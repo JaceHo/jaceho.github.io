@@ -1,0 +1,46 @@
+---
+layout: post
+status: publish
+published: true
+title: milking cows,done!
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 36
+wordpress_url: http://localhost/?p=32
+date: '2012-06-08 12:22:20 +0800'
+date_gmt: '2012-06-08 12:22:20 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <center> <b><font size="7"><font size="3"><span style="font-family: 黑体;">有点小插曲，其中<&#47;span><&#47;font><&#47;font><&#47;b><b><font size="7"><font size="3"><span style="font-family: 黑体;">if中的<&#47;span><&#47;font><&#47;font><&#47;b><b><font size="7"><font size="3"><span style="font-family: 黑体;">判断条件少了个&ldquo;=",出现的结果让人莫名奇妙，但最后还是看出来了。<&#47;span><&#47;font><br &#47;>Milking Cows<&#47;font><&#47;b><br &#47;> <&#47;center>
+<p>Three farmers rise at 5 am each morning and head for the barn to milk three cows. The first farmer begins milking his cow at time 300 (measured in seconds after 5 am) and ends at time 1000. The second farmer begins at time 700 and ends at time 1200. The third farmer begins at time 1500 and ends at time 2100.  The longest continuous time during which at least one farmer was milking a cow was 900 seconds (from 300 to 1200). The longest time no milking was done, between the beginning and the ending of all milking, was 300 seconds (1500 minus 1200).  <&#47;p>
+<p>Your job is to write a program that will examine a list of beginning and ending times for N (1 <=  N <= 5000) farmers milking N cows and compute (in seconds): <&#47;p>
+<ul>
+<li> The longest time interval at least one cow was milked.  <&#47;li>
+<li> The longest time interval (after milking starts) during which no cows were being milked. <&#47;li><&#47;ul><br />
+<h3>PROGRAM NAME: milk2<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3><br />
+<table border="1">
+<tbody>
+<tr>
+<td> Line 1: <&#47;td>
+<td>The single integer  <&#47;td> <&#47;tr><br />
+<tr>
+<td> Lines 2..N+1: <&#47;td>
+<td>Two non-negative integers less than 1000000, the starting and ending time in seconds after 0500<&#47;td> <&#47;tr><&#47;tbody><&#47;table><br />
+<h3>SAMPLE INPUT (file milk2.in) <&#47;h3>
+<pre>3 300 1000 700 1200 1500 2100  <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>  A single line with two integers that represent the longest continuous time of milking and the longest idle time.<br />
+<h3>SAMPLE OUTPUT (file milk2.out)<&#47;h3>
+<p><&#47;p>
+<pre>900 300<br &#47;><br &#47;>&#47;*<br &#47;>ID:hejiek1<br &#47;>LANG: C<br &#47;>TASK:milk2<br &#47;>*&#47;<br &#47;>#include<stdio.h><br &#47;>#include<string.h><br &#47;>int n;<br &#47;>short int seconds[1000001];<br &#47;>void input(long int *startx,long int *starty)<br &#47;>{<br &#47;>    int i,j;<br &#47;>    long int min=1e6,max=0,x,y;<br &#47;>    memset(seconds,0,sizeof(seconds));<br &#47;>    FILE *fp=fopen("milk2.in","r");<br &#47;>    fscanf(fp,"%d",&amp;n);<br &#47;>    for(j=0;j<n;j++)<br &#47;>    {<br &#47;>        fscanf(fp,"%ld %ld",&amp;x,&amp;y);<br &#47;>        for(i=x;i<y;i++)<br &#47;>        seconds[i]++;<br &#47;>        if(min>x)min=x;<br &#47;>        if(max<y)max=y;<br &#47;>    }<br &#47;>    (*startx)=min;<br &#47;>    (*starty)=max;<br &#47;>}<br &#47;>void period(long int x,long int y,int *mit,int *nmit)<br &#47;>{<br &#47;>    long i,j,tmp1=0,tmp2=0,max1=0,max2=0;<br &#47;>    for(i=x;i<=y;i++)<br &#47;>    {<br &#47;>        if(seconds[i]==0)<br &#47;>        {<br &#47;>            if(tmp2>=max2)<br &#47;>                max2=tmp2;<br &#47;>            tmp2=0;<br &#47;>            tmp1++;<br &#47;>        }<br &#47;>        else<br &#47;>        {<br &#47;>            if(tmp1>=max1)<br &#47;>                max1=tmp1;<br &#47;>            tmp1=0;<br &#47;>            tmp2++;<br &#47;>        }<br &#47;>    }<br &#47;>    (*mit)=max1;<br &#47;>    (*nmit)=max2;<br &#47;>}<br &#47;><br &#47;>void output(int max1,int max2)<br &#47;>{<br &#47;>    FILE *fp=fopen("milk2.out","w");<br &#47;>    fprintf(fp,"%d %dn",max1,max2);<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>    int max1,max2;<br &#47;>    long int x,y;<br &#47;>    memset(seconds,0,sizeof(seconds));<br &#47;>    input(&amp;x,&amp;y);<br &#47;>    period(x,y,&amp;max1,&amp;max2);<br &#47;>    output(max2,max1);<br &#47;>    return 0;<br &#47;>}<br &#47;><&#47;pre><&#47;div></p>

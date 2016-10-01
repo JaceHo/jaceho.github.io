@@ -1,0 +1,53 @@
+---
+layout: post
+status: publish
+published: true
+title: transformations
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 38
+wordpress_url: http://localhost/?p=34
+date: '2012-06-11 12:43:20 +0800'
+date_gmt: '2012-06-11 12:43:20 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <center> <b><font size="7">Transformations<&#47;font><&#47;b><br &#47;> <&#47;center>
+<p> A square pattern of size N x N (1 <= N <= 10) black and white square tiles is transformed into another square pattern.  Write a program that will recognize the minimum transformation that has been applied to the original pattern given the following list of possible transformations:  <&#47;p>
+<ul>
+<li>#1: 90 Degree Rotation: The pattern was rotated clockwise 90 degrees. <&#47;li>
+<li>#2: 180 Degree Rotation: The pattern was rotated clockwise 180 degrees. <&#47;li>
+<li>#3: 270 Degree Rotation: The pattern was rotated clockwise 270 degrees.<&#47;li>
+<li>#4: Reflection: The pattern was reflected horizontally (turned into a mirror image of itself by reflecting around a vertical line in the middle of the image).<&#47;li>
+<li>#5: Combination: The pattern was reflected horizontally and then subjected to one of the rotations (#1-#3). <&#47;li>
+<li>#6: No Change: The original pattern was not changed. <&#47;li>
+<li>#7: Invalid Transformation: The new pattern was not obtained by any of the  above methods. <&#47;li><&#47;ul>
+<p>In the case that more than one transform could have been used, choose the one with the minimum number above.  <&#47;p><br />
+<h3>PROGRAM NAME: transform<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3><br />
+<table border="1">
+<tbody>
+<tr>
+<td> Line 1: <&#47;td>
+<td> A single integer, N <&#47;td> <&#47;tr><br />
+<tr>
+<td> Line 2..N+1: <&#47;td>
+<td> N lines of N characters (each either   `@' or `-'); this is the square before   transformation<&#47;td> <&#47;tr><br />
+<tr>
+<td> Line N+2..2*N+1: <&#47;td>
+<td> N lines of N characters (each either   `@' or `-'); this is the square after transformation<&#47;td> <&#47;tr> <&#47;tbody><&#47;table><br />
+<h3>SAMPLE INPUT (file transform.in) <&#47;h3>
+<pre>3 @-@ --- @@- @-@ @-- --@ <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>  A single line containing the the number from 1 through 7 (described above) that categorizes the transformation required to change from the `before' representation to the `after' representation.<br />
+<h3>SAMPLE OUTPUT (file transform.out)<&#47;h3>
+<pre>1<br &#47;>&#47;*<br &#47;>ID:hejiek1<br &#47;>LANG: C<br &#47;>TASK:transform<br &#47;>*&#47;<br &#47;>#include<stdio.h><br &#47;>#include<stdlib.h><br &#47;>#include<string.h><br &#47;>int input(char ***pre,char***aft)<br &#47;>{<br &#47;>    int n,i;<br &#47;>    FILE *fp=fopen("transform.in","r");<br &#47;>    fscanf(fp,"%d",&amp;n);<br &#47;>    char **p1=(char**)malloc(n*sizeof(char*));<br &#47;>    char **p2=(char**)malloc(n*sizeof(char*));<br &#47;>    for(i=0;i<n;i++)<br &#47;>    {<br &#47;>        p1[i]=(char*)malloc(n*sizeof(char));<br &#47;>        p2[i]=(char*)malloc(n*sizeof(char));<br &#47;>    }<br &#47;>    for(i=0;i<n;i++)<br &#47;>    fscanf(fp,"%s",p1[i]);<br &#47;>    for(i=0;i<n;i++)<br &#47;>    fscanf(fp,"%s",p2[i]);<br &#47;>    (*pre)=p1;<br &#47;>    (*aft)=p2;<br &#47;>    return n;<br &#47;>}<br &#47;>int transforms(int n,char **pre,char**aft)<br &#47;>{<br &#47;>    int flag[7],i,j,tmp=1,k=0;<br &#47;>    memset(flag,1,sizeof(flag));<br &#47;>    for(i=0;i<n;i++)<br &#47;>        for(j=0;j<n;j++)<br &#47;>        {<br &#47;>            if(pre[i][j]!=aft[j][n-i-1])<br &#47;>                flag[1]=0;<br &#47;>            if(pre[i][j]!=aft[n-i-1][n-j-1])<br &#47;>                flag[2]=0;<br &#47;>            if(pre[i][j]!=aft[n-j-1][i])<br &#47;>                flag[3]=0;<br &#47;>            if(pre[i][j]!=aft[i][n-j-1])<br &#47;>                flag[4]=0;<br &#47;>            if(pre[i][j]!=aft[i][j]);<br &#47;>                flag[6]=0;<br &#47;>        }<br &#47;>    for(i=1;i<5;i++)<br &#47;>        if(flag[i])<br &#47;>            return i;<br &#47;>    if(flag[6])<br &#47;>        return 6;<br &#47;>    return 0;<br &#47;>}<br &#47;>int combination(int n,char**pre,char**aft)<br &#47;>{<br &#47;>    int flag,i,j;<br &#47;>    char **tmp=(char**)malloc(n*sizeof(char*));<br &#47;>    for(i=0;i<n;i++)<br &#47;>        tmp[i]=(char*)malloc(n*sizeof(char));<br &#47;>    for(i=0;i<n;i++)<br &#47;>    for(j=0;j<n;j++)<br &#47;>        tmp[i][j]=aft[i][n-j-1];<br &#47;>    flag=transforms(n,pre,tmp);<br &#47;>    if(flag<=3&amp;&amp;flag>=1)<br &#47;>        return 5;<br &#47;>    for(i=0;i<n;i++)<br &#47;>    for(j=0;j<n;j++)<br &#47;>        tmp[i][j]=aft[n-i-1][j];<br &#47;>    flag=transforms(n,pre,tmp);<br &#47;>    if(flag<=3&amp;&amp;flag>=1)<br &#47;>        return 5;<br &#47;>    return -1;<br &#47;>}<br &#47;>void output(int num)<br &#47;>{<br &#47;>    FILE  *fp=fopen("transform.out","w");<br &#47;>    if(num!=-1)<br &#47;>    fprintf(fp,"%dn",num);<br &#47;>    else<br &#47;>    fprintf(fp,"7n",num);<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>    int flag=0,n;<br &#47;>    char **pre=NULL,**aft=NULL;<br &#47;>    n=input(&amp;pre,&amp;aft);<br &#47;>    flag=transforms(n,pre,aft);<br &#47;>    if(!flag)<br &#47;>        flag=combination(n,pre,aft);<br &#47;>    output(flag);<br &#47;>    return 0;<br &#47;>} <br &#47;><&#47;pre><&#47;div></p>

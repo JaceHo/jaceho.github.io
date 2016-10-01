@@ -1,0 +1,25 @@
+---
+layout: post
+status: publish
+published: true
+title: Greedy Gift Givers,done!
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 43
+wordpress_url: http://localhost/?p=39
+date: '2012-06-04 12:54:21 +0800'
+date_gmt: '2012-06-04 12:54:21 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &#47;*<br &#47;>ID:hejiek1<br &#47;>LANG: C<br &#47;>TASK:gift1<br &#47;>*&#47;<br &#47;>#include<stdio.h><br &#47;>#include<string.h><br &#47;>#include<stdlib.h><br &#47;>FILE *fp;<br &#47;>char **a;<br &#47;>int *b;<br &#47;>int who(int n)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; int i;<br &#47;>&nbsp;&nbsp;&nbsp; char buf[15];<br &#47;>&nbsp;&nbsp; fscanf(fp,"%s",buf);<br &#47;>&nbsp;&nbsp; for(i=0;i<n;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(!strncmp(buf,a[i],15))<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return i;<br &#47;>}<br &#47;>void output(int n){<br &#47;>&nbsp;&nbsp;&nbsp; int i;<br &#47;>&nbsp;&nbsp;&nbsp; fp=fopen("gift1.out","w");<br &#47;>&nbsp;&nbsp;&nbsp; for(i=0;i<n;i++)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(fp,"%s %d",a[i],b[i]);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fprintf(fp,"n",n);<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>}<br &#47;><br &#47;>int main (int argc, char const* argv[]) {<br &#47;>&nbsp;&nbsp;&nbsp; int n,i,j,give,m,tmp;<br &#47;>&nbsp;&nbsp;&nbsp; fp=fopen("gift1.in","r");<br &#47;>&nbsp;&nbsp;&nbsp; fscanf(fp,"%d",&amp;n);<br &#47;>&nbsp;&nbsp;&nbsp; b=(int *)malloc(n*sizeof(int));<br &#47;>&nbsp;&nbsp;&nbsp; memset(b,0,sizeof(b));<br &#47;>&nbsp;&nbsp;&nbsp; a=(char**)malloc(n*sizeof(char*));<br &#47;>&nbsp;&nbsp;&nbsp; for(i=0;i<n;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; a[i]=(char*)malloc(15*sizeof(char));<br &#47;>&nbsp;&nbsp;&nbsp; for(i=0;i<n;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; fscanf(fp,"%s",a[i]);<br &#47;>&nbsp;&nbsp;&nbsp; while(1)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j=who(n);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp=fscanf(fp,"%d%d",&amp;give,&amp;m);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(tmp<=0)break;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(m!=0)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[j]+=give%m-give;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(i=0;i<m;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j=who(n);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; b[j]+=give&#47;m;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; output(n);<br &#47;>&nbsp;&nbsp;&nbsp; return 0;<br &#47;>}<&#47;div></p>

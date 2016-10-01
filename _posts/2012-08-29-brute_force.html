@@ -1,0 +1,46 @@
+---
+layout: post
+status: publish
+published: true
+title: brute force
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 27
+wordpress_url: http://localhost/?p=23
+date: '2012-08-29 11:00:18 +0800'
+date_gmt: '2012-08-29 11:00:18 +0800'
+categories:
+- usaco
+tags:
+- brute
+- force
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <center> <b><font size="7">Prime Cryptarithm<&#47;font><&#47;b><br &#47;> <&#47;center>
+<p> The following cryptarithm is a multiplication problem that can be solved by substituting digits from a specified set of N digits into the positions marked with *. If the set of prime digits {2,3,5,7} is selected, the cryptarithm is called a PRIME CRYPTARITHM. <&#47;p>
+<pre>      * * *    x    * *     -------       * * *         <-- partial product 1     * * *           <-- partial product 2     -------     * * * * <&#47;pre> Digits can appear only in places marked by `*'.  Of course, leading zeroes are not allowed.
+<p>Note that the 'partial products' are as taught in USA schools. The first partial product is the product of the final digit of the second number and the top number.  The second partial product is the product of the first digit of the second number and the top number.  <&#47;p>
+<p> Write a program that will find all solutions to the cryptarithm above for any subset of digits from the set {1,2,3,4,5,6,7,8,9}.  <&#47;p><br />
+<h3>PROGRAM NAME: crypt1<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3><br />
+<table border="1">
+<tbody>
+<tr>
+<td> Line 1: <&#47;td>
+<td> N, the number of digits that will be used<&#47;td> <&#47;tr><br />
+<tr>
+<td> Line 2: <&#47;td>
+<td>N space separated digits with which to solve the cryptarithm <&#47;td> <&#47;tr><&#47;tbody><&#47;table><br />
+<h3>SAMPLE INPUT (file crypt1.in) <&#47;h3>
+<pre>5 2 3 4 6 8 <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>
+<p>A single line with the total number of unique solutions.  Here is the single solution for the sample input: <&#47;p>
+<pre>      2 2 2     x   2 2      ------       4 4 4     4 4 4   ---------     4 8 8 4 <&#47;pre><br />
+<h3>SAMPLE OUTPUT (file crypt1.out)<&#47;h3>
+<pre>1 &#47;*<br &#47;>ID: hippo he<br &#47;>LANG: C++<br &#47;>TASK:crypt1<br &#47;>*&#47;<br &#47;><br &#47;>#include<iostream><br &#47;>#include<fstream><br &#47;>using namespace std;<br &#47;>static int m;<br &#47;>void input(int *&amp;sets)<br &#47;>{<br &#47;>    int i=0,j;<br &#47;>    ifstream file("crypt1.in");<br &#47;>    file>>m;<br &#47;>    sets=new int[m] ;<br &#47;>    j=m;<br &#47;>    while(j--)<br &#47;>        file>>sets[i++];<br &#47;>}<br &#47;><br &#47;>bool inSet(int x,int *sets)<br &#47;>{<br &#47;>    int dig=0,i,j,tmp=1,flag=0;<br &#47;>    tmp=x;<br &#47;>    while(tmp)<br &#47;>    {<br &#47;>        dig++;<br &#47;>        tmp&#47;=10;<br &#47;>    }<br &#47;>    tmp=1;<br &#47;>    for(i=0;i<dig;i++)<br &#47;>    {<br &#47;>        for(j=dig-i-1,tmp=1;j>0;j--)<br &#47;>            tmp*=10;<br &#47;>        for(j=0;j<m;j++)<br &#47;>            if(x&#47;tmp==sets[j])flag=1;<br &#47;>        if(!flag)return false;<br &#47;>        x%=tmp;<br &#47;>        flag=0;<br &#47;>    }<br &#47;>    return true;<br &#47;>}<br &#47;><br &#47;>bool allIn(int x,int y,int* sets)<br &#47;>{<br &#47;>    if(inSet(x,sets)&amp;&amp;inSet(y,sets)&amp;&amp;inSet(x*(y%10),sets)&amp;&amp;inSet(x*(y&#47;10),sets)&amp;&amp;inSet(x*y,sets)&amp;&amp;x*(y&#47;10)<=999&amp;&amp;x*(y%10)<=999&amp;&amp;x*y<=9999)<br &#47;>            return true;<br &#47;>            return false;<br &#47;>}<br &#47;><br &#47;>int counter(int *sets)<br &#47;>{<br &#47;>    int i,j,k,l,n,mul1,num=0,mul2;<br &#47;>    for(i=0;i<m;i++)<br &#47;>    for(j=0;j<m;j++)<br &#47;>    for(k=0;k<m;k++)<br &#47;>    for(l=0;l<m;l++)<br &#47;>    for(n=0;n<m;n++)<br &#47;>    {<br &#47;>        mul1=sets[i]*100+sets[j]*10+sets[k];<br &#47;>        mul2=sets[l]*10+sets[n];<br &#47;>        if(allIn(mul1,mul2,sets))<br &#47;>        {<br &#47;>            num++;<br &#47;>            cout<<mul1<<" "<<mul2<<endl;<br &#47;>        }<br &#47;>    }<br &#47;>    return num;<br &#47;>}<br &#47;><br &#47;>void output(int num)<br &#47;>{<br &#47;>    ofstream file("crypt1.out");<br &#47;>    file<<num;<br &#47;>    file<<endl;<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>    int num=0,*sets;<br &#47;>    input(sets);<br &#47;>    num=counter(sets);<br &#47;>    output(num);<br &#47;>    return 0;<br &#47;>}<br &#47;><br &#47;><&#47;pre><&#47;div></p>

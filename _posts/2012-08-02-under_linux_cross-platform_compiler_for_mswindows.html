@@ -1,0 +1,33 @@
+---
+layout: post
+status: publish
+published: true
+title: linux下跨平台编译（for MSwindows）
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 28
+wordpress_url: http://localhost/?p=24
+date: '2012-08-02 01:21:18 +0800'
+date_gmt: '2012-08-02 01:21:18 +0800'
+categories:
+- linux
+tags:
+- linux
+- windows
+- 跨平台
+- 编译
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &nbsp; &nbsp; &nbsp;&nbsp; 由于考虑平台的通用性，32位的编译器更符合大多数人的需要，而且minGW的mingw32库更加稳定，也许可以胜任在c++尚未成熟时发展出来的MFC。<br &#47;>&nbsp;&nbsp;&nbsp; 1.在安装Wxwidgets前，先安装mingw32的软件包。<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp; $ sudo apt-get install mingw32<br &#47;>&nbsp;&nbsp;&nbsp; 2.在之前的基础上，下载编译 <a target="_blank" rel="nofollow" href="http:&#47;&#47;www.wxwidgets.org&#47;downloads&#47;">wxWidgets&nbsp; (大约100多M源码)<&#47;a>
+<ul>
+<li> 下载wxWidgets源码<&#47;li>
+<li> 编译源码，这可能需要10分钟左右，注意configure时加上这些东西：<br &#47;> $ .&#47;configure --prefix=&#47;usr&#47;local&#47;i586-mingw32 --host=i586-mingw32msvc --build=i686-linux<&#47;li>
+<li>你最好用<br &#47;>&nbsp; sudo checkinstall&nbsp;<br &#47;>&nbsp; $ sudo make install<&#47;li>
+<li>&nbsp;替换 <br &#47;>$ sudo make<br &#47;>$ sudo make installi>'做一些软件安装的选择。<&#47;li><&#47;ul>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这样就能用wxwidgets的库了。<br &#47;><br &#47;>&nbsp;&nbsp;&nbsp;&nbsp; 1. 举个例子：（对于windows.h头文件的源码几乎可以让大多数 *nuxer 恼火)<br &#47;>&#47;&#47;box.c<br &#47;>&nbsp;#include <windows.h><br &#47;>&nbsp;int main(int argc, char *argv[])<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; MessageBox(NULL, "Hello, world!", "Hello, world!", MB_OK);<br &#47;>&nbsp;&nbsp;&nbsp; return 0;<br &#47;>}<br &#47;><br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 最简单的命令就可以搞定：i586-mingw32msvc-gcc box.c &nbsp; -o box.exe <br &#47;>结果是wine弹出的一个小hello world 窗口（<font color="#800000">这之前你必需有安装wine<&#47;font>）。<br &#47;><br &#47;>&nbsp;&nbsp;&nbsp; 2.&nbsp; 如果想更近一步，直接用mingw32编译MSwindows下的源码，下载sdl-devel-mingw32的开发者版本，将对应的解压包下的 usr&#47;lib&#47;&nbsp; &#47;usr&#47;include&#47;SDL&#47;&nbsp; 移到 &#47;usr&#47;i586-mingw32-msvc&#47;include&#47;SDL&nbsp;&nbsp; &#47;usr&#47;i586-mingw32-msvc&#47;lib&#47;<br &#47;>
+<pre>&nbsp; &nbsp; 对于debian的linux用户，编译时用命令i586-mingw32msvc-g++ &nbsp; `&#47;usr&#47;local&#47;i586-mingw32&#47;bin&#47;wx-config --libs` 替换g++就可以生成exe文件。 <&#47;pre>&nbsp;&nbsp;&nbsp;&nbsp; 现在测试一下：<br &#47;>&#47;&#47;test.c<br &#47;>&nbsp;#include<stdio.h><br &#47;>#include"SDL&#47;SDL.h"<br &#47;><br &#47;>int main(int argc,char *argv[])<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; if(SDL_INIT_EVERYTHING!=-1)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("OK!n");<br &#47;>&nbsp;&nbsp;&nbsp; printf("awaysome!");<br &#47;><br &#47;>&nbsp;&nbsp;&nbsp; SDL_Quit();<br &#47;>}<br &#47;><br &#47;>&nbsp;&nbsp; $ i586-mingw32msvc-g++ test.c&nbsp; -lmingw32 -lSDLmain -lSDL -I&#47;usr&#47;i586-mingw32msvc&#47;include&#47;SDL<br &#47;>之后生成test.exe,没有错误的话就大工告成了。<br &#47;><br &#47;><br &#47;><&#47;div></p>

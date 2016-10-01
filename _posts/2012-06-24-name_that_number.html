@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: Name That Number
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 35
+wordpress_url: http://localhost/?p=31
+date: '2012-06-24 18:18:20 +0800'
+date_gmt: '2012-06-24 18:18:20 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">
+<p> Among the large Wisconsin cattle ranchers, it is customary to brand cows with serial numbers to please the Accounting Department. The cow hands don't appreciate the advantage of this filing system, though, and wish to call the members of their herd by a pleasing name rather than saying, "C'mon, #4734, get along."  <&#47;p>
+<p> Help the poor cowhands out by writing a program that will translate the brand serial number of a cow into possible names uniquely associated with that serial number. Since the cow hands all have cellular saddle phones these days, use the standard Touch-Tone(R) telephone keypad mapping to get from numbers to letters (except for "Q" and "Z"):  <&#47;p>
+<pre>          2: A,B,C     5: J,K,L    8: T,U,V           3: D,E,F     6: M,N,O    9: W,X,Y           4: G,H,I     7: P,R,S <&#47;pre>
+<p> Acceptable names for cattle are provided to you in a file named "dict.txt", which contains a list of fewer than 5,000 acceptable cattle names (all letters capitalized). Take a cow's brand number and report which of all the possible words to which that number maps are in the <a rel="nofollow" href="http:&#47;&#47;ace.delos.com&#47;usaco&#47;namenumdict.txt">given dictionary<&#47;a> which is supplied as dict.txt in the grading environment (and is sorted into ascending order).  <&#47;p>
+<p> For instance, the brand number 4734 produces all the following names: <&#47;p>
+<pre>GPDG GPDH GPDI GPEG GPEH GPEI GPFG GPFH GPFI GRDG GRDH GRDI GREG GREH GREI GRFG GRFH GRFI GSDG GSDH GSDI GSEG GSEH GSEI GSFG GSFH GSFI HPDG HPDH HPDI HPEG HPEH HPEI HPFG HPFH HPFI HRDG HRDH HRDI HREG HREH HREI HRFG HRFH HRFI HSDG HSDH HSDI HSEG HSEH HSEI HSFG HSFH HSFI IPDG IPDH IPDI IPEG IPEH IPEI IPFG IPFH IPFI IRDG IRDH IRDI IREG IREH IREI IRFG IRFH IRFI ISDG ISDH ISDI ISEG ISEH ISEI ISFG ISFH ISFI <&#47;pre>
+<p> As it happens, the only one of these 81 names that is in the list of valid names is "GREG".  <&#47;p>
+<p> Write a program that is given the brand number of a cow and prints all the valid names that can be generated from that brand number or ``NONE'' if there are no valid names.  Serial numbers can be as many as a dozen digits long.  <&#47;p><br />
+<h3>PROGRAM NAME: namenum<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3>  A single line with a number from 1 through 12 digits in length.<br />
+<h3>SAMPLE INPUT (file namenum.in) <&#47;h3>
+<pre>4734 <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>  A list of valid names that can be generated from the input, one per line, in ascending alphabetical order.<br />
+<h3>SAMPLE OUTPUT (file namenum.out)<&#47;h3>
+<pre>GREG &#47;*<br &#47;>ID: hippo he<br &#47;>LANG: C<br &#47;>TASK:namenum<br &#47;>*&#47;<br &#47;><br &#47;>#include<stdio.h><br &#47;>#include<string.h><br &#47;>#include<stdlib.h><br &#47;>typedef struct code<br &#47;>{<br &#47;> int num;<br &#47;> char a[3];<br &#47;>}code,*pcode;<br &#47;><br &#47;>void input(char *src)<br &#47;>{<br &#47;> FILE*fp=fopen("namenum.in","r");<br &#47;> fscanf(fp,"%s",src);<br &#47;> fclose(fp);<br &#47;>}<br &#47;><br &#47;>char* transcode(FILE**fp,pcode glob,char (*des)[13],char*src)<br &#47;>{<br &#47;> char *buf,*nu;<br &#47;> int i,j,k,m=1,flag=0;<br &#47;> nu=(char*)malloc(13*sizeof(char));<br &#47;> buf=(char*)malloc(13*sizeof(char));<br &#47;> i=fscanf(*fp,"%s",buf);<br &#47;> if(i<=0) return NULL;<br &#47;> else<br &#47;> {<br &#47;>  for(i=0;i<13;i++)<br &#47;>  {<br &#47;>   if(buf[i])<br &#47;>   {<br &#47;>    for(j=0;j<8;j++)<br &#47;>    {<br &#47;>     flag=0;<br &#47;>     for(k=0;k<3;k++)<br &#47;>     {<br &#47;>      if(buf[i]==glob[j].a[k])<br &#47;>      {<br &#47;>       nu[i]=glob[j].num+'0';<br &#47;>       flag=1;<br &#47;>       break;<br &#47;>      }<br &#47;>     }<br &#47;>     if(flag==1)break;<br &#47;>    }<br &#47;>         if(flag==0) return src;<br &#47;>   }<br &#47;>  }<br &#47;> }<br &#47;> if(!strcmp(nu,src))<br &#47;>  return buf;<br &#47;> else return src;<br &#47;>}<br &#47;><br &#47;>void ouput(char (*des)[13],int m)<br &#47;>{<br &#47;> FILE *fp=fopen("namenum.out","w");<br &#47;> int i;<br &#47;> if(m==0)<br &#47;>  fprintf(fp,"NONEn",&amp;m);<br &#47;> else<br &#47;> {<br &#47;>  for(i=0;i<m;i++)<br &#47;>   fprintf(fp,"%sn",des[i]);<br &#47;> }<br &#47;> fclose(fp);<br &#47;>}<br &#47;><br &#47;>int main (int argc, char const* argv[])<br &#47;>{<br &#47;> int i,m=0,j=0;<br &#47;> code glob[8]={<br &#47;>  {2,'A','B','C'},<br &#47;>  {3,'D','E','F'},<br &#47;>  {4,'G','H','I'},<br &#47;>  {5,'J','K','L'},<br &#47;>  {6,'M','N','O'},<br &#47;>  {7,'P','R','S'},<br &#47;>  {8,'T','U','V'},<br &#47;>  {9,'W','X','Y'},<br &#47;> };<br &#47;> char src[13],*buf,des[200][13];<br &#47;> FILE *fp=fopen("dict.txt","r");<br &#47;> input(src);<br &#47;> for(i=0;;i++)<br &#47;> {<br &#47;>  buf=transcode(&amp;fp,glob,des,src);<br &#47;>  if(buf==NULL)<br &#47;>  {<br &#47;>   break;<br &#47;>  }<br &#47;>  else if(buf==src);<br &#47;>  else<br &#47;>  {<br &#47;>   strcpy(des[j++],buf);<br &#47;>  }<br &#47;> }<br &#47;> ouput(des,j);<br &#47;> fclose(fp);<br &#47;> return 0;<br &#47;>}<br &#47;><&#47;pre> <&#47;div></p>

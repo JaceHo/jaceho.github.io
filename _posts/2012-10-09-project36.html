@@ -1,0 +1,115 @@
+---
+layout: post
+status: publish
+published: true
+title: project36
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+excerpt: "<div id=\"BlogArticleDetail\" style=\"font-size: 14px;\">\r\n<h2 style=\"cursor:
+  help;\" title=\"Solved by 34636\">Problem 36<&#47;h2>\r\n<div style=\"cursor: help;
+  color: #666; font-size: 80%;\" title=\"Published on 31 January 2003 at 06:00 pm\">31
+  January 2003<&#47;div>\r\n<div class=\"problem_content\" role=\"problem\">\r\n\r\nThe
+  decimal number, 585 = 1001001001<sub>2<&#47;sub> (binary), is palindromic in both
+  bases.\r\n\r\nFind the sum of all numbers, less than one million, which are palindromic
+  in base 10 and base 2.\r\n<p class=\"info\">(Please note that the palindromic number,
+  in either base, may not include leading zeros.)<&#47;p>\r\n\r\n<&#47;div>\r\n<&#47;div>\r\n&nbsp;\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<div
+  style=\"text-align: right;\">Answer:<&#47;div><&#47;td>\r\n<td><b>872187<&#47;b><&#47;td>\r\n<&#47;tr>\r\n<&#47;tbody>\r\n<&#47;table>\r\n#include<iostream>\r\nusing
+  namespace std;\r\nint digits[6];\r\nint bins[20];\r\nint binNum=0;\r\n"
+wordpress_id: 25
+wordpress_url: http://localhost/?p=21
+date: '2012-10-09 11:41:13 +0800'
+date_gmt: '2012-10-09 11:41:13 +0800'
+categories:
+- 算法
+tags:
+- algorithms
+- projecteuler
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">
+<h2 style="cursor: help;" title="Solved by 34636">Problem 36<&#47;h2></p>
+<div style="cursor: help; color: #666; font-size: 80%;" title="Published on 31 January 2003 at 06:00 pm">31 January 2003<&#47;div></p>
+<div class="problem_content" role="problem">
+<p>The decimal number, 585 = 1001001001<sub>2<&#47;sub> (binary), is palindromic in both bases.</p>
+<p>Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2.</p>
+<p class="info">(Please note that the palindromic number, in either base, may not include leading zeros.)<&#47;p></p>
+<p><&#47;div><br />
+<&#47;div><br />
+&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="text-align: right;">Answer:<&#47;div><&#47;td></p>
+<td><b>872187<&#47;b><&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table><br />
+#include<iostream><br />
+using namespace std;<br />
+int digits[6];<br />
+int bins[20];<br />
+int binNum=0;<br />
+<a id="more"></a><a id="more-25"></a><br />
+bool ispaldec(long i)<br />
+{<br />
+int j=0;<br />
+for (; i>0; i&#47;=10)<br />
+digits[j++]=i%10;<br />
+for (i = 0; i < j&#47;2; i++) {<br />
+if(digits[i]!=digits[j-i-1])<br />
+return false;<br />
+}<br />
+return true;<br />
+}<br />
+&#47;*<br />
+* alternaltive way recursive<br />
+void ispaldectobin(long i)<br />
+{<br />
+binNum=0;<br />
+if(i<=1)<br />
+{<br />
+bins[binNum++]=i;<br />
+return;<br />
+}<br />
+ispaldectobin(i&#47;2);<br />
+bins[binNum++]=i%2;<br />
+}<br />
+*&#47;<br />
+&#47;&#47;while loop<br />
+void ispaldectobin(long i)<br />
+{<br />
+binNum=0;<br />
+do {<br />
+bins[binNum++]=i%2;<br />
+i&#47;=2;<br />
+}while(i);<br />
+}<br />
+bool ispalbin(int *bins)<br />
+{<br />
+int i=0;<br />
+for (i = 0; i < binNum&#47;2; i++) {<br />
+if(bins[i]!=bins[binNum-i-1])<br />
+return false;<br />
+}<br />
+return true;<br />
+}<br />
+int main (int argc, char const* argv[]) {<br />
+int i=1,j=0,sum=0;<br />
+for (i = 1; i < 1000000; i++) {<br />
+ispaldectobin(i);<br />
+if(ispalbin(bins)&amp;&amp;ispaldec(i))<br />
+{<br />
+ispaldectobin(i);<br />
+sum+=i;<br />
+}<br />
+}<br />
+cout<<sum<<endl;<br />
+return 0;<br />
+}</p>

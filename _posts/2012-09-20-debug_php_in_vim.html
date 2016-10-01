@@ -1,0 +1,39 @@
+---
+layout: post
+status: publish
+published: true
+title: debug php in vim
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 24
+wordpress_url: http://localhost/?p=20
+date: '2012-09-20 16:45:13 +0800'
+date_gmt: '2012-09-20 16:45:13 +0800'
+categories:
+- vim
+- linux
+- php
+tags:
+- linux
+- vim
+- php
+- debug
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 之前一直是看xdebug的安装，<a target="_blank" rel="nofollow" href="http:&#47;&#47;www.apaddedcell.com&#47;easy-php-debugging-ubuntu-using-xdebug-and-vim">http:&#47;&#47;www.apaddedcell.com&#47;easy-php-debugging-ubuntu-using-xdebug-and-vim<&#47;a>但，~&#47;.vim&#47;plugin&#47;debugger.vim 分明执行到<br &#47;><br &#47;>&nbsp;
+<pre>if !has('python')&nbsp; <br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; finish <br &#47;>end<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <&#47;pre>就没有了，换了之前F5 的html preview in  firefox的键盘映射到F4，F5按过之后还是没有 wiatting for 5s 的提示，刷新firefox也没反应, 必须得自己编译vim呗。<br &#47;><br &#47;>1.<a target="_blank" rel="nofollow" href="http:&#47;&#47;www.drchip.org&#47;astronaut&#47;vim&#47;vimfeat.html">这里<&#47;a>有个vim features的说明很有用，除了一些默认的选项，其他的功能开着也不碍事。<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 举个例子(<font color="#99CC00">这之前要安装 对应版本的python2.x-dev<&#47;font>)：<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 简单点：<br &#47;>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; .&#47;configure --with-features=huge --enable-pythoninterp &nbsp; <br &#47;>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <code><span class="pun">--<&#47;span><span class="kwd">with<&#47;span><span class="pun">-<&#47;span><span class="pln">python<&#47;span><span class="pun">-<&#47;span><span class="pln">config<&#47;span><span class="pun">-<&#47;span><span class="pln">dir<&#47;span><span class="pun">=<&#47;span><span class="str">&#47;usr&#47;<&#47;span><span class="pln">lib<&#47;span><span class="pun">&#47;<&#47;span><span class="pln">python2<&#47;span><span class="pun">.<&#47;span><span class="lit">x<&#47;span><span class="pun">&#47;<&#47;span><span class="pln">config<&#47;span><&#47;code><br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 看了vim 其他拓展功能后，这个也行：<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; .&#47;configure --with-features=huge --enable-pythoninterp&nbsp; <br &#47;>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <code><span class="pun">--<&#47;span><span class="kwd">with<&#47;span><span class="pun">-<&#47;span><span class="pln">python<&#47;span><span class="pun">-<&#47;span><span class="pln">config<&#47;span><span class="pun">-<&#47;span><span class="pln">dir<&#47;span><span class="pun">=<&#47;span><span class="str">&#47;usr&#47;<&#47;span><span class="pln">lib<&#47;span><span class="pun">&#47;<&#47;span><span class="pln">python2<&#47;span><span class="pun">.<&#47;span><span class="lit">x<&#47;span><span class="pun">&#47;<&#47;span><span class="pln">config&nbsp; <br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <&#47;span><&#47;code>--enable-cscope       --enable-hangulinput  --enable-sniff<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#808080">**不论何种版本，一定确保<code><span class="str">&#47;usr&#47;<&#47;span><span class="pln">lib<&#47;span><span class="pun">&#47;<&#47;span><span class="pln">python2<&#47;span><span class="pun">.<&#47;span><span class="lit">x<&#47;span><span class="pun">&#47;<&#47;span><span class="pln">config 下有&lsquo;config.c'文件。<&#47;span><&#47;code><&#47;font><br &#47;>2. 然后编译，安装就OK了。<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 测试一下vim python的功能开通了没有：<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $vim <br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; :python print "Hello"<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 如果vim命令行出现：Hello<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 祝贺你，python 的支持安装成功了！<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 在确保xdebug以及～&#47;.vim&#47;plugin&#47;下有<br &#47;>
+<ul>
+<li><em>debugger.py<&#47;em><&#47;li>
+<li><em>debugger.vim<&#47;em><&#47;li><&#47;ul>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp; 正确安装后&nbsp; <br &#47;><&#47;em><&#47;p>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; $vim<&#47;em><&#47;p>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <F5><&#47;em><&#47;p>
+<p><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 这时vim提示等待5s，快速打开浏览器刷新<&#47;em> http:&#47;&#47;localhost&#47;php0&#47;1_3.php<font color="#808000">?XDEBUG_SESSION_START=1<&#47;font><&#47;p>
+<p>后面的是xdebug调试标志。正确的话vim就为下面的样子了。<&#47;p>
+<p><a target="_blank" rel="nofollow" href="http:&#47;&#47;hejieL.photo.hexun.com&#47;97055213_d.html"><img title=" debug php in vim - hejieL - hejiek的博客" src="http:&#47;&#47;img.bimg.126.net&#47;photo&#47;GYF-cKUNBgO6XNm71Ql2og==&#47;332421947512127658.jpg" alt="查看更多精彩图片" border="0" &#47;><&#47;a><br &#47;><br &#47;><&#47;p><&#47;div></p>

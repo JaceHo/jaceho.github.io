@@ -1,0 +1,110 @@
+---
+layout: post
+status: publish
+published: true
+title: P37
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+excerpt: "<div id=\"BlogArticleDetail\" style=\"font-size: 14px;\">\r\n<h2 style=\"cursor:
+  help;\" title=\"Solved by 26596\">Problem 37<&#47;h2>\r\n<div style=\"cursor: help;
+  color: #666; font-size: 80%;\" title=\"Published on 14 February 2003 at 06:00 pm\">14
+  February 2003<&#47;div>\r\n<div class=\"problem_content\" role=\"problem\">\r\n\r\nThe
+  number 3797 has an interesting property. Being prime itself, it is possible to continuously
+  remove digits from left to right, and remain prime at each stage: 3797, 797, 97,
+  and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.\r\n\r\nFind
+  the sum of the only eleven primes that are both truncatable from left to right and
+  right to left.\r\n<p class=\"info\">NOTE: 2, 3, 5, and 7 are not considered to be
+  truncatable primes.<&#47;p>\r\n\r\n<&#47;div>\r\n<&#47;div>\r\n&nbsp;\r\n<table>\r\n<tbody>\r\n<tr>\r\n<td>\r\n<div
+  style=\"text-align: right;\">Answer:<&#47;div><&#47;td>\r\n<td><b>748317<&#47;b><&#47;td>\r\n<&#47;tr>\r\n<&#47;tbody>\r\n<&#47;table>\r\n#include<iostream>\r\nusing
+  namespace std;\r\n\r\nbool isprime(int n)\r\n{\r\nint i=0;\r\nif(n==2||n==3||n==5||n==7)return
+  true;\r\nelse if(n==1||n%2==0)return false;\r\nfor(i=3;i*i<=n;i+=2)\r\nif(n%i==0)return
+  false;\r\nreturn true;\r\n}\r\n"
+wordpress_id: 26
+wordpress_url: http://localhost/?p=22
+date: '2012-10-09 23:11:13 +0800'
+date_gmt: '2012-10-09 23:11:13 +0800'
+categories:
+- 算法
+tags:
+- algorithms
+- projecteuler
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">
+<h2 style="cursor: help;" title="Solved by 26596">Problem 37<&#47;h2></p>
+<div style="cursor: help; color: #666; font-size: 80%;" title="Published on 14 February 2003 at 06:00 pm">14 February 2003<&#47;div></p>
+<div class="problem_content" role="problem">
+<p>The number 3797 has an interesting property. Being prime itself, it is possible to continuously remove digits from left to right, and remain prime at each stage: 3797, 797, 97, and 7. Similarly we can work from right to left: 3797, 379, 37, and 3.</p>
+<p>Find the sum of the only eleven primes that are both truncatable from left to right and right to left.</p>
+<p class="info">NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes.<&#47;p></p>
+<p><&#47;div><br />
+<&#47;div><br />
+&nbsp;</p>
+<table>
+<tbody>
+<tr>
+<td>
+<div style="text-align: right;">Answer:<&#47;div><&#47;td></p>
+<td><b>748317<&#47;b><&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table><br />
+#include<iostream><br />
+using namespace std;</p>
+<p>bool isprime(int n)<br />
+{<br />
+int i=0;<br />
+if(n==2||n==3||n==5||n==7)return true;<br />
+else if(n==1||n%2==0)return false;<br />
+for(i=3;i*i<=n;i+=2)<br />
+if(n%i==0)return false;<br />
+return true;<br />
+}<br />
+<a id="more"></a><a id="more-26"></a><br />
+int digits(int n)<br />
+{<br />
+int dig=0;<br />
+for(;n>=1;n&#47;=10)<br />
+dig++;<br />
+return dig;<br />
+}</p>
+<p>bool travels(int n)<br />
+{<br />
+int j,i,tmp=n,k=digits(n);<br />
+for(j=0;j<k;j++)<br />
+{<br />
+if(!isprime(tmp))<br />
+return false;<br />
+tmp&#47;=10;<br />
+}<br />
+for(j=k;j>1;j--)<br />
+{<br />
+for(tmp=1,i=0;i<j-1;i++)<br />
+tmp*=10;<br />
+n%=tmp;<br />
+if(!isprime(n))<br />
+return false;<br />
+}<br />
+return true;<br />
+}<br />
+int main (int argc, char const* argv[]) {<br />
+int n=0,i,sum=0;<br />
+for(i=11;;i+=2)<br />
+{<br />
+if(travels(i))<br />
+{<br />
+n++;<br />
+sum+=i;<br />
+if(n==11)<br />
+break;<br />
+}<br />
+}<br />
+cout<<sum<<endl;<br />
+return 0;<br />
+}</p>

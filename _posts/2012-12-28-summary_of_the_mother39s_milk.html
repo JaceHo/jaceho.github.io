@@ -1,0 +1,36 @@
+---
+layout: post
+status: publish
+published: true
+title: mother&lsquo;s milk总结
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 23
+wordpress_url: http://localhost/?p=19
+date: '2012-12-28 12:58:12 +0800'
+date_gmt: '2012-12-28 12:58:12 +0800'
+categories:
+- usaco
+tags:
+- search
+- usaco
+- algorithms
+- breadth first search
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">
+<p><font face="宋体" size="4">&nbsp;&nbsp;&nbsp; 这实在不是一个难题，只是我对于图的搜索和去重应用的不太好。<br &#47;><&#47;font><&#47;p>
+<p><font face="宋体" size="4">&nbsp; 首先，搜索的题目最重要的就是找到状态，就是怎么样一个东西算作此题的状态，亦即解空间的一个节<&#47;font><&#47;p>
+<p><font face="宋体" size="4">点，这是首要任务，如果连状态都没定义好，后续的一切都是浮云。<&#47;font><&#47;p>
+<p><font face="宋体" size="4">&nbsp; 然后呢，就是要思考从一个状态有几种转移方式，就是从解空间的一个节点出发有条边和其他节点相连，<&#47;font><&#47;p>
+<p><font face="宋体" size="4">这样就能够大概估计到解空间的大小，以考虑是用深搜呢，还是广搜。如果空间需求不大，解可能在离根节<&#47;font><&#47;p>
+<p><font face="宋体" size="4">点较近的地方，就果断广搜，其他就深搜吧。我广搜一般是用队列，深搜是用递归实现的，这中间要考虑几点：<&#47;font><&#47;p>
+<ul>
+<li><font face="宋体" size="4">&nbsp; 考虑用何种方式判重？（布尔数组？）<&#47;font> <&#47;li>
+<li><font face="宋体" size="4">&nbsp; 考虑是否可以剪枝？<&#47;font><&#47;li><&#47;ul><&#47;div></p>

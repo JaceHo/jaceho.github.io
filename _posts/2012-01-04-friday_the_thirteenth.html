@@ -1,0 +1,25 @@
+---
+layout: post
+status: publish
+published: true
+title: Friday the Thirteenth
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 37
+wordpress_url: http://localhost/?p=33
+date: '2012-01-04 12:55:20 +0800'
+date_gmt: '2012-01-04 12:55:20 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &#47;*<br &#47;>ID:hejiek1<br &#47;>LANG: C<br &#47;>TASK:friday<br &#47;>*&#47;<br &#47;>#include<stdio.h><br &#47;>#include<string.h><br &#47;><br &#47;>int isleap(int year)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; if(year%400==0||(year%4==0)&amp;&amp;year%100!=0&amp;&amp;!year%400==0)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 1;<br &#47;>&nbsp;&nbsp;&nbsp; return 0;<br &#47;>}<br &#47;><br &#47;>int days(int year,int month,int day)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; int n=0,i;<br &#47;>&nbsp;&nbsp;&nbsp; int mon[12];<br &#47;>&nbsp;&nbsp;&nbsp; mon[0]=mon[2]=mon[4]=mon[6]=mon[7]=mon[9]=mon[11]=31;<br &#47;>&nbsp;&nbsp;&nbsp; mon[3]=mon[5]=mon[8]=mon[10]=30;<br &#47;>&nbsp;&nbsp;&nbsp; if(isleap(year))<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mon[1]=29;<br &#47;>&nbsp;&nbsp;&nbsp; else<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; mon[1]=28;<br &#47;>&nbsp;&nbsp;&nbsp; if(day>mon[month-1]||day<1||month<1||month>12)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; printf("error!");<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return 0;<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; for(i=0;i<month-1;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n+=mon[i];<br &#47;>&nbsp;&nbsp;&nbsp; n=n+day;<br &#47;>&nbsp;&nbsp;&nbsp; return n;<br &#47;>}<br &#47;>int ndaysweek(int year,int month,int day)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; long i,n;<br &#47;>&nbsp;&nbsp;&nbsp; n=days(year,month,day);<br &#47;>&nbsp;&nbsp;&nbsp; for(i=year-1;i>=1900;i--)<br &#47;>&nbsp;&nbsp;&nbsp; n+=days(i,12,31);<br &#47;>&nbsp;&nbsp;&nbsp; return n%7;<br &#47;>}<br &#47;>void input(int* n)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; FILE *fp=fopen("friday.in","r");<br &#47;>&nbsp;&nbsp;&nbsp; fscanf(fp,"%d",n);<br &#47;>}<br &#47;>void output(const int *a)<br &#47;>{<br &#47;><br &#47;>&nbsp;&nbsp;&nbsp; int i;<br &#47;>&nbsp;&nbsp;&nbsp; FILE *fp=fopen("friday.out","w");<br &#47;>&nbsp;&nbsp;&nbsp; for(i=0;i<6;i++)<br &#47;>&nbsp;&nbsp;&nbsp; fprintf(fp,"%d ",a[i]);<br &#47;>&nbsp;&nbsp;&nbsp; fprintf(fp,"%dn",a[6]);<br &#47;><br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>&nbsp;&nbsp;&nbsp; int a[7],i,j,k,n=0;<br &#47;>&nbsp;&nbsp;&nbsp; memset(a,0,sizeof(a));<br &#47;>&nbsp;&nbsp;&nbsp; input(&amp;n);<br &#47;>&nbsp;&nbsp;&nbsp; for(j=1;j<13;j++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(i=0;i<n;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; k=ndaysweek(1900+i,j,13);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==6)a[0]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==0)a[1]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==1)a[2]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==2)a[3]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==3)a[4]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==4)a[5]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(k==5)a[6]++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; output(a);<br &#47;>&nbsp;&nbsp;&nbsp; return 0;<br &#47;>}<&#47;div></p>

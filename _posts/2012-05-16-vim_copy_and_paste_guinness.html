@@ -1,0 +1,39 @@
+---
+layout: post
+status: publish
+published: true
+title: VIM复制粘贴大全！
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 46
+wordpress_url: http://localhost/?p=42
+date: '2012-05-16 11:08:22 +0800'
+date_gmt: '2012-05-16 11:08:22 +0800'
+categories:
+- 数学物理
+tags:
+- vim
+- 复制
+- 粘贴
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <span style="background-color: rgb(255, 255, 255);"> <&#47;span>
+<p>原文地址：http:&#47;&#47;lsong17.spaces.live.com&#47;blog&#47;cns!556C21919D77FB59!603.entry<&#47;p>
+<p>内容：<&#47;p>
+<p>用<strong style="color: black;">vim<&#47;strong>这么久 了，始终也不知道怎么在<font style="background-color: rgb(255, 255, 255);" color="#000000"><strong style="color: black;">vim<&#47;strong><&#47;font>中使用系统粘贴板，通常要在网上<strong style="color: black;">复制<&#47;strong>一段代码都是先gedit打开文件，中键粘贴后关闭，然后再用<strong style="color: black;">vim<&#47;strong>打开编辑，真的不 爽；上次论坛上有人问到了怎么在<strong style="color: black;">vim<&#47;strong>中使用系统粘贴板，印象里回复很多，有好几页的回复却没有解决问题，今天实在受不了了又在网上找办法，竟意外地找到 了，贴出来分享一下。<&#47;p>
+<p>如果只是想使用系统粘贴板的话直接在输入模式按Shift+Inset（粘贴）就可以了，下面讲一下<strong style="color: black;">vim<&#47;strong>的粘贴板的基础知识，有兴趣的可以看看，应该会有所收获的。<br &#47;> <strong style="color: black;">vim<&#47;strong>帮助文档里与粘贴板有关的内容如下：<&#47;p>
+<ol>
+<li><strong style="color: black;">vim<&#47;strong>有12个粘贴板，分别是0、1、2、...、9、a、&ldquo;、＋；用:reg命令可以查看各个粘贴板里的内容。在<strong style="color: black;">vim<&#47;strong>中简单用y只是<strong style="color: black;">复制<&#47;strong>到&ldquo;（双引号)粘贴板里，同样用p粘贴的也是这个粘贴板里的内容；
+<p> <&#47;p> <&#47;li>
+<li>要将<strong style="color: black;">vim<&#47;strong>的内容<strong style="color: black;">复制<&#47;strong>到某个粘贴板，需要退出编辑模式，进入正常模式后，选择要<strong style="color: black;">复制<&#47;strong>的内容，然后按"Ny（注意带引号）完成<strong style="color: black;">复制<&#47;strong>，其中N为粘贴板号(注意是按一下双引号然后按粘贴板号最后按y)，例如要把内容<strong style="color: black;">复制<&#47;strong>到粘贴板a，选中内容后按"ay就可以了，有两点需要说明一下：
+<ul>
+<li>&ldquo;号粘贴板（临时粘贴板）比较特殊，直接按y就<strong style="color: black;">复制<&#47;strong>到这个粘贴板中了，直接按p就粘贴这个粘贴板中的内容；<&#47;li>
+<li>+号粘贴板是系统粘贴板，用"+y将内容<strong style="color: black;">复制<&#47;strong>到该粘贴板后可以使用Ctrl＋V将其粘贴到其他文档（如firefox、gedit）中，同理，要把在其他地方用Ctrl＋C或右键<strong style="color: black;">复制<&#47;strong>的内容<strong style="color: black;">复制<&#47;strong>到<strong style="color: black;">vim<&#47;strong>中，需要在正常模式下按"+p；<&#47;li><&#47;ul>
+<p> <&#47;p> <&#47;li>
+<li>要将<strong style="color: black;">vim<&#47;strong>某个粘贴板里的内容粘贴进来，需要退出编辑模式，在正常模式按"Np，其中N为粘贴板号，如上所述，可以按"5p将5号粘贴板里的内容粘贴进来，也可以按"+p将系统全局粘贴板里的内容粘贴进来。<&#47;li><&#47;ol> 注意：在我这里，只有vim.gtk或vim.gnome才能使用系统全局粘贴板，默认的vim.basic看不到+号寄存器。安装vim.gnome使用apt-get install vim-gnome，然后vim自动会链接到vim.gnome。<br &#47;> <br &#47;> 下面是vim复制粘贴的基本命令：<br &#47;> yy复制游标所在行整行。或大写一个Y。  <br &#47;> 2yy或y2y复制两行。 ㄟ ，请举一反三好不好！ :-)  <br &#47;> y^复制至行首，或y0。不含游标所在处字元。  <br &#47;> y$复制至行尾。含游标所在处字元。  <br &#47;> yw复制一个word。  <br &#47;> y2w复制两个字（单词）。  <br &#47;> yG复制至档尾。  <br &#47;> y1G复制至档首。  <br &#47;> p小写p代表贴至游标后（下）。  <br &#47;> P大写P代表贴至游标前（上）。<br &#47;> <br &#47;> 复制单个字符<br &#47;> 首选进入正常模式（按ESC就行）<br &#47;> 然后按ｖ（指定<span style="background-color: rgb(255, 255, 255);">粘贴板为"1v 引号不能少<&#47;span>），进入visual方式，然后就可以移动方向键选中文本，然后按y，就拷贝完成，<br &#47;> 如果你要从光标处开始复制 4 个字符，可以按 4yl (复制光标后的)（"14yl）("110yl 后面10个字符),4yh(复制光标前的) ，就复制了4个字符到缓冲区中了，<br &#47;> 按下来就可以用 p （指定<span style="background-color: rgb(255, 255, 255);">粘贴板为"1v 引号不能少<&#47;span>）命令随便粘贴了（1为指下粘贴板名）                <&#47;div></p>

@@ -1,0 +1,51 @@
+---
+layout: post
+status: publish
+published: true
+title: mother&amp;#39;s milk AC
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+excerpt: '<div id="BlogArticleDetail" style="font-size: 14px;"> <font size="2"><b>总算用<font
+  size="2">上学到的数据结构了，广搜AC，这做到1.5<font size="2">虽然有点<&#47;font>慢，但不能放弃啊。<&#47;font><&#47;b><&#47;font><br
+  &#47;> <p> Farmer John has three milking buckets of capacity A, B, and C liters.
+  Each of the numbers A, B, and C is an integer from 1 through 20, inclusive. Initially,
+  buckets A and B are empty while bucket C is full of milk. Sometimes, FJ pours milk
+  from one bucket to another until the second bucket is filled or the first bucket
+  is empty. Once begun, a pour must be completed, of course. Being thrifty, no milk
+  may be tossed out.  <&#47;p>'
+wordpress_id: 22
+wordpress_url: http://localhost/?p=18
+date: '2012-12-28 20:13:12 +0800'
+date_gmt: '2012-12-28 20:13:12 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+- milk
+- mother
+- breadth first search
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <font size="2"><b>总算用<font size="2">上学到的数据结构了，广搜AC，这做到1.5<font size="2">虽然有点<&#47;font>慢，但不能放弃啊。<&#47;font><&#47;b><&#47;font><br &#47;>
+<p> Farmer John has three milking buckets of capacity A, B, and C liters. Each of the numbers A, B, and C is an integer from 1 through 20, inclusive. Initially, buckets A and B are empty while bucket C is full of milk. Sometimes, FJ pours milk from one bucket to another until the second bucket is filled or the first bucket is empty. Once begun, a pour must be completed, of course. Being thrifty, no milk may be tossed out.  <&#47;p><a id="more"></a><a id="more-22"></a>
+<p> Write a program to help FJ determine what amounts of milk he can leave in bucket C when he begins with three buckets as above, pours milk among the buckets for a while, and then notes that bucket A is empty.  <&#47;p><br />
+<h3>PROGRAM NAME: milk3<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3>
+<p>A single line with the three integers A, B, and C.  <&#47;p><br />
+<h3>SAMPLE INPUT (file milk3.in) <&#47;h3>
+<pre>8 9 10 <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>
+<p>A single line with a sorted list of all the possible amounts of milk that can be in bucket C when bucket A is empty.  <&#47;p><br />
+<h3>SAMPLE OUTPUT (file milk3.out)<&#47;h3>
+<pre>1 2 8 9 10 <&#47;pre><br />
+<h3>SAMPLE INPUT (file milk3.in) <&#47;h3>
+<pre>2 5 10 <&#47;pre><br />
+<h3>SAMPLE OUTPUT (file milk3.out)<&#47;h3>
+<pre>5 6 7 8 9 10 <br &#47;><br &#47;><!--more-->&#47;*<br &#47;>ID: hippo he<br &#47;>LANG: C++<br &#47;>TASK: milk3<br &#47;>*&#47;<br &#47;>#include<iostream><br &#47;>#include<fstream><br &#47;>#include<queue><br &#47;>#include<vector><br &#47;>#include<algorithm><br &#47;>using  namespace std;<br &#47;>typedef struct Tripple{<br &#47;>    short int container[3];<br &#47;>}Tripple;<br &#47;>short int Max[3];<br &#47;>void input()<br &#47;>{<br &#47;>    ifstream in("milk3.in");<br &#47;>    in>>Max[0]>>Max[1]>>Max[2];<br &#47;>    in.close();<br &#47;>}<br &#47;>bool arriGoal(Tripple t){<br &#47;>    if(t.container[0]==0)return true;<br &#47;>    return false;<br &#47;>}<br &#47;>bool exchanged(Tripple &amp;u,int i,int j){<br &#47;>    if(i==j||u.container[i]==0||u.container[j]==Max[j])return false;<br &#47;>    if(u.container[i]-(Max[j]-u.container[j])>0){<br &#47;>        u.container[i]-=Max[j]-u.container[j];<br &#47;>        u.container[j]=Max[j];<br &#47;>    }<br &#47;>    else{<br &#47;>        u.container[j]+=u.container[i];<br &#47;>        u.container[i]=0;<br &#47;>    }<br &#47;>    return true;<br &#47;>}<br &#47;>void dfs(bool (*visited)[20][20],vector<int> &amp; res){<br &#47;>    queue<Tripple> tr;<br &#47;>    Tripple init;<br &#47;>    init.container[0]=0;<br &#47;>    init.container[1]=0;<br &#47;>    init.container[2]=Max[2];<br &#47;>    tr.push(init);<br &#47;>    if(arriGoal(init))res.push_back(init.container[2]);<br &#47;>    visited[0][0][Max[2]]=1;<br &#47;><br &#47;>    while(!tr.empty()){<br &#47;>        Tripple tmp=tr.front();<br &#47;>        Tripple save=tmp;<br &#47;>        tr.pop();<br &#47;><br &#47;>        for (int i = 0; i < 3; i++) {<br &#47;>            for (int j = 0; j < 3; j++) {<br &#47;>                if(exchanged(tmp,i,j)&amp;&amp;!visited[tmp.container[0]][tmp.container[1]][tmp.container[2]]){<br &#47;>                    tr.push(tmp);<br &#47;>                    visited[tmp.container[0]][tmp.container[1]][tmp.container[2]]=1;<br &#47;>                    if(arriGoal(tmp))res.push_back(tmp.container[2]);<br &#47;>                }<br &#47;>                tmp=save;<br &#47;>            }<br &#47;>        }<br &#47;>    }<br &#47;>}<br &#47;>void output(vector<int> &amp;res)<br &#47;>{<br &#47;>    ofstream file("milk3.out");<br &#47;>    vector<int>::iterator it=res.begin();<br &#47;>    for (it = res.begin(); it!=res.end();it++)<br &#47;>        if(it==res.begin())file<<*it;<br &#47;>        else file<<" "<<*it;<br &#47;><br &#47;>    file<<endl;<br &#47;>    file.close();<br &#47;>}<br &#47;>int main(int argc, char const* argv[])<br &#47;>{<br &#47;>    bool visited[20][20][20];<br &#47;>    vector<int> res;<br &#47;>    input();<br &#47;>    dfs(visited,res);<br &#47;>    sort(res.begin(),res.end());<br &#47;>    res.erase(unique(res.begin(),res.end()),res.end());<br &#47;>    output(res);<br &#47;>    return 0;<br &#47;>}<br &#47;><br &#47;><&#47;pre><&#47;div></p>

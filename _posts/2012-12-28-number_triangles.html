@@ -1,0 +1,42 @@
+---
+layout: post
+status: publish
+published: true
+title: Number Triangles
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+excerpt: '<div id="BlogArticleDetail" style="font-size: 14px;">                     &nbsp;&nbsp;
+  最简单的动态规划，但有一点得注意，用记录数组记录和时要防止其和与初始值相同。<br &#47;><center> <h1>Number Triangles<&#47;h1>
+  <&#47;center> <p> Consider the number triangle shown below. Write a program that
+  calculates the highest sum of numbers that can be passed on a route that starts
+  at the top and ends somewhere on the base. Each step can go either diagonally down
+  to the left or diagonally down to the right.  <&#47;p>'
+wordpress_id: 16
+wordpress_url: http://localhost/?p=16
+date: '2012-12-28 22:19:12 +0800'
+date_gmt: '2012-12-28 22:19:12 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &nbsp;&nbsp; 最简单的动态规划，但有一点得注意，用记录数组记录和时要防止其和与初始值相同。<br &#47;><center><br />
+<h1>Number Triangles<&#47;h1> <&#47;center>
+<p> Consider the number triangle shown below. Write a program that calculates the highest sum of numbers that can be passed on a route that starts at the top and ends somewhere on the base. Each step can go either diagonally down to the left or diagonally down to the right.  <&#47;p><a id="more"></a><a id="more-16"></a></p>
+<pre>          7          3   8        8   1   0      2   7   4   4    4   5   2   6   5 <&#47;pre>
+<p> In the sample above, the route from 7 to 3 to 8 to 7 to 5 produces the highest sum: 30.  <&#47;p><br />
+<h3>PROGRAM NAME: numtri<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3>  The first line contains R (1 <= R <= 1000), the number of rows. Each subsequent line contains the integers for that particular row of the triangle.  All the supplied integers are non-negative and no larger than 100.<br />
+<h3>SAMPLE INPUT (file numtri.in) <&#47;h3>
+<pre>5 7 3 8 8 1 0 2 7 4 4 4 5 2 6 5 <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>  A single line containing the largest sum using the traversal specified.<br />
+<h3>SAMPLE OUTPUT (file numtri.out)<&#47;h3>
+<pre>30 <br &#47;>&#47;*<br &#47;>ID: hippo he<br &#47;>LANG: C++<br &#47;>TASK: numtri<br &#47;>*&#47;<br &#47;>#include<iostream><br &#47;>#include<fstream><br &#47;>#include<cstring><br &#47;>using namespace std;<br &#47;>int prev[2][1000][1000];<br &#47;>int R;<br &#47;>void input(){<br &#47;>    ifstream file("numtri.in");<br &#47;>    file>>R;<br &#47;>    memset(prev,-1,sizeof(prev));<br &#47;>    for (int i = 0; i < R; i++) {<br &#47;>        for (int j = 0; j <= i; j++) {<br &#47;>            file>>prev[0][i][j];<br &#47;>        }<br &#47;>    }<br &#47;>}<br &#47;>int max(int i,int j){<br &#47;>    if(i==R-1)return prev[1][i][j]=prev[0][i][j];<br &#47;>    else if(-1!=prev[1][i][j])return prev[1][i][j];<br &#47;>    else{<br &#47;>        if(max(i+1,j)>max(i+1,j+1))<br &#47;>            return prev[1][i][j]=prev[0][i][j]+max(i+1,j);<br &#47;>        else return prev[1][i][j]=prev[0][i][j]+max(i+1,j+1);<br &#47;>    }<br &#47;>}<br &#47;>int main(int argc, const char *argv[])<br &#47;>{<br &#47;>    input();<br &#47;>    ofstream file("numtri.out");<br &#47;>    file<<max(0,0)<<endl;<br &#47;>    return 0;<br &#47;>}<br &#47;><br &#47;><&#47;pre><br &#47;><&#47;div></p>

@@ -1,0 +1,89 @@
+---
+layout: post
+status: publish
+published: true
+title: pprime
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+excerpt: "<!DOCTYPE html PUBLIC \"-&#47;&#47;W3C&#47;&#47;DTD HTML 4.01 Transitional&#47;&#47;EN\">\r\n\r\n<html>\r\n<head>\r\n
+  \ <meta name=\"generator\" content=\r\n  \"HTML Tidy for Linux (vers 25 March 2009),
+  see www.w3.org\">\r\n\r\n  <title><&#47;title>\r\n  <style type=\"text&#47;css\">\r\ndiv.c3
+  {font-size: 14px;}\r\n  div.c2 {text-align: center}\r\n  span.c1 {font-family: Verdana,Tahoma,sans-serif,Arial,Lucida
+  Sans,Gill Sans}\r\n  <&#47;style>\r\n<&#47;head>\r\n\r\n<body>\r\n  <div id=\"BlogArticleDetail\"
+  class=\"c3\">\r\n    <pre>\r\nAll tests OK. <br>Your program ('pprime') produced
+  all correct answers!  This is your submission #10 for this problem.  <b>Congratulations!<&#47;b>
+  <br><br>无论判断<span class=\"c1\">所<&#47;span>有质数还是回文数都无法解决，必须按位广搜，分支限界。\r\n<&#47;pre>\r\n\r\n
+  \   <div class=\"c2\">\r\n      <h1>Prime Palindromes<&#47;h1>\r\n    <&#47;div>\r\n\r\n
+  \   <p>The number 151 is a prime palindrome because it is both a\r\n    prime number
+  and a palindrome (it is the same number when read\r\n    forward as backward). Write
+  a program that finds all prime\r\n    palindromes in the range of two supplied numbers
+  a and b (5\r\n    <= a < b <= 100,000,000); both a and b are considered\r\n    to
+  be within the range .<&#47;p>\r\n"
+wordpress_id: 21
+wordpress_url: http://localhost/?p=17
+date: '2012-12-31 12:14:12 +0800'
+date_gmt: '2012-12-31 12:14:12 +0800'
+categories:
+- usaco
+tags:
+- prime
+- usaco
+- algorithms
+comments: []
+---
+<p><!DOCTYPE html PUBLIC "-&#47;&#47;W3C&#47;&#47;DTD HTML 4.01 Transitional&#47;&#47;EN"></p>
+<p><html><br />
+<head><br />
+  <meta name="generator" content=<br />
+  "HTML Tidy for Linux (vers 25 March 2009), see www.w3.org"></p>
+<p>  <title><&#47;title></p>
+<style type="text&#47;css">
+div.c3 {font-size: 14px;}<br />
+  div.c2 {text-align: center}<br />
+  span.c1 {font-family: Verdana,Tahoma,sans-serif,Arial,Lucida Sans,Gill Sans}<br />
+  <&#47;style><br />
+<&#47;head></p>
+<p><body></p>
+<div id="BlogArticleDetail" class="c3">
+<pre>
+All tests OK. <br>Your program ('pprime') produced all correct answers!  This is your submission #10 for this problem.  <b>Congratulations!<&#47;b> <br><br>无论判断<span class="c1">所<&#47;span>有质数还是回文数都无法解决，必须按位广搜，分支限界。<br />
+<&#47;pre></p>
+<div class="c2">
+<h1>Prime Palindromes<&#47;h1><br />
+    <&#47;div></p>
+<p>The number 151 is a prime palindrome because it is both a<br />
+    prime number and a palindrome (it is the same number when read<br />
+    forward as backward). Write a program that finds all prime<br />
+    palindromes in the range of two supplied numbers a and b (5<br />
+    <= a < b <= 100,000,000); both a and b are considered<br />
+    to be within the range .<&#47;p><br />
+<a id="more"></a><a id="more-21"></a></p>
+<h3>PROGRAM NAME: pprime<&#47;h3></p>
+<h3>INPUT FORMAT<&#47;h3></p>
+<table>
+<tbody>
+<tr>
+<td>Line 1:<&#47;td></p>
+<td>Two integers, a and b<&#47;td><br />
+        <&#47;tr><br />
+      <&#47;tbody><br />
+    <&#47;table></p>
+<h3>SAMPLE INPUT (file pprime.in)<&#47;h3></p>
+<pre>
+5 500<br />
+<&#47;pre></p>
+<h3>OUTPUT FORMAT<&#47;h3>The list of palindromic primes in<br />
+    numerical order, one per line.</p>
+<h3>SAMPLE OUTPUT (file pprime.out)<&#47;h3></p>
+<pre>
+5 7 11 101 131 151 181 191 313 353 373 383<br>&#47;*<br>ID: hippo he<br>LANG: C++<br>TASK: pprime<br>*&#47;<br>#include<iostream><br>#include<stack><br>#include<vector><br>#include<fstream><br>#include <queue><br>#include<algorithm><br>using namespace std;<br>int A,B;<br>typedef pair<int,int> Node;<br>void input(){<br>    ifstream in("pprime.in");<br>    in>>A>>B;<br>    in.close();<br>}<br>void output(vector<int>&amp; res){<br>    ofstream out("pprime.out");<br>    for (int it = 0; it < res.size(); it++) {<br>        out<<res[it]<<endl;<br>    }<br>    out.close();<br>}<br>bool isprime(int n)<br>{<br>    if(n==2||n==3||n==5||n==7)return true;<br>    else if(n==1||n%2==0)return false;<br>    for(int i=3;i*i<=n;i+=2)<br>        if(n%i==0)return false;<br>    return true;<br>}<br>int reflect(Node a){<br>    int n=a.first;<br>    int depth=a.second;<br>    stack<int> tmp1,tmp2;<br>    while(depth--){<br>        tmp1.push(n%10);<br>        n&#47;=10;<br>    }<br>    while(!tmp1.empty()){<br>        tmp2.push(tmp1.top());<br>        tmp1.pop();<br>    }<br>    tmp1=tmp2;<br><br>    while(!tmp1.empty()){<br>        tmp2.push(tmp1.top());<br>        tmp1.pop();<br>    }<br><br>    int res=0;<br>    res+=tmp2.top();<br>    tmp2.pop();<br>    while(!tmp2.empty()){<br>        res*=10;<br>        res+=tmp2.top();<br>        tmp2.pop();<br>    }<br>    return res;<br>}<br>int reverse(Node a){<br>    int n=a.first;<br>    int depth=a.second;<br>    stack<int> tmp1,tmp2;<br>    while(depth--){<br>        tmp1.push(n%10);<br>        n&#47;=10;<br>    }<br>    while(!tmp1.empty()){<br>        tmp2.push(tmp1.top());<br>        tmp1.pop();<br>    }<br>    tmp1=tmp2;<br><br>    tmp2.pop();<br>    while(!tmp1.empty()){<br>        tmp2.push(tmp1.top());<br>        tmp1.pop();<br>    }<br><br>    int res=0;<br>    res+=tmp2.top();<br>    tmp2.pop();<br>    while(!tmp2.empty()){<br>        res*=10;<br>        res+=tmp2.top();<br>        tmp2.pop();<br>    }<br>    return res;<br>}<br>void bfs(int init,vector<int>&amp; res,int depth,int max,int min){<br>    queue<Node> ints;<br>    Node ini;<br>    ini.first=init;<br>    ini.second=1;<br>    if(ini.second*2-1<=depth)<br>        ints.push(ini);<br><br>    int x=reflect(ini);<br>    int y=reverse(ini);<br>    if(x>=min&amp;&amp;x<=max&amp;&amp;isprime(x)&amp;&amp;ini.second*2<=depth)<br>        res.push_back(x);<br>    if(y>=min&amp;&amp;y<=max&amp;&amp;isprime(y)&amp;&amp;ini.second*2-1<=depth)<br>        res.push_back(y);<br><br>    while(!ints.empty()){<br>        Node tmp=ints.front();<br>        ints.pop();<br>        for (int i = 0; i <= 9; i++) {<br>            Node neb;<br>            neb.first=tmp.first*10+i;<br>            neb.second=tmp.second+1;<br><br>            if(neb.first>max)return;<br>            if(neb.second*2-1<=depth)<br>                ints.push(neb);<br>            else return;<br><br>            int x=reflect(neb);<br>            int y=reverse(neb);<br>            if(x>=min&amp;&amp;x<=max&amp;&amp;isprime(x)&amp;&amp;ini.second*2<=depth)<br>                res.push_back(x);<br>            if(y>=min&amp;&amp;y<=max&amp;&amp;isprime(y)&amp;&amp;ini.second*2-1<=depth)<br>                res.push_back(y);<br><br>        }<br>    }<br>}<br>void Bfs(vector<int> &amp;res,int depth,int max,int min){<br>    bfs(1,res,depth,max,min);<br>    bfs(3,res,depth,max,min);<br>    bfs(5,res,depth,max,min);<br>    bfs(7,res,depth,max,min);<br>    bfs(9,res,depth,max,min);<br>}<br>int main(int argc, const char *argv[])<br>{<br>    vector<int> res;<br>    int depth=0;<br>    input();<br>    int tmp=B;<br>    while(tmp){<br>        tmp&#47;=10;<br>        depth++;<br>    }<br>    Bfs(res,depth,B,A);<br><br>    sort(res.begin(),res.end());<br>    res.erase(unique(res.begin(),res.end()),res.end());<br>    output(res);<br><br>    return 0;<br>}<br> <br><br><br />
+<&#47;pre><br />
+  <&#47;div><br />
+<&#47;body><br />
+<&#47;html></p>

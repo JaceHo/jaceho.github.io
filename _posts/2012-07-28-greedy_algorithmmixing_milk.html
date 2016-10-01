@@ -1,0 +1,49 @@
+---
+layout: post
+status: publish
+published: true
+title: greedy algorithm:mixing milk
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 31
+wordpress_url: http://localhost/?p=27
+date: '2012-07-28 21:31:19 +0800'
+date_gmt: '2012-07-28 21:31:19 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+- greedy
+- 贪心
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <center><br />
+<h1>Mixing Milk<&#47;h1> <&#47;center>
+<p>Since milk packaging is such a low margin business, it is important to keep the price of the raw product (milk) as low as possible. Help Merry Milk Makers get the milk they need in the cheapest possible manner.  <&#47;p>
+<p>The Merry Milk Makers company has several farmers from which they may buy milk, and each one has a (potentially) different price at which they sell to the milk packing plant. Moreover, as a cow can only produce so much milk a day, the farmers only have so much milk to sell per day. Each day, Merry Milk Makers can purchase an integral amount of milk from each farmer, less than or equal to the farmer's limit.   <&#47;p>
+<p>Given the Merry Milk Makers' daily requirement of milk, along with the cost per gallon and amount of available milk for each farmer, calculate the minimum amount of money that it takes to fulfill the Merry Milk Makers' requirements.   <&#47;p>
+<p>Note: The total milk produced per day by the farmers will be sufficient to meet the demands of the Merry Milk Makers.  <&#47;p><br />
+<h3>PROGRAM NAME: milk<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3><br />
+<table border="1">
+<tbody>
+<tr>
+<td> Line 1: <&#47;td>
+<td> Two integers, N and M. <br &#47;>The first value, N,  (0 <= N <= 2,000,000) is the amount of milk that Merry Milk Makers wants per day. The second, M, (0 <= M <= 5,000) is the number of farmers that they may buy from. <br &#47;> <&#47;td> <&#47;tr><br />
+<tr>
+<td> Lines 2 through M+1: <&#47;td>
+<td> The next M lines each contain two integers, P<sub>i<&#47;sub> and A<sub>i<&#47;sub>. <br &#47;> P<sub>i<&#47;sub> (0 <= P<sub>i<&#47;sub> <= 1,000) is price in cents that farmer i charges.<br &#47;>  A<sub>i<&#47;sub> (0 <= Ai <= 2,000,000) is the amount of milk that farmer i can sell to Merry Milk Makers per day. <&#47;td> <&#47;tr><&#47;tbody><&#47;table>
+<p> <&#47;p><br />
+<h3>SAMPLE INPUT (file milk.in) <&#47;h3>
+<pre>100 5 5 20 9 40 3 10 8 80 6 30 <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>
+<p> A single line with a single integer that is the minimum price that Merry Milk Makers can get their milk at for one day.  <&#47;p><br />
+<h3>SAMPLE OUTPUT (file milk.out)<&#47;h3>
+<pre>630<br &#47;>&#47;*<br &#47;>ID: hippo he<br &#47;>LANG: C++<br &#47;>TASK:milk<br &#47;>*&#47;<br &#47;>#include<fstream><br &#47;>#include<iostream><br &#47;>using std::ifstream;<br &#47;>using std::ios;<br &#47;>using std::ofstream;<br &#47;>using std::endl;<br &#47;>int m,n,cost=0;<br &#47;>void input(int***src)<br &#47;>{<br &#47;>    int i;<br &#47;>    ifstream myfile("milk.in");<br &#47;>    myfile>>n>>m;<br &#47;>    *src=new int*[m];<br &#47;>    for(i=0;i<m;i++)<br &#47;>        (*src)[i]=new int[2];<br &#47;>    for(i=0;!myfile.eof();i++)<br &#47;>    myfile>>(*src)[i][0]>>(*src)[i][1];<br &#47;>    myfile.close();<br &#47;>}<br &#47;>int getsn(int n,int **src)<br &#47;>{<br &#47;>    int i,j,min,left=n;<br &#47;>    while(n)<br &#47;>    {<br &#47;>        for(i=0,min=100;i<m;i++)<br &#47;>            if(min>src[i][0]&amp;&amp;src[i][0]!=-1)<br &#47;>            {<br &#47;>                min=src[i][0];<br &#47;>                j=i;<br &#47;>            }<br &#47;>        n-=src[j][1];<br &#47;>        if(n>0)<br &#47;>        {<br &#47;>            cost+=src[j][0]*src[j][1];<br &#47;>            src[j][0]=-1;<br &#47;>        }<br &#47;>        else<br &#47;>        {<br &#47;>            cost+=(n+src[j][1])*src[j][0];<br &#47;>            n=0;<br &#47;>        }<br &#47;>    }<br &#47;>    return cost;<br &#47;>}<br &#47;>void output()<br &#47;>{<br &#47;>    ofstream myfile("milk.out");<br &#47;>    myfile<<cost<<endl;<br &#47;>    myfile.close();<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>    int **src=NULL,i;<br &#47;>    input(&amp;src);<br &#47;>    getsn(n,src);<br &#47;>    output();<br &#47;>    for(i=0;i<m;i++)<br &#47;>    delete(src[i]);<br &#47;>    delete(src);<br &#47;>    return 0;<br &#47;>} <br &#47;><br &#47;><&#47;pre><&#47;div></p>

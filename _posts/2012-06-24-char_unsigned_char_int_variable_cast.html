@@ -1,0 +1,40 @@
+---
+layout: post
+status: publish
+published: true
+title: char,unsigned char,int变量的强制转换
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 39
+wordpress_url: http://localhost/?p=35
+date: '2012-06-24 18:37:20 +0800'
+date_gmt: '2012-06-24 18:37:20 +0800'
+categories:
+- 默认分类
+tags: []
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &nbsp;
+<div class="bct fc05 fc11 nbw-blog ztag js-fs2">
+<p>&nbsp;&nbsp;&nbsp;&nbsp; char型变量强制转换成int时，会使前几 位成为0xff ff ff ，这是因为char默认是有符号的，所以char的最高位是符号位，这使转换通过补码形式变成了FF FF  FF，因此在char 强制转化成int之前需要将char先强制转化成unsigned char。<&#47;p>
+<p>而且，赋值运算也有强制类型转换作用，因此，转化之后要赋给正确的变量。<wbr><&#47;wbr><&#47;p>
+<p>&nbsp;这里有一个小程序能说明它们得关系：<&#47;p>
+<p>#include<stdio.h><br &#47;>#include<string.h><br &#47;><br &#47;><&#47;p>
+<p>int main (int argc, char const* argv[]) {<br &#47;>&nbsp;&nbsp;&nbsp; unsigned char c=-8;<br &#47;>&nbsp;&nbsp;&nbsp; printf("%xn",c);<br &#47;>&nbsp;&nbsp;&nbsp; char d=-8;<br &#47;>&nbsp;&nbsp;&nbsp; printf("%xn",d);<&#47;p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; return 0;<&#47;p>
+<p>}<br &#47;><&#47;p>
+<p><br &#47;><&#47;p>
+<p>结果是：f8<&#47;p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ffffff80<&#47;p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; -8是int型，转化为usigned char需截取低位,11111111 11111111 <span style="color: rgb(255, 0, 0);">11111111 1000<&#47;span>后8位即是0x f8,转换为int型输出为0x 000000f8.<&#47;p>
+<p>&nbsp;&nbsp; 第二个是有符号int，相当-8转换为补码输出。<br &#47;><&#47;p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp; <br &#47;><&#47;p>
+<p><br &#47;><&#47;p>
+<p><br &#47;><&#47;p>
+<p><br &#47;><&#47;p><&#47;div><&#47;div></p>

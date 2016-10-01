@@ -1,0 +1,36 @@
+---
+layout: post
+status: publish
+published: true
+title: Problem 35
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 34
+wordpress_url: http://localhost/?p=30
+date: '2012-06-24 18:40:19 +0800'
+date_gmt: '2012-06-24 18:40:19 +0800'
+categories:
+- 算法
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <br &#47;>
+<div class="problem_content" role="problem">
+<p>The number, 197, is called a circular prime because all rotations of the digits: 197, 971, and 719, are themselves prime.<&#47;p>
+<p>There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73, 79, and 97.<&#47;p>
+<p>How many circular primes are there below one million?<&#47;p> <&#47;div><br &#47;><br />
+<table>
+<tbody>
+<tr>
+<td>
+<div style="text-align:right;">Answer:<&#47;div><&#47;td>
+<td> <b>55<&#47;b><&#47;td><&#47;tr><&#47;tbody><&#47;table>#include<stdio.h><br &#47;>#include<br />
+<math.h><br &#47;>#include<stdlib.h><br &#47;>#define MAX 1e6<br &#47;>int isprime(long n)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; int i=3;<br &#47;>&nbsp;&nbsp;&nbsp; if(n==2||n==3||n==5||n==7)return 1;<br &#47;>&nbsp;&nbsp;&nbsp; if(n%2==0)return 0;<br &#47;>&nbsp;&nbsp;&nbsp; for(i=3;i*i<=n;i+=2)<br &#47;>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; if(n%i==0)return 0;<br &#47;>&nbsp;&nbsp;&nbsp; return 1;<br &#47;>}<br &#47;>int dig(long i)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; int n=0;<br &#47;>&nbsp;&nbsp;&nbsp; while(i)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i&#47;=10;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; n++;<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; return n;<br &#47;>}<br &#47;><br &#47;>int *rotations(long i,int m)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; int j=0,carry,tmp;<br &#47;>&nbsp;&nbsp;&nbsp; int *p=(int*)malloc((m-1)*sizeof(long));<br &#47;>&nbsp;&nbsp;&nbsp; tmp=i;<br &#47;>&nbsp;&nbsp;&nbsp; for(j=0;j<m-1;j++)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; carry=pow(10,m-1);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; p[j]=tmp%carry*10+tmp&#47;carry;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp=p[j];<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; return p;<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>&nbsp;&nbsp;&nbsp; int j,flag=1,i=0,k;<br &#47;>&nbsp;&nbsp;&nbsp; long n,sum;<br &#47;>&nbsp;&nbsp;&nbsp; int *tmp=NULL;<br &#47;>&nbsp;&nbsp;&nbsp; for(n=2;n<MAX;n++)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; j=dig(n);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; tmp=rotations(n,j);<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(k=0,flag=1;k<j-1;k++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(!isprime(tmp[k]))<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag=0;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(flag&amp;&amp;isprime(n))<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; i++;<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; printf("%dn",i);<br &#47;>&nbsp;&nbsp;&nbsp; return 0;<br &#47;>}<br &#47;><&#47;div></p>

@@ -1,0 +1,3296 @@
+---
+layout: post
+status: publish
+published: true
+title: ubuntu grub修复启动项
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+excerpt: "<div id=\"BlogArticleDetail\" style=\"font-size: 14px;\"><span style=\"font-size:
+  small;\"><span style=\"font-size: large;\"><b>Grub Rescue commands<&#47;b><&#47;span>
+  <&#47;span><span style=\"font-size: small;\">I<&#47;span><span style=\"font-size:
+  small;\">f <b>Grub is missing<&#47;b> after installing Ubuntu and screen is showing
+  <b>Grub Rescue<&#47;b>, then Ubuntu <b>grub<&#47;b> <b>rescue or restore<&#47;b>
+  has to done. It can be done through Ubuntu Server CD or <b>Ubuntu Desktop CD<&#47;b>.&nbsp;<&#47;span>\r\n<span
+  style=\"font-size: small;\">If <span style=\"font-size: small;\">a<&#47;span>t system
+  start up you might be seeing the option <b>Grub Rescue or Grub missing<&#47;b><span
+  style=\"font-size: small;\"> option then you <span style=\"font-size: small;\">need
+  to follow the below commands.<&#47;span><&#47;span><&#47;span>\r\n<div style=\"font-family:
+  inherit;\"><span style=\"font-size: small;\">This article will show how to do <b>Ubuntu
+  grub rescue<&#47;b> with screen shots using Ubuntu Desktop CD. These <span style=\"font-size:
+  small;\">screenshots<&#47;span>&nbsp; have been taken on Ubuntu 11.04. The very
+  same method can be used to repair <b>grub mint Debian<&#47;b>. <&#47;span><&#47;div>\r\n<span
+  style=\"font-size: small;\"><span style=\"font-family: inherit;\">If you don't have
+  the desktop CD then <span style=\"font-size: small;\">you can use<&#47;span> Ubuntu
+  server CD or USB also.&nbsp;<&#47;span><&#47;span>\r\n<div style=\"font-family:
+  inherit;\"><span style=\"font-size: small;\"> To do grub rescue through Ubuntu Server
+  CD see&nbsp;<&#47;span><&#47;div>\r\n<span style=\"font-size: small;\">\"<i style=\"color:
+  blue;\"><b>Install Grub from Ubuntu server CD<&#47;b><&#47;i>\".<&#47;span>\r\n\r\n<span
+  style=\"font-size: small;\"><i><b>NOTE:<&#47;b><&#47;i><b>&nbsp; <&#47;b>You will
+  get <&#47;span><b><span style=\"font-size: large;\">&#47;usr&#47;sbin&#47;grub-probe:
+  error: cannot stat 'aufs'<&#47;span><&#47;b><span style=\"font-size: small;\">&nbsp;
+  error if <&#47;span>you didn't follow the commands listed below. Specifically you
+  did not do chroot,\r\ni.e. <span style=\"font-size: small;\"><i><b> sudo chroot
+  &#47;mnt<&#47;b><&#47;i><&#47;span>.<span style=\"font-size: small;\">&nbsp;<&#47;span>\r\n"
+wordpress_id: 13
+wordpress_url: http://localhost/?p=13
+date: '2013-01-04 20:14:15 +0800'
+date_gmt: '2013-01-04 20:14:15 +0800'
+categories:
+- ubuntu
+tags:
+- ubuntu
+- grub
+- rescue
+comments:
+- id: 2
+  author: Free Woodworking Plans Building Anything
+  author_email: cynthiawinston@freenet.de
+  author_url: ''
+  date: '2013-02-06 09:54:46 +0800'
+  date_gmt: '2013-02-06 09:54:46 +0800'
+  content: I'm gone to say to my little brother, that he should also visit this webpage
+    on regular basis to take updated from hottest information.
+- id: 3
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: ''
+  date: '2013-02-06 13:38:19 +0800'
+  date_gmt: '2013-02-06 13:38:19 +0800'
+  content: "<b>Thanks for visiting my \"nearly\" new blog!<&#47;b>\r\nYeah,something
+    useful always help someone in need.I will keep going."
+- id: 4
+  author: Cruz
+  author_email: cruzsheets@vegemail.com
+  author_url: ''
+  date: '2013-02-07 12:55:59 +0800'
+  date_gmt: '2013-02-07 12:55:59 +0800'
+  content: It's in fact very complicated in this full of activity life to listen news
+    on Television, therefore I just use web for that purpose, and take the latest
+    news.
+- id: 5
+  author: Krystyna
+  author_email: krystynasettle@gmail.com
+  author_url: ''
+  date: '2013-02-07 17:15:56 +0800'
+  date_gmt: '2013-02-07 17:15:56 +0800'
+  content: "Great information. Lucky me I found your website by chance (stumbleupon).\r\nI've
+    book-marked it for later!"
+- id: 6
+  author: acne solutions
+  author_email: david-snipes@gmail.com
+  author_url: ''
+  date: '2013-02-07 21:06:32 +0800'
+  date_gmt: '2013-02-07 21:06:32 +0800'
+  content: "Howdy I am so excited I found your blog page, I really \r\nfound you by
+    accident, while I was searching on Yahoo for something else, Regardless \r\nI
+    am here now and would just like to say thanks a lot for a tremendous post and
+    a all round enjoyable blog (I also love the \r\ntheme&#47;design), I don't have
+    time to read it all at the minute but I have saved it and also added your RSS
+    feeds, so when I have time I will be back to read more, Please do keep up the
+    great job."
+- id: 7
+  author: conversational hypnosis
+  author_email: torridecker@hotmail.de
+  author_url: ''
+  date: '2013-02-07 23:03:24 +0800'
+  date_gmt: '2013-02-07 23:03:24 +0800'
+  content: "This piece of writing is truly a pleasant one it assists \r\nnew web users,
+    who are wishing in favor of blogging."
+- id: 9
+  author: how to get rid of cellulite
+  author_email: abrahamkeane@gmail.com
+  author_url: ''
+  date: '2013-02-08 13:45:35 +0800'
+  date_gmt: '2013-02-08 13:45:35 +0800'
+  content: "I just could not go away your site before suggesting that I actually loved
+    the standard information an individual supply \r\nto your visitors? Is going to
+    be again often to inspect new posts"
+- id: 10
+  author: covert hypnosis presuposition examples
+  author_email: francescaalmond@swift-mail.com
+  author_url: ''
+  date: '2013-02-09 07:48:22 +0800'
+  date_gmt: '2013-02-09 07:48:22 +0800'
+  content: "Do you have a spam issue on this site; I also am a blogger, and I was
+    curious about your situation; \r\nmany of us have created some nice methods and
+    we are looking \r\nto trade strategies with other folks, please shoot \r\nme an
+    email if interested."
+- id: 11
+  author: el-paso-tx-dentist.com
+  author_email: chet.fletcher@gmail.com
+  author_url: ''
+  date: '2013-02-09 09:40:17 +0800'
+  date_gmt: '2013-02-09 09:40:17 +0800'
+  content: "I got this web page from my pal who shared with me concerning \r\nthis
+    web page and at the moment this time I am visiting this site and reading very
+    informative articles at this \r\ntime."
+- id: 16
+  author: woodworking plans
+  author_email: louanncaskey@gmail.com
+  author_url: ''
+  date: '2013-02-11 14:28:15 +0800'
+  date_gmt: '2013-02-11 14:28:15 +0800'
+  content: "wonderful post, very informative. I wonder why the opposite \r\nspecialists
+    of this sector do not understand this.\r\nYou must continue your writing. I am
+    sure, you've a huge readers' base already!"
+- id: 17
+  author: Selena
+  author_email: selenatilley@gmail.com
+  author_url: ''
+  date: '2013-02-12 00:12:48 +0800'
+  date_gmt: '2013-02-12 00:12:48 +0800'
+  content: "Greetings! I know this is kinda off topic but I was wondering which blog
+    platform \r\nare you using for this site? I'm getting fed up of Wordpress because
+    I've had issues with hackers \r\nand I'm looking at options for another platform.
+    I would be fantastic if you could point me in the direction of a good platform."
+- id: 18
+  author: thecigarettesstore.com
+  author_email: lincolnbatts@gmail.com
+  author_url: ''
+  date: '2013-02-12 01:51:10 +0800'
+  date_gmt: '2013-02-12 01:51:10 +0800'
+  content: "Hey I know this is off topic but I was wondering if you knew of any \r\nwidgets
+    I could add to my blog that automatically tweet my newest twitter updates.\r\nI've
+    been looking for a plug-in like this for quite some time and was hoping maybe
+    you would have some experience with something like this. Please let me know if
+    you run into anything. I truly enjoy reading your blog and I look forward to your
+    new updates."
+- id: 19
+  author: subliminal message
+  author_email: richard.lightner@gawab.com
+  author_url: ''
+  date: '2013-02-12 10:22:57 +0800'
+  date_gmt: '2013-02-12 10:22:57 +0800'
+  content: "My family always say that I am killing my time here \r\nat net, except
+    I know I am getting knowledge all the time by reading thes pleasant articles \r\nor
+    reviews."
+- id: 20
+  author: http:&#47;&#47;netizens.sg&#47;groups&#47;extraordinary-ways-regarding-how-to-take-off-procrastination
+  author_email: klaus-knight@bigstring.com
+  author_url: ''
+  date: '2013-02-12 11:51:50 +0800'
+  date_gmt: '2013-02-12 11:51:50 +0800'
+  content: "Hey! I understand this is somewhat off-topic but I had to ask.\r\nDoes
+    operating a well-established website like yours require a large amount of work?\r\nI'm
+    completely new to writing a blog but I do write in my journal every day. I'd like
+    to start a blog so I can share my own \r\nexperience and views online. Please
+    let me know if you have any suggestions or tips for brand new aspiring blog \r\nowners.
+    Appreciate it!"
+- id: 21
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-12 13:05:59 +0800'
+  date_gmt: '2013-02-12 13:05:59 +0800'
+  content: |
+    Hi, klaus-knight, I failed to send you an email via klaus-knight@bigstring.com due to an unknown error.
+    Here is the contents:
+
+                    Hi, I'd like to see your comment on my blog: http:&#47;&#47;blog.futureme.info .
+                    Of course operating such a blog does not take much time. My blog uses wordpress because it reports that 60 percents out of 100 top-ranked blogs  are using wordpress. Wordpress doesn't need any php,html,js,css,mysql knowledge since wordpress developers already do everything you need, but you may needtechnical knowledge to create your own plugins,themes,widgets...
+                But here are some problems you may encounter when using wordpress.
+                1.widget drag or drop not working:
+                    Try installing the Use Google Libraries plugin, as recommended by a user from this message:http:&#47;&#47;wordpress.org&#47;support&#47;topic&#47;widgets-dont-drag-and-drop-as-advertised&#47;page&#47;3?replies=76
+            .    2.Sorry, this file type is not permitted for security reasons.
+                    Make sure you always have a file extension, and must be one of available file types. Details you may need:http:&#47;&#47;www.sutanaryan.com&#47;wordpress&#47;sorry-this-file-type-is-not-permitted-for-security-reasons-wordpress&#47;
+
+            Useful links:
+            free web-hosting-sites(mysql,php,domain)
+            http:&#47;&#47;www.prchecker.info&#47;web-hosting&#47;top-10-free-web-hosting-sites&#47;
+            http:&#47;&#47;www.prchecker.info&#47;web-hosting&#47;plans2&#47;biz.nf.html
+
+            *Something I have to say: I'm a Chinese , and my English is not good enough to express my opinion precisely.Hope you will forgive me;)
+- id: 22
+  author: ps3 repair guide
+  author_email: elden_gillen@gmail.com
+  author_url: ''
+  date: '2013-02-12 14:28:38 +0800'
+  date_gmt: '2013-02-12 14:28:38 +0800'
+  content: "Its like you read my mind! You appear to know a lot about this, like you
+    wrote the book in it or something.\r\nI think that you can do with a few pics
+    to drive the message home a little bit,\r\nbut instead of that, this is great
+    blog. An excellent read.\r\nI will definitely be back."
+- id: 23
+  author: liberipensieri.altervista.org
+  author_email: tommy_archibald@gmail.com
+  author_url: ''
+  date: '2013-02-12 18:19:11 +0800'
+  date_gmt: '2013-02-12 18:19:11 +0800'
+  content: "certainly like your web site but you need to check the \r\nspelling on
+    quite a few of your posts. Many of them are rife with spelling issues and I in
+    finding it very troublesome to inform the truth \r\nnevertheless I'll definitely
+    come back again."
+- id: 24
+  author: englishliterature.co
+  author_email: anyaaskew@aol.com
+  author_url: ''
+  date: '2013-02-13 01:50:56 +0800'
+  date_gmt: '2013-02-13 01:50:56 +0800'
+  content: "Howdy! This blog post couldn't be written any better! Reading through
+    this article reminds me of my previous roommate! He always kept talking about
+    this. I'll forward this information to him.\r\nFairly certain he will have a good
+    read. Many thanks for sharing!"
+- id: 27
+  author: how to grow taller
+  author_email: kristopherwooten@gmail.com
+  author_url: ''
+  date: '2013-02-13 10:28:13 +0800'
+  date_gmt: '2013-02-13 10:28:13 +0800'
+  content: "Today, I went to the beach front with my children.\r\nI found a sea shell
+    and gave it to my 4 year old daughter and \r\nsaid \"You can hear the ocean if
+    you put this to your ear.\" She placed the shell to her \r\near and screamed.
+    There was a hermit crab inside and it pinched her ear.\r\nShe never wants to go
+    back! LoL I know this is totally off topic \r\nbut I had to tell someone!"
+- id: 31
+  author: puregreencoffeebeansextract.webs.com
+  author_email: madeleinejean@yahoo.com
+  author_url: ''
+  date: '2013-02-15 01:40:16 +0800'
+  date_gmt: '2013-02-15 01:40:16 +0800'
+  content: "Greetings! Quick question that's completely off topic. Do you know how
+    to make your site mobile friendly? My weblog looks weird when browsing from my
+    apple iphone. I'm trying to find a theme \r\nor plugin that might be able to resolve
+    this issue.\r\nIf you have any suggestions, please share. Thanks!"
+- id: 32
+  author: Britt
+  author_email: britt_montague@gmail.com
+  author_url: ''
+  date: '2013-02-15 03:17:23 +0800'
+  date_gmt: '2013-02-15 03:17:23 +0800'
+  content: "Fine way of telling, and good article to obtain data about my presentation
+    subject \r\nmatter, which i am going to deliver in college."
+- id: 33
+  author: winston red cigarettes
+  author_email: cathy-lefebvre@hotmail.de
+  author_url: http://lowestpricedwinstoncigarettes.webs.com/
+  date: '2013-02-15 04:05:25 +0800'
+  date_gmt: '2013-02-15 04:05:25 +0800'
+  content: "Hey there are using Wordpress for your site platform?\r\n\r\nI'm new to
+    the blog world but I'm trying to get started and create my \r\nown. Do you require
+    any html coding knowledge to make your own blog?\r\nAny help would be greatly
+    appreciated!"
+- id: 35
+  author: raspberry Ketones
+  author_email: elainecorbett@gmail.com
+  author_url: ''
+  date: '2013-02-15 10:32:50 +0800'
+  date_gmt: '2013-02-15 10:32:50 +0800'
+  content: "This blog was... how do I say it? Relevant!\r\n! Finally I have found
+    something which helped me.\r\nMany thanks!"
+- id: 37
+  author: raspberry ketones
+  author_email: guscalvin@gawab.com
+  author_url: ''
+  date: '2013-02-15 18:04:38 +0800'
+  date_gmt: '2013-02-15 18:04:38 +0800'
+  content: "I am regular visitor, how are you everybody? This post posted at this
+    \r\nweb site is truly pleasant."
+- id: 38
+  author: thecigarettesstore.com
+  author_email: mellissa_pounds@fastmessaging.com
+  author_url: ''
+  date: '2013-02-15 20:41:25 +0800'
+  date_gmt: '2013-02-15 20:41:25 +0800'
+  content: "Hey! Quick question that's completely off topic. Do you know how to make
+    your site mobile friendly? My website looks weird when viewing from my iphone4.
+    I'm trying to find a template or plugin that might \r\nbe able to resolve this
+    issue. If you have any suggestions, please share.\r\nAppreciate it!"
+- id: 39
+  author: green coffee bean extract
+  author_email: felipafredericks@inbox.com
+  author_url: ''
+  date: '2013-02-16 01:32:53 +0800'
+  date_gmt: '2013-02-16 01:32:53 +0800'
+  content: "Hurrah! At last I got a web site from where I know how to genuinely take
+    useful data \r\nregarding my study and knowledge."
+- id: 40
+  author: webs.com
+  author_email: adriancall@gmail.com
+  author_url: http://bargainpricedluckystrikecigs.webs.com/
+  date: '2013-02-16 01:58:36 +0800'
+  date_gmt: '2013-02-16 01:58:36 +0800'
+  content: It's going to be end of mine day, but before ending I am reading this wonderful
+    article to increase my knowledge.
+- id: 41
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-16 05:48:59 +0800'
+  date_gmt: '2013-02-16 05:48:59 +0800'
+  content: |-
+    Try installing the Use Google Libraries plugin, as recommended by a user from this message:http:&#47;&#47;wordpress.org&#47;support&#47;topic&#47;widgets-dont-drag-and-drop-as-advertised&#47;page&#47;3?replies=76
+    Hope this helps.
+- id: 42
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-16 05:53:29 +0800'
+  date_gmt: '2013-02-16 05:53:29 +0800'
+  content: |-
+    Yeah.Here are some problems you may encounter when using wordpress.
+    1.widget drag or drop not working:
+    Try installing the Use Google Libraries plugin, as recommended by a user from this message:http:&#47;&#47;wordpress.org&#47;support&#47;topic&#47;widgets-dont-drag-and-drop-as-advertised&#47;page&#47;3?replies=76
+    . 2.Sorry, this file type is not permitted for security reasons.
+    Make sure you always have a file extension, and must be one of available file types. Details you may need:http:&#47;&#47;www.sutanaryan.com&#47;wordpress&#47;sorry-this-file-type-is-not-permitted-for-security-reasons-wordpress&#47;
+
+    Useful links:
+    free web-hosting-sites(mysql,php,domain)
+    http:&#47;&#47;www.prchecker.info&#47;web-hosting&#47;top-10-free-web-hosting-sites&#47;
+    http:&#47;&#47;www.prchecker.info&#47;web-hosting&#47;plans2&#47;biz.nf.html
+- id: 43
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-16 05:54:57 +0800'
+  date_gmt: '2013-02-16 05:54:57 +0800'
+  content: Try installing the Use Google Libraries plugin, as recommended by a user
+    from this message:http:&#47;&#47;wordpress.org&#47;support&#47;topic&#47;widgets-dont-drag-and-drop-as-advertised&#47;page&#47;3?replies=76
+- id: 44
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-16 05:58:31 +0800'
+  date_gmt: '2013-02-16 05:58:31 +0800'
+  content: Good idea !I will try it latter.Many thanks!
+- id: 46
+  author: Vernita
+  author_email: vernita.bilodeau@gmail.com
+  author_url: ''
+  date: '2013-02-16 10:50:48 +0800'
+  date_gmt: '2013-02-16 10:50:48 +0800'
+  content: Yes! Finally someone writes about roller cover.
+- id: 47
+  author: thecigarettesstore.com
+  author_email: davis-archibald@web.de
+  author_url: ''
+  date: '2013-02-16 18:18:07 +0800'
+  date_gmt: '2013-02-16 18:18:07 +0800'
+  content: "This blog was... how do I say it? Relevant!!\r\nFinally I've found something
+    which helped me. Thanks a lot!"
+- id: 48
+  author: http:&#47;&#47;wholesaledavidoffcigarettes.webs.com&#47;
+  author_email: concettapagan@arcor.de
+  author_url: http://wholesaledavidoffcigarettes.webs.com/
+  date: '2013-02-17 01:44:54 +0800'
+  date_gmt: '2013-02-17 01:44:54 +0800'
+  content: "Hello! I could have sworn I've been to this site before but after browsing
+    through some of the post I realized it's new to me.\r\nNonetheless, I'm definitely
+    glad I found it and I'll be bookmarking and checking back frequently!"
+- id: 49
+  author: Therese
+  author_email: theresemccallum@gmail.com
+  author_url: ''
+  date: '2013-02-17 02:45:03 +0800'
+  date_gmt: '2013-02-17 02:45:03 +0800'
+  content: "Pretty! This has been a really wonderful post.\r\nThank you for providing
+    these details."
+- id: 51
+  author: how can i get taller
+  author_email: vickey_desimone@web.de
+  author_url: ''
+  date: '2013-02-17 04:55:01 +0800'
+  date_gmt: '2013-02-17 04:55:01 +0800'
+  content: Wow! This blog looks exactly like my old one! It's on a totally different
+    topic but it has pretty much the same page layout and design. Superb choice of
+    colors!
+- id: 52
+  author: finishingabasement.org
+  author_email: kathy_bertram@gmail.com
+  author_url: ''
+  date: '2013-02-17 05:38:24 +0800'
+  date_gmt: '2013-02-17 05:38:24 +0800'
+  content: I do agree with all the concepts you've offered to your post. They are
+    really convincing and can definitely work. Nonetheless, the posts are too quick
+    for novices. May just you please lengthen them a bit from next time? Thanks for
+    the post.
+- id: 54
+  author: tattoo removal
+  author_email: hansaugust@gmx.net
+  author_url: http://www.rebizconnect.com/myRebiz/?L=blogs.blog&amp;article=46608
+  date: '2013-02-17 05:44:35 +0800'
+  date_gmt: '2013-02-17 05:44:35 +0800'
+  content: What's up, of course this post is really fastidious and I have learned
+    lot of things from it on the topic of blogging. thanks.
+- id: 55
+  author: Damion
+  author_email: damionburns@gmail.com
+  author_url: http://vom-rockland.de/index.php?option=com_easygb&amp;Itemid=35
+  date: '2013-02-17 05:50:37 +0800'
+  date_gmt: '2013-02-17 05:50:37 +0800'
+  content: "Hi, i read your blog from time to time and i own a similar one and i was
+    \r\njust curious if you get a lot of spam remarks?\r\n\r\nIf so how do you prevent
+    it, any plugin or anything you can \r\nrecommend? I get so much lately it's driving
+    me mad so any support is very much appreciated."
+- id: 56
+  author: tattoo ideas
+  author_email: weldonhostetler@yahoo.com
+  author_url: http://russtroy.infoloadwww.russtroy.infoloadwww.russtroy.infoloadwww.juliawroblewska.pl/infusions/guestbook2/guestbook2.php
+  date: '2013-02-17 08:11:43 +0800'
+  date_gmt: '2013-02-17 08:11:43 +0800'
+  content: Thanks for finally talking about > ubuntu grub修复启动项hippo的blog | hippo的blog
+    < Loved it!
+- id: 58
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-17 13:09:45 +0800'
+  date_gmt: '2013-02-17 13:09:45 +0800'
+  content: Of course. eh, i am newbie to wordpress.Thanks a lot.
+- id: 61
+  author: thecigarettesstore.com
+  author_email: christie-steed@yahoo.com
+  author_url: http://thecigarettesstore.com/89-lucky-strike
+  date: '2013-02-17 16:48:41 +0800'
+  date_gmt: '2013-02-17 16:48:41 +0800'
+  content: Hello! This post couldn't be written any better! Reading through this post
+    reminds me of my previous room mate! He always kept talking about this. I will
+    forward this write-up to him. Fairly certain he will have a good read. Thank you
+    for sharing!
+- id: 63
+  author: vogue cigarette
+  author_email: remona.kendrick@gmail.com
+  author_url: http://chepeastvoguecigarettes.webs.com/
+  date: '2013-02-17 22:29:44 +0800'
+  date_gmt: '2013-02-17 22:29:44 +0800'
+  content: "Wonderful items from you, man. I've be aware your stuff prior to and you
+    are just extremely magnificent. I really like what you have got here, really like
+    what you're stating and the way in which in which you say it.\r\nYou are making
+    it entertaining and you still care for to stay it smart.\r\nI can not wait to
+    read far more from you. That is actually a tremendous website."
+- id: 64
+  author: tattoo removal cream
+  author_email: dallas-pipkin@googlemail.com
+  author_url: http://miacompagnia.it/link/1063
+  date: '2013-02-17 23:18:08 +0800'
+  date_gmt: '2013-02-17 23:18:08 +0800'
+  content: "Ridiculous story there. What occurred after?\r\nThanks!"
+- id: 66
+  author: http:&#47;&#47;www.belle.hk
+  author_email: sherrie_whitt@bigstring.com
+  author_url: http://www.belle.hk/blog/12488/as-well-as-skin-whitening-cream-go-available-for-state/
+  date: '2013-02-18 03:36:38 +0800'
+  date_gmt: '2013-02-18 03:36:38 +0800'
+  content: "I loved as much as you will receive carried out right here.\r\nThe sketch
+    is tasteful, your authored subject matter stylish.\r\nnonetheless, you command
+    get bought an nervousness over that you wish be delivering the following.\r\nunwell
+    unquestionably come further formerly again since exactly \r\nthe same nearly a
+    lot often inside case you shield this \r\nincrease."
+- id: 67
+  author: Buy Twitter Followers cheap
+  author_email: damienorth@gawab.com
+  author_url: http://www.pressreleasesworld.com/epic-followers-its-time-to-get-enormous-followers-now
+  date: '2013-02-18 05:00:04 +0800'
+  date_gmt: '2013-02-18 05:00:04 +0800'
+  content: "I believe that is one of the so much significant info \r\nfor me. And
+    i am satisfied studying your article.\r\n\r\nBut should observation on some basic
+    things, The site style is perfect, the articles \r\nis truly great : D. Excellent
+    activity, cheers"
+- id: 69
+  author: Cheap Volkswagen deals
+  author_email: vicki_milliken@theinternetemail.com
+  author_url: http://www.flickr.com/photos/93116598@N08/
+  date: '2013-02-18 05:43:51 +0800'
+  date_gmt: '2013-02-18 05:43:51 +0800'
+  content: Generally I don't read post on blogs, however I would like to say that
+    this write-up very compelled me to check out and do so! Your writing style has
+    been amazed me. Thank you, quite great post.
+- id: 70
+  author: wristbands tyvek
+  author_email: joyce_mares@bigstring.com
+  author_url: http://leonstewart19.webnode.com/news/first-blog/
+  date: '2013-02-18 07:12:26 +0800'
+  date_gmt: '2013-02-18 07:12:26 +0800'
+  content: "For latest information you have to pay a quick visit web and on world-wide-web
+    \r\nI found this web page as a best website for latest updates."
+- id: 71
+  author: how to sing
+  author_email: gregorygilbertson@airpost.net
+  author_url: http://yougomysister.com/groups/the-right-way-to-sing-easier-and-lots-more-confidently/
+  date: '2013-02-18 10:44:30 +0800'
+  date_gmt: '2013-02-18 10:44:30 +0800'
+  content: "I think that everything published made a ton of sense.\r\nHowever, think
+    about this, what if you wrote a catchier title?\r\n\r\nI ain't suggesting your
+    content isn't solid., however suppose you added a \r\npost title to possibly grab
+    people's attention? I mean ubuntu grub修复启动项hippo的blog | hippo的blog is kinda vanilla.
+    You should glance at Yahoo's home page and see how they create post headlines
+    to grab people interested.\r\nYou might try adding a video or a related pic or
+    two to get readers interested about \r\neverything've written. In my opinion,
+    it could make your blog a little bit more interesting."
+- id: 72
+  author: discountedparliamentcigarettes.webs.com
+  author_email: willisswank@googlemail.com
+  author_url: http://discountedparliamentcigarettes.webs.com/
+  date: '2013-02-18 12:18:59 +0800'
+  date_gmt: '2013-02-18 12:18:59 +0800'
+  content: WOW just what I was searching for. Came here by searching for grub
+- id: 73
+  author: how to grow taller
+  author_email: maple.caraballo@yahoo.com
+  author_url: http://community.iblse.com/index.php?do=/profile-19368/info/
+  date: '2013-02-18 12:29:39 +0800'
+  date_gmt: '2013-02-18 12:29:39 +0800'
+  content: "Hmm is anyone else encountering problems with the pictures on \r\nthis
+    blog loading? I'm trying to determine if its a problem on my end or if it's the
+    \r\nblog. Any feedback would be greatly appreciated."
+- id: 75
+  author: http:&#47;&#47;taxfreedunhillcigarettes.webs.com&#47;
+  author_email: rustywinfrey@gmail.com
+  author_url: http://taxfreedunhillcigarettes.webs.com/
+  date: '2013-02-18 22:22:55 +0800'
+  date_gmt: '2013-02-18 22:22:55 +0800'
+  content: "A fascinating discussion is definitely worth \r\ncomment. I do believe
+    that you ought to write more about this issue,\r\nit may not be a taboo matter
+    but generally people do not discuss \r\nsuch subjects. To the next! Many thanks!!"
+- id: 76
+  author: free xbox live
+  author_email: doyle.broome@gmail.com
+  author_url: http://guanabee.com/2013/01/shakira-pique-milan-pique-mebarak-pictures/
+  date: '2013-02-19 01:44:17 +0800'
+  date_gmt: '2013-02-19 01:44:17 +0800'
+  content: "Appreciating the time and energy you put into your website and in depth
+    information you offer.\r\nIt's nice to come across a blog every once in a while
+    that isn't \r\nthe same old rehashed material. Fantastic read! I've saved your
+    site and I'm including your RSS feeds to my \r\nGoogle account."
+- id: 77
+  author: tribal tattoos
+  author_email: christi-shade@gmail.com
+  author_url: http://feuerwehr112.fe.funpic.de/burningbook/
+  date: '2013-02-19 02:07:49 +0800'
+  date_gmt: '2013-02-19 02:07:49 +0800'
+  content: "It is the best time to make some plans for the future and it is time \r\nto
+    be happy. I have read this post and if I could I desire to suggest you some interesting
+    \r\nthings or advice. Perhaps you could write next articles referring to this
+    article.\r\nI want to read more things about it!"
+- id: 78
+  author: diablo 3 guide
+  author_email: kirsten.mccreary@gmx.net
+  author_url: http://www.business5to5.co.uk/Diablo-3-Effect-Leveling-Book-To-Limit-Lvl-65-Fastest.htm
+  date: '2013-02-19 05:49:54 +0800'
+  date_gmt: '2013-02-19 05:49:54 +0800'
+  content: "Why visitors still make use of to read news papers when in \r\nthis technological
+    world all is presented on net?"
+- id: 83
+  author: thecigarettesstore.com
+  author_email: sheritajacks@t-online.de
+  author_url: http://thecigarettesstore.com/92-camel
+  date: '2013-02-19 20:57:58 +0800'
+  date_gmt: '2013-02-19 20:57:58 +0800'
+  content: "Hi, i think that i noticed you visited my web site thus i came to return
+    the want?\r\n.I am trying to in finding things to improve my web site!\r\nI guess
+    its adequate to use a few of your ideas!!"
+- id: 84
+  author: skin bleaching cream
+  author_email: violettefrizzell@zoho.com
+  author_url: http://ibase45.com/blogs/9191/10174/self-made-skin-improving-product
+  date: '2013-02-20 00:24:23 +0800'
+  date_gmt: '2013-02-20 00:24:23 +0800'
+  content: "Wow, this piece of writing is good, my younger sister is analyzing these
+    \r\nthings, thus I am going to let know her."
+- id: 85
+  author: lose belly fat fast
+  author_email: anyagarrison@peacemail.com
+  author_url: http://www.freedsbulldogges.com/cgi-bin/fpg.cgi
+  date: '2013-02-20 01:11:34 +0800'
+  date_gmt: '2013-02-20 01:11:34 +0800'
+  content: "Hi there! Do you know if they make any plugins to safeguard against hackers?\r\nI'm
+    kinda paranoid about losing everything I've worked hard on.\r\nAny tips?"
+- id: 86
+  author: tribal tattoos
+  author_email: imawitt@googlemail.com
+  author_url: http://ivarlantz.se/jip/gastbok
+  date: '2013-02-20 04:19:42 +0800'
+  date_gmt: '2013-02-20 04:19:42 +0800'
+  content: "hello there and thank you for your info &ndash; I have certainly picked
+    up anything new from right here.\r\nI did however expertise several technical
+    points using \r\nthis web site, since I experienced to reload the site lots of
+    times \r\nprevious to I could get it to load correctly. I had been wondering \r\nif
+    your web hosting is OK? Not that I am complaining, but \r\nslow loading instances
+    times will often affect your \r\nplacement in google and could damage your high
+    quality score if advertising and marketing with Adwords.\r\n\r\nAnyway I'm adding
+    this RSS to my email and could look out for a lot more of your respective exciting
+    content. Ensure that you update this again very soon."
+- id: 92
+  author: music maker
+  author_email: lois_mattox@nospammail.net
+  author_url: http://www.youtube.com/watch?v=ws7m6GSFFb4
+  date: '2013-02-20 06:39:54 +0800'
+  date_gmt: '2013-02-20 06:39:54 +0800'
+  content: It's actually very difficult in this active life to listen news on Television,
+    thus I simply use the web for that reason, and take the most recent information.
+- id: 93
+  author: Kayleigh
+  author_email: kayleighdove@gmail.com
+  author_url: http://sv-reichmannshausen.de/index.php?option=com_akobook&amp;Itemid=35
+  date: '2013-02-20 07:57:25 +0800'
+  date_gmt: '2013-02-20 07:57:25 +0800'
+  content: I don't write a ton of comments, however i did a few searching and wound
+    up here ubuntu grub修复启动项hippo的blog | hippo的blog. And I do have some questions
+    for you if you usually do not mind. Is it simply me or does it appear like some
+    of the responses look like written by brain dead individuals? :-P And, if you
+    are writing at other sites, I would like to keep up with anything new you have
+    to post. Would you make a list of the complete urls of all your public pages like
+    your twitter feed, Facebook page or linkedin profile?
+- id: 95
+  author: taxfreedunhillcigarettes.webs.com
+  author_email: tim-nutter@aol.com
+  author_url: http://taxfreedunhillcigarettes.webs.com/
+  date: '2013-02-20 09:11:08 +0800'
+  date_gmt: '2013-02-20 09:11:08 +0800'
+  content: "Greetings! Very helpful advice in this particular article!\r\nIt is the
+    little changes that will make the biggest changes.\r\nThanks for sharing!"
+- id: 100
+  author: how to get rid of acne
+  author_email: wilton-howes@ftml.net
+  author_url: http://www.youtube.com/watch?v=gj-TklSlTis
+  date: '2013-02-20 13:28:54 +0800'
+  date_gmt: '2013-02-20 13:28:54 +0800'
+  content: This is my first time pay a quick visit at here and i am truly pleassant
+    to read everthing at alone place.
+- id: 103
+  author: bgorb.com
+  author_email: tony_hull@gawab.com
+  author_url: http://bgorb.com/moodle/user/view.php?id=3214&amp;course=1
+  date: '2013-02-20 15:39:02 +0800'
+  date_gmt: '2013-02-20 15:39:02 +0800'
+  content: "Hi, I do believe your site may be having web browser compatibility \r\nproblems.
+    When I look at your blog in Safari, it looks fine however, when opening in Internet
+    Explorer, it's got some overlapping issues. I just wanted to provide you with
+    a quick heads up! Apart from that, great website!"
+- id: 110
+  author: Watch Movies Online
+  author_email: elisabeth-osborne@gmail.com
+  author_url: http://www.youtube.com/watch?v=0sicXa8lZwo
+  date: '2013-02-21 02:41:11 +0800'
+  date_gmt: '2013-02-21 02:41:11 +0800'
+  content: "constantly i used to read smaller posts that  also clear \r\ntheir motive,
+    and that is also happening with this paragraph which I am reading at this time."
+- id: 117
+  author: how to lose belly fat
+  author_email: eloisa-mccleary@gmail.com
+  author_url: http://www.comune.polizzi.pa.it/index.php?option=com_easygb&amp;Itemid=99
+  date: '2013-02-21 14:12:56 +0800'
+  date_gmt: '2013-02-21 14:12:56 +0800'
+  content: "Whoa! This blog looks just like my old one!\r\nIt's on a completely different
+    topic but it has pretty much the same layout and design. Outstanding choice of
+    colors!"
+- id: 123
+  author: face exercises
+  author_email: philipp.bacon@gmail.com
+  author_url: http://www.youtube.com/watch?v=hRMPupG7pkk
+  date: '2013-02-22 01:44:31 +0800'
+  date_gmt: '2013-02-22 01:44:31 +0800'
+  content: "Great goods from you, man. I've understand your stuff previous to and
+    you're just too great.\r\n\r\nI actually like what you have acquired here, really
+    like what you are saying and the way in which \r\nyou say it. You make it enjoyable
+    and you still take care of to keep it smart.\r\nI can not wait to read much more
+    from you. This is really \r\na great website."
+- id: 140
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-02-23 04:35:49 +0800'
+  date_gmt: '2013-02-23 04:35:49 +0800'
+  content: Many thanks, I will check out.
+- id: 149
+  author: how to reduce belly fat
+  author_email: howardgeary@aol.com
+  author_url: http://www.ypsc.org/albums/displayimage.php?pid=162
+  date: '2013-02-23 23:41:33 +0800'
+  date_gmt: '2013-02-23 23:41:33 +0800'
+  content: "You actually make it appear so easy with your presentation however I \r\nfind
+    this topic to be actually something which I think I would by no means understand.\r\nIt
+    kind of feels too complicated and very vast for me.\r\nI'm looking forward in
+    your next put up, I'll try to get \r\nthe dangle of it!"
+- id: 152
+  author: thecigarettesstore.com
+  author_email: rebeccacain@gmail.com
+  author_url: http://thecigarettesstore.com/124-sobranie
+  date: '2013-02-27 12:17:15 +0800'
+  date_gmt: '2013-02-27 12:17:15 +0800'
+  content: "If you wish for to obtain a great deal from this \r\npost then you have
+    to apply such methods to your won webpage."
+- id: 153
+  author: tattoo removal
+  author_email: elishamohr@gmail.com
+  author_url: http://www.seneville.com/index.php?do=/blog/606/should-certainly-you-online-to-disappointment-that-tat/
+  date: '2013-02-27 21:42:50 +0800'
+  date_gmt: '2013-02-27 21:42:50 +0800'
+  content: "I am sure this paragraph has touched all the internet \r\npeople, its
+    really really fastidious piece of writing \r\non building up new weblog."
+- id: 157
+  author: Clomiphene 50 mg
+  author_email: Boetcher8732@yahoo.com
+  author_url: http://clomidnoprescription.beep.com/
+  date: '2013-02-28 10:00:08 +0800'
+  date_gmt: '2013-02-28 10:00:08 +0800'
+  content: ZE5ol3 Really enjoyed this blog article.Thanks Again. Much obliged.
+- id: 162
+  author: buy clomid
+  author_email: Graddy9073@yahoo.com
+  author_url: http://clomidnoprescription.overblog.com/
+  date: '2013-02-28 20:18:21 +0800'
+  date_gmt: '2013-02-28 20:18:21 +0800'
+  content: 8IYtit Fantastic article post.Much thanks again. Great.
+- id: 172
+  author: Vogue Cigarette
+  author_email: araaleman@gmx.net
+  author_url: http://thecigarettesstore.com/103-vogue
+  date: '2013-03-01 12:28:56 +0800'
+  date_gmt: '2013-03-01 12:28:56 +0800'
+  content: "Spot on with this write-up, I honestly think this website needs a \r\ngreat
+    deal more attention. I'll probably be returning to read more, thanks for the info!"
+- id: 174
+  author: diablo 3 gold farming
+  author_email: darlene-pereira@googlemail.com
+  author_url: http://agrawalpariwar.com/groups/what-makes-diablo-iii-irresistible-that-will-help-fans/
+  date: '2013-03-02 02:04:35 +0800'
+  date_gmt: '2013-03-02 02:04:35 +0800'
+  content: "Woah! I'm really enjoying the template&#47;theme of this blog. It's simple,
+    yet effective.\r\nA lot of times it's very difficult to get that \"perfect balance\"
+    between user friendliness and appearance. I must say you've done a great job with
+    \r\nthis. In addition, the blog loads extremely fast for me on Firefox.\r\nExcellent
+    Blog!"
+- id: 180
+  author: http:&#47;&#47;ashfun.com&#47;profile-46742&#47;info
+  author_email: manuelacruz@gmail.com
+  author_url: http://ashfun.com/profile-46742/info/
+  date: '2013-03-02 20:56:05 +0800'
+  date_gmt: '2013-03-02 20:56:05 +0800'
+  content: What's up, this weekend is fastidious in support of me, for the reason
+    that this occasion i am reading this wonderful educational paragraph here at my
+    home.
+- id: 184
+  author: Gail Metzga
+  author_email: Calabro2@gmail.com
+  author_url: http://www.hitme3aonzo2f.com
+  date: '2013-03-03 07:52:25 +0800'
+  date_gmt: '2013-03-03 07:52:25 +0800'
+  content: I just want to say I am very new to weblog and certainly liked your web-site.
+    Probably I&rsquo;m likely to bookmark your site . You surely have exceptional
+    well written articles. Regards for sharing your web-site.
+- id: 191
+  author: tattoo removal
+  author_email: lupe_connor@gmail.com
+  author_url: http://triazuz.com/blog/4528/elective-laser-a-surgical-treatment-center/
+  date: '2013-03-03 19:32:48 +0800'
+  date_gmt: '2013-03-03 19:32:48 +0800'
+  content: "Very great post. I simply stumbled upon your blog and wanted \r\nto say
+    that I've truly loved surfing around your weblog posts. In any case I will be
+    subscribing for your rss feed and I hope you write again soon!"
+- id: 194
+  author: diablo 3 guide
+  author_email: briandunne@gmail.com
+  author_url: http://www.pinpeterest.com/groups/diablo-3-monk-leveling-gain/
+  date: '2013-03-04 02:33:55 +0800'
+  date_gmt: '2013-03-04 02:33:55 +0800'
+  content: It's actually very difficult in this full of activity life to listen news
+    on TV, so I simply use world wide web for that purpose, and obtain the newest
+    information.
+- id: 212
+  author: diablo 3 gold farming
+  author_email: aleciaweathers@web.de
+  author_url: http://www.moodle.lino.pro.br/user/view.php?id=1123&amp;course=1
+  date: '2013-03-05 07:52:39 +0800'
+  date_gmt: '2013-03-05 07:52:39 +0800'
+  content: "Please let me know if you're looking for a article author for your blog.
+    You have some really good posts and I feel I would be a good asset. If you ever
+    want to take some of the load off, I'd absolutely \r\nlove to write some content
+    for your blog in exchange for a link \r\nback to mine. Please shoot me an email
+    if interested.\r\nRegards!"
+- id: 215
+  author: skin bleaching
+  author_email: feliciafontenot@gmail.com
+  author_url: http://press.massimovolpi.com/Simple-Skin-Paint-Teeth-Lightening-Points.htm
+  date: '2013-03-05 10:59:31 +0800'
+  date_gmt: '2013-03-05 10:59:31 +0800'
+  content: "Great beat ! I wish to apprentice while you amend your web site, how could
+    i \r\nsubscribe for a weblog site? The account aided me a appropriate deal.\r\nI
+    have been a little bit acquainted of this your broadcast offered bright \r\ntransparent
+    idea"
+- id: 221
+  author: http:&#47;&#47;lookingforarrangement.com
+  author_email: dewaynefaber@gmail.com
+  author_url: http://lookingforarrangement.com/DamianTho
+  date: '2013-03-06 03:18:44 +0800'
+  date_gmt: '2013-03-06 03:18:44 +0800'
+  content: It's very effortless to find out any matter on web as compared to books,
+    as I found this paragraph at this website.
+- id: 229
+  author: Bertie
+  author_email: bertielanglois@gmail.com
+  author_url: http://cswip.ca/index.php/member/5493/
+  date: '2013-03-06 13:25:59 +0800'
+  date_gmt: '2013-03-06 13:25:59 +0800'
+  content: "wonderful points altogether, you just gained a new reader.\r\n\r\n\r\nWhat
+    would you suggest about your post that you made some days ago?\r\nAny positive?"
+- id: 232
+  author: how To lose stomach fat
+  author_email: alisha_brody@zoho.com
+  author_url: http://thinkoutsidetheboxtoday.com/friends/link/8491
+  date: '2013-03-06 19:32:22 +0800'
+  date_gmt: '2013-03-06 19:32:22 +0800'
+  content: "Hello, constantly i used to check website posts here in the early hours
+    in \r\nthe morning, since i enjoy to gain knowledge of more \r\nand more."
+- id: 237
+  author: 2012 Calendar Us Printable
+  author_email: karri_donley@web.de
+  author_url: http://www.cam-Clip.com/users/LareePowell88
+  date: '2013-03-07 02:00:10 +0800'
+  date_gmt: '2013-03-07 02:00:10 +0800'
+  content: "Howdy would you mind stating which blog platform you're using? \r\n\r\nI'm
+    looking to start my own blog in the near future but I'm having a tough time \r\n\r\ndeciding
+    between BlogEngine&#47;Wordpress&#47;B2evolution and Drupal. The reason I ask
+    is \r\n\r\nbecause your design seems different then most blogs and I'm \r\nlooking
+    for something unique.                  P.S My apologies for being off-topic but
+    I had to ask!"
+- id: 238
+  author: http:&#47;&#47;taxfreecamelcigarettes.webs.com
+  author_email: carley.kingsley@care2.com
+  author_url: http://taxfreecamelcigarettes.webs.com/
+  date: '2013-03-07 02:01:58 +0800'
+  date_gmt: '2013-03-07 02:01:58 +0800'
+  content: "Hi! I just wanted to ask if you ever have any issues with hackers?\r\nMy
+    last blog (wordpress) was hacked and I ended up \r\nlosing months of hard work
+    due to no backup. Do you have any solutions to prevent hackers?"
+- id: 241
+  author: diablo 3 guide
+  author_email: ulrichspeed@t-online.de
+  author_url: http://canaldemusica.com/read_blog/11770/diablo-3-wizard-doctor-increases-guide
+  date: '2013-03-08 12:41:52 +0800'
+  date_gmt: '2013-03-08 12:41:52 +0800'
+  content: "Thanks , I have recently been looking for info about this subject \r\nfor
+    a while and yours is the best I've discovered till now. But, what about the bottom
+    line? Are you sure concerning the supply?"
+- id: 243
+  author: diablo 3 guide
+  author_email: sadyehuerta@yahoo.de
+  author_url: http://healthefile.com/HattiePer
+  date: '2013-03-09 00:04:53 +0800'
+  date_gmt: '2013-03-09 00:04:53 +0800'
+  content: Hey! I'm at work browsing your blog from my new iphone 3gs! Just wanted
+    to say I love reading through your blog and look forward to all your posts! Carry
+    on the outstanding work!
+- id: 250
+  author: social.2dtg.com.br
+  author_email: georginagilliland@gmail.com
+  author_url: http://social.2dtg.com.br/index.php?do=/profile-6471/info/
+  date: '2013-03-10 02:04:24 +0800'
+  date_gmt: '2013-03-10 02:04:24 +0800'
+  content: "Do you have a spam issue on this website; I also am \r\na blogger, and
+    I was wondering your situation; many of us have developed some \r\nnice methods
+    and we are looking to swap strategies with others, please shoot me an e-mail if
+    \r\ninterested."
+- id: 252
+  author: Antonio
+  author_email: antonio_castellanos@gmail.com
+  author_url: http://thecigarettesstore.com/105-davidoff
+  date: '2013-03-10 05:53:49 +0800'
+  date_gmt: '2013-03-10 05:53:49 +0800'
+  content: "excellent issues altogether, you just gained a brand new \r\nreader. What
+    could you suggest in regards to your submit that you just made a few days ago?\r\nAny
+    sure?"
+- id: 256
+  author: http:&#47;&#47;garciniacambogiagnc.webs.com
+  author_email: mercedesarce@gmail.com
+  author_url: http://garciniacambogiagnc.webs.com/
+  date: '2013-03-10 17:47:42 +0800'
+  date_gmt: '2013-03-10 17:47:42 +0800'
+  content: "I know this if off topic but I'm looking into starting my own blog and
+    was wondering what all is needed to get setup? I'm assuming having a blog like
+    \r\nyours would cost a pretty penny? I'm not very web smart so I'm not 100% sure.
+    Any suggestions or advice would be greatly appreciated. Appreciate it"
+- id: 258
+  author: losing belly fat
+  author_email: rauloglesby@zoho.com
+  author_url: http://facebooka1.com/blog/view/508481/digestive-system-fat-guide-1-best-approach-to-lose-abdominal-flab
+  date: '2013-03-10 21:11:45 +0800'
+  date_gmt: '2013-03-10 21:11:45 +0800'
+  content: "I think the admin of this site is actually working hard in support of
+    his web page, \r\nas here every material is quality based data."
+- id: 262
+  author: tattoo removal
+  author_email: jefferygavin@ssl-mail.com
+  author_url: http://www.peopletalkn.com/index.php?do=/profile-15950/info/
+  date: '2013-03-11 05:57:46 +0800'
+  date_gmt: '2013-03-11 05:57:46 +0800'
+  content: "I enjoy, result in I found just what I was having a look for.\r\nYou have
+    ended my four day long hunt! God Bless you man.\r\nHave a great day. Bye"
+- id: 263
+  author: http:&#47;&#47;thecigarettesstore.com&#47;
+  author_email: janniecreamer@yahoo.de
+  author_url: http://thecigarettesstore.com/94-pall-mall
+  date: '2013-03-11 17:41:54 +0800'
+  date_gmt: '2013-03-11 17:41:54 +0800'
+  content: "I delight in, result in I found just what I used to be looking for.\r\nYou
+    have ended my four day long hunt! God Bless you man.\r\nHave a great day. Bye"
+- id: 264
+  author: green coffee weight loss
+  author_email: manuela.weiss@googlemail.com
+  author_url: http://www.youtube.com/watch?v=kKVyD0LBZNs
+  date: '2013-03-11 23:10:02 +0800'
+  date_gmt: '2013-03-11 23:10:02 +0800'
+  content: I've been browsing online greater than 3 hours as of late, yet I by no
+    means found any interesting article like yours. It is pretty worth sufficient
+    for me. In my opinion, if all web owners and bloggers made excellent content material
+    as you probably did, the net might be much more helpful than ever before.
+- id: 268
+  author: http:&#47;&#47;momentolatino.com&#47;blogs&#47;entry&#47;Like-So-Many-Years-To-Unwanted-Ink-Now-With
+  author_email: damianmarcotte@freenet.de
+  author_url: http://momentolatino.com/blogs/entry/Like-So-Many-Years-To-Unwanted-Ink-Now-With
+  date: '2013-03-12 14:53:23 +0800'
+  date_gmt: '2013-03-12 14:53:23 +0800'
+  content: "I&rsquo;m not that much of a internet reader to be honest but your sites
+    really nice,\r\nkeep it up! I'll go ahead and bookmark your website to come back
+    later. Many thanks"
+- id: 270
+  author: http:&#47;&#47;wiki.kithara.gr&#47;La_Finca_Golf_Course_-_White_Coast_Of_Spain_Spain
+  author_email: cierra-carlton@gmail.com
+  author_url: http://wiki.kithara.gr/La_Finca_Golf_Course_-_White_Coast_Of_Spain_Spain
+  date: '2013-03-13 07:01:20 +0800'
+  date_gmt: '2013-03-13 07:01:20 +0800'
+  content: "Excellent post. I was checking constantly this blog and \r\nI am impressed!
+    Very \r\n\r\nuseful information particularly the last part :) I care for such
+    \r\n\r\n\r\ninformation much. I was seeking this certain information for a long
+    time.\r\nThank you and best of luck."
+- id: 271
+  author: how to lose belly fat
+  author_email: thorsten_baber@freenet.de
+  author_url: http://www.favolink.de/user/9615-niamhseit
+  date: '2013-03-13 07:41:58 +0800'
+  date_gmt: '2013-03-13 07:41:58 +0800'
+  content: "My spouse and I stumbled over here by a different \r\nweb address and
+    thought I might check things out. I like what I see so now \r\ni am following
+    you. Look forward to going over \r\nyour web page yet again."
+- id: 280
+  author: how can i get taller
+  author_email: lynettecallender@freenet.de
+  author_url: http://www.cooperathletics.com/groups/maturing-taller-commonly/
+  date: '2013-03-13 17:41:19 +0800'
+  date_gmt: '2013-03-13 17:41:19 +0800'
+  content: "Piece of writing writing is also a excitement, if \r\nyou be acquainted
+    with afterward you can write otherwise it is difficult to write."
+- id: 283
+  author: diablo 3 wizard guide
+  author_email: ina-foust@gmail.com
+  author_url: http://socialfy.lbriones.com/story.php?title=have-an-edge-around-other-professionals-with-a-good-diablo-3-guide
+  date: '2013-03-13 20:37:44 +0800'
+  date_gmt: '2013-03-13 20:37:44 +0800'
+  content: Why users still make use of to read news papers when in this technological
+    globe the whole thing is accessible on net?
+- id: 284
+  author: tattoo ideas
+  author_email: kassieterry@t-online.de
+  author_url: http://www.tarefando.com.br/index.php?do=/profile-849/info/
+  date: '2013-03-13 23:48:29 +0800'
+  date_gmt: '2013-03-13 23:48:29 +0800'
+  content: Hi all, here every person is sharing such familiarity, therefore it's good
+    to read this webpage, and I used to visit this website all the time.
+- id: 285
+  author: artsonet.com
+  author_email: carleyforster@bigstring.com
+  author_url: http://artsonet.com/index.php?do=/profile-49115/info/
+  date: '2013-03-14 01:05:54 +0800'
+  date_gmt: '2013-03-14 01:05:54 +0800'
+  content: "I have been browsing on-line more than 3 hours nowadays, yet I by no \r\nmeans
+    found any fascinating article like yours. It is pretty value sufficient \r\nfor
+    me. Personally, if all website owners and bloggers made just right \r\ncontent
+    as you probably did, the net will likely be much more useful than ever \r\nbefore."
+- id: 288
+  author: Corey Yoshino
+  author_email: Hyde70@gmail.com
+  author_url: http://www.corziun5m2jf.com
+  date: '2013-03-14 08:13:49 +0800'
+  date_gmt: '2013-03-14 08:13:49 +0800'
+  content: I just want to mention I'm beginner to weblog and seriously liked your
+    blog site. Likely I&rsquo;m likely to bookmark your website . You absolutely come
+    with perfect articles and reviews. Bless you for revealing your web page.
+- id: 293
+  author: Andrew Pelt
+  author_email: Mikeska78@gmail.com
+  author_url: http://www.cor5ziun5m2jf.com
+  date: '2013-03-14 16:51:28 +0800'
+  date_gmt: '2013-03-14 16:51:28 +0800'
+  content: I just want to say I am newbie to blogging and site-building and really
+    loved your web-site. Very likely I&rsquo;m want to bookmark your site . You really
+    come with superb well written articles. Appreciate it for revealing your website
+    page.
+- id: 294
+  author: how to grow taller
+  author_email: ezekiel_temple@gmail.com
+  author_url: http://www.ivf-guide.com/groups/flower-taller-profitable-tips-to-obtain-dream-high/
+  date: '2013-03-14 16:54:55 +0800'
+  date_gmt: '2013-03-14 16:54:55 +0800'
+  content: "It's nearly impossible to find well-informed people about this subject,
+    but you seem like you know what you're talking about!\r\n\r\nThanks"
+- id: 303
+  author: http:&#47;&#47;agilanguage.com&#47;forums-2&#47;groups&#47;tat-ink-removal-ways-to-remove-each-of-our-tattoo&#47;
+  author_email: debbrasell@zoho.com
+  author_url: http://agilanguage.com/forums-2/groups/tat-ink-removal-ways-to-remove-each-of-our-tattoo/
+  date: '2013-03-15 02:13:59 +0800'
+  date_gmt: '2013-03-15 02:13:59 +0800'
+  content: Hi, Neat post. There's an issue along with your web site in internet explorer,
+    might check this? IE still is the marketplace chief and a big component of other
+    folks will omit your magnificent writing because of this problem.
+- id: 310
+  author: http:&#47;&#47;www.madakasira.com&#47;
+  author_email: marilynnray@gawab.com
+  author_url: http://www.madakasira.com/index.php?do=/blog/3610/determining-how-to-uncover-a-costa-blanca-villa/
+  date: '2013-03-16 03:14:18 +0800'
+  date_gmt: '2013-03-16 03:14:18 +0800'
+  content: "I like what you guys are up too. Such smart work and reporting!\r\nCarry
+    on the \r\n\r\nsuperb works guys I have incorporated you guys to my blogroll.\r\nI
+    think it'll improve the value \r\n\r\nof my web site :)"
+- id: 313
+  author: lose belly fat
+  author_email: remona_forman@bigstring.com
+  author_url: http://lawfirmarticles.com/In-Which-Way-To-Cook-Asparagus-Utterly.htm
+  date: '2013-03-16 08:43:10 +0800'
+  date_gmt: '2013-03-16 08:43:10 +0800'
+  content: Excellent goods from you, man. I've understand your stuff previous to and
+    you are just too magnificent. I actually like what you've acquired here, really
+    like what you're stating and the way in which you say it. You make it enjoyable
+    and you still take care of to keep it smart. I cant wait to read far more from
+    you. This is actually a tremendous website.
+- id: 317
+  author: mollyrecords.com
+  author_email: ericka-mcadams@gmx.de
+  author_url: http://mollyrecords.com/blog/view/64893/convenient-tips-certainly-grow-more-elevated
+  date: '2013-03-16 19:08:47 +0800'
+  date_gmt: '2013-03-16 19:08:47 +0800'
+  content: "Your style is unique compared to other folks I have read stuff from.\r\nThank
+    you for posting when you have the opportunity, Guess I'll just bookmark this page."
+- id: 320
+  author: how to get rid of belly fat
+  author_email: rachel.bateman@yahoo.de
+  author_url: http://poznane.pl/community/pg/profile/Debbra39K
+  date: '2013-03-17 03:04:08 +0800'
+  date_gmt: '2013-03-17 03:04:08 +0800'
+  content: "I&rsquo;m not that much of a internet reader to be honest \r\nbut your
+    sites really nice, keep it up! I'll go ahead and bookmark your website to come
+    back later. Cheers"
+- id: 393
+  author: Cindy
+  author_email: cindybender@yahoo.de
+  author_url: http://thedeal.my/index.php?do=/blog/6651/exactly-what-is-the-best-performances-in-diablo-3-commun-mode/
+  date: '2013-03-18 00:35:43 +0800'
+  date_gmt: '2013-03-18 00:35:43 +0800'
+  content: We're a gaggle of volunteers and opening a brand new scheme in our community.
+    Your website provided us with helpful information to work on. You have done a
+    formidable process and our entire neighborhood can be grateful to you.
+- id: 401
+  author: Rdataa.com
+  author_email: dena.quezada@inbox.com
+  author_url: http://Rdataa.com/wiki/index.php?title=User_talk:GhislaineGreen1974
+  date: '2013-03-18 01:54:05 +0800'
+  date_gmt: '2013-03-18 01:54:05 +0800'
+  content: "Somebody necessarily help to make seriously articles I would state.\r\nThat
+    is the first time I \r\n\r\nfrequented your web page and thus far? I amazed with
+    the \r\n\r\nanalysis you made to make this particular publish \r\n\r\n\r\namazing.
+    Fantastic process!"
+- id: 403
+  author: video xxx
+  author_email: julia_jewell@gmx.de
+  author_url: http://www.ihatecaralarms.com
+  date: '2013-03-18 09:21:36 +0800'
+  date_gmt: '2013-03-18 09:21:36 +0800'
+  content: "Good replies in return of this difficulty with real arguments and describing
+    \r\neverything concerning that.\r\n\r\nFeel free to visit my webpage - <a href=\"http:&#47;&#47;www.ihatecaralarms.com\"
+    rel=\"nofollow\">video xxx<&#47;a>"
+- id: 404
+  author: video porno streaming
+  author_email: margie_means@yahoo.de
+  author_url: http://www.Videoxporno.org
+  date: '2013-03-18 09:27:30 +0800'
+  date_gmt: '2013-03-18 09:27:30 +0800'
+  content: "Hey very nice blog!\r\n\r\nmy page :: <a href=\"http:&#47;&#47;www.Videoxporno.org\"
+    rel=\"nofollow\">video porno streaming<&#47;a>"
+- id: 410
+  author: http:&#47;&#47;crp-network.mn
+  author_email: delilakirkwood@gmail.com
+  author_url: http://crp-network.mn/groups/loose-your-man-boobs-fast-completely-uncovered/
+  date: '2013-03-18 23:05:24 +0800'
+  date_gmt: '2013-03-18 23:05:24 +0800'
+  content: "Hello, this weekend is pleasant designed for me, since this occasion i
+    am reading this impressive educational piece of writing here at \r\nmy house."
+- id: 424
+  author: Bailey
+  author_email: baileywallin@yahoo.de
+  author_url: http://socialfy.lbriones.com/search.php?search=http://www.youtube.com/watch?v=Do1phQY3JI8
+  date: '2013-03-20 08:03:50 +0800'
+  date_gmt: '2013-03-20 08:03:50 +0800'
+  content: "Link exchange is nothing else except it \r\nis simply placing the other
+    person's blog link on your page at suitable place and other person will also do
+    similar in favor of you."
+- id: 426
+  author: How To Burn belly fat
+  author_email: jerebittner@gmail.com
+  author_url: http://community.glowclick.com/groups/surrendering-fat-through-diet-and-exercise/
+  date: '2013-03-20 12:12:07 +0800'
+  date_gmt: '2013-03-20 12:12:07 +0800'
+  content: "This article will assist the internet viewers \r\nfor setting up new website
+    or even a weblog from start to end."
+- id: 429
+  author: http:&#47;&#47;bentio.com&#47;zellarossi
+  author_email: zandra_noriega@aol.com
+  author_url: http://bentio.com/zellarossi
+  date: '2013-03-20 13:40:36 +0800'
+  date_gmt: '2013-03-20 13:40:36 +0800'
+  content: "Wonderful post! We will be linking to this particularly great post on
+    our \r\nsite. Keep up the great writing."
+- id: 431
+  author: asian dating site
+  author_email: Didomizio68@hotmail.com
+  author_url: http://www.heartscombined.com.ph/Love/Luurnz
+  date: '2013-03-20 15:44:19 +0800'
+  date_gmt: '2013-03-20 15:44:19 +0800'
+  content: I want to know how to get the CSS code for rounded corners for my header,
+    post background, and sidebar background! It's for my blogspot blog. PLEASE tell
+    me how to get the css code!.
+- id: 432
+  author: Klonopin
+  author_email: brendan_badillo@gawab.com
+  author_url: http://Www.chatterslounge.com/index.php?do=/profile-39487/info/
+  date: '2013-03-20 16:08:02 +0800'
+  date_gmt: '2013-03-20 16:08:02 +0800'
+  content: "&#1198;our current write-u&#1088; has proven helpful to m&#1077;.\r\nIt&rsquo;s
+    quite educat&#1110;onal &#1072;n&#1281; you are naturally extr&#1077;mely \r\nexperience&#1281;
+    in this area.  You get opened up my own face to be able \r\nto numerous opin&#1110;on
+    of thi&#1109; &kappa;ind of topic using \r\nintriguing, notabl&#1077; and sound
+    content mat&#1077;ri&#1072;l."
+- id: 434
+  author: personals
+  author_email: Greenwalt55@hotmail.com
+  author_url: http://www.heartscombined.com.au/Love/Yensen
+  date: '2013-03-20 19:59:24 +0800'
+  date_gmt: '2013-03-20 19:59:24 +0800'
+  content: Whats a good website to start a blog on (a free one), and how would i do
+    that?.
+- id: 435
+  author: Ang mo kio cluster house
+  author_email: ''
+  author_url: http://amkclusterhouse.soup.io/
+  date: '2013-03-20 21:29:10 +0800'
+  date_gmt: '2013-03-20 21:29:10 +0800'
+  content: |-
+    <strong>Wikia...<&#47;strong>
+
+    Wika linked to this place...
+- id: 436
+  author: match
+  author_email: Bokman74@hotmail.com
+  author_url: http://www.heartscombined.com.au/Love/pauline
+  date: '2013-03-20 22:16:38 +0800'
+  date_gmt: '2013-03-20 22:16:38 +0800'
+  content: I am new to blogging. How do I add a subscribe function to my site so new
+    post will go to their email?
+- id: 440
+  author: filipina dating
+  author_email: Dorris99@hotmail.com
+  author_url: http://www.filipinocupid.net.ph
+  date: '2013-03-21 01:09:11 +0800'
+  date_gmt: '2013-03-21 01:09:11 +0800'
+  content: I'm looking for clothing and style ideas at a reasonable prices for a woman
+    over 25.. . Anyone know any good sites or blogs?. . Seems like everything I find
+    is either geared toward teens or is insanely expensive couture.. . Thanks!.
+- id: 442
+  author: filipino heart
+  author_email: Jafek98@hotmail.com
+  author_url: http://www.heartscombined.com.ph/Love/skyking10
+  date: '2013-03-21 02:29:33 +0800'
+  date_gmt: '2013-03-21 02:29:33 +0800'
+  content: I am a little confused on exactly how I would make money by blogging, I
+    mean who pay me and how, once I blog who come to my page and how do I get them
+    there. I really appreciate if some one could  break it down for me..  . Thanks!.
+- id: 444
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-03-21 03:46:31 +0800'
+  date_gmt: '2013-03-21 03:46:31 +0800'
+  content: Are you have any experience on web developing? Firebug will do these things
+    easily, even editing webpage style through this plugin is surpported.You may search
+    google for more available message.
+- id: 445
+  author: hippo
+  author_email: kimiscircle@gmail.com
+  author_url: http://blog.futureme.info
+  date: '2013-03-21 03:47:19 +0800'
+  date_gmt: '2013-03-21 03:47:19 +0800'
+  content: Check biz.nf  if you have internests.
+- id: 447
+  author: Blind date treffen
+  author_email: ''
+  author_url: http://blinddatew.xanga.com/
+  date: '2013-03-21 06:47:39 +0800'
+  date_gmt: '2013-03-21 06:47:39 +0800'
+  content: |-
+    <strong>Wikia...<&#47;strong>
+
+    Wika linked to this site...
+- id: 450
+  author: 1000 euro kredit
+  author_email: ''
+  author_url: http://kredit1000euro.beep.com/
+  date: '2013-03-21 09:59:48 +0800'
+  date_gmt: '2013-03-21 09:59:48 +0800'
+  content: |-
+    <strong>News info...<&#47;strong>
+
+    I was reading the news and I saw this really interesting information...
+- id: 453
+  author: sex chats
+  author_email: ''
+  author_url: http://sexchat9x.bravesites.com/
+  date: '2013-03-21 12:39:07 +0800'
+  date_gmt: '2013-03-21 12:39:07 +0800'
+  content: |-
+    <strong>Informative and precise...<&#47;strong>
+
+    Its hard to find informative and accurate information but here I found...
+- id: 455
+  author: chat mit cam
+  author_email: ''
+  author_url: http://camchat.wallinside.com/
+  date: '2013-03-21 15:32:00 +0800'
+  date_gmt: '2013-03-21 15:32:00 +0800'
+  content: |-
+    <strong>Yahoo results...<&#47;strong>
+
+    While browsing Yahoo I discovered this page in the results and I didn't think it fit...
+- id: 456
+  author: download phan mem quan ly ban hang
+  author_email: Loveall25454@yahoo.com
+  author_url: http://traitimhanam.com/phan-mem-viet-hoa/7583-tim-hieu-ve-phan-mem-quan-ly-ban-hang.html
+  date: '2013-03-21 16:36:16 +0800'
+  date_gmt: '2013-03-21 16:36:16 +0800'
+  content: But a smiling visitor   here to share the really like (:, btw great   pattern
+    .
+- id: 465
+  author: reinigungsmittel
+  author_email: ''
+  author_url: http://www.journalhome.com/reinigungsmittel/330431/reinigungs-mittel.html
+  date: '2013-03-22 05:10:49 +0800'
+  date_gmt: '2013-03-22 05:10:49 +0800'
+  content: |-
+    <strong>Its hard to find good help...<&#47;strong>
+
+    I am regularly saying that its hard to procure quality help, but here is...
+- id: 467
+  author: Hundeleine
+  author_email: ''
+  author_url: http://hundeleine.skyrock.com/3149123436-Hundeleinen.html
+  date: '2013-03-22 06:06:04 +0800'
+  date_gmt: '2013-03-22 06:06:04 +0800'
+  content: |-
+    <strong>News info...<&#47;strong>
+
+    I was reading the news and I saw this really interesting information...
+- id: 468
+  author: Hundehalsband
+  author_email: ''
+  author_url: http://hundehalsband1.jimdo.com/
+  date: '2013-03-22 07:46:00 +0800'
+  date_gmt: '2013-03-22 07:46:00 +0800'
+  content: |-
+    <strong>Tumblr article...<&#47;strong>
+
+    I saw a writer writing about this on Tumblr and it linked to...
+- id: 475
+  author: Xanax
+  author_email: candice.matthew@live.com
+  author_url: http://www.dailyroads.com/profile.php?ID=137764
+  date: '2013-03-22 13:08:36 +0800'
+  date_gmt: '2013-03-22 13:08:36 +0800'
+  content: "Y&#1086;ur re&rho;&omicron;rt provides verified beneficial to me.\r\n&Iota;t&rsquo;s
+    ve&#1075;y &#1077;duc&#1072;tional \r\n&#1072;nd you really a&#1075;e certainly
+    &nu;ery educate&#1281; \r\n&#1110;n this reg&#1110;on.  &Upsilon;ou po&#1109;sess
+    opened my own ey&#1077;s &#1110;n order to va&#1075;&#1091;&#1110;ng th&#959;ughts
+    about this matter w&#1110;th intriguing, \r\nnotable and reliable &#1089;ontent."
+- id: 476
+  author: colombian coffee beans
+  author_email: orlandoheyward@gawab.com
+  author_url: http://torontowineeducation.com/
+  date: '2013-03-22 14:58:14 +0800'
+  date_gmt: '2013-03-22 14:58:14 +0800'
+  content: "If you want to increase your familiarity just \r\nkeep visiting this web
+    page and be updated with the hottest news posted here."
+- id: 478
+  author: Survey Supplier is a Paid Online Survey Site which offers the user access
+    to an extensive database with links to paid survey sites. Users also get access
+    to links to multiple Freelance Jobs.
+  author_email: Melia13@gmail.com
+  author_url: http://IONUTG2004.survey.track.clicksure.com?lp=4
+  date: '2013-03-22 15:41:22 +0800'
+  date_gmt: '2013-03-22 15:41:22 +0800'
+  content: I'd like to thank you for the efforts you have put in penning this site.
+    I am hoping to view the same high-grade blog posts from you in the future as well.
+    In fact, your creative writing abilities has encouraged me to get my own site
+    now ;)
+- id: 479
+  author: 3 ingredients
+  author_email: ''
+  author_url: http://www.flixya.com/blog/5212204/geek-love
+  date: '2013-03-22 16:17:23 +0800'
+  date_gmt: '2013-03-22 16:17:23 +0800'
+  content: |-
+    <strong>Informative and precise...<&#47;strong>
+
+    Its difficult to find informative and precise information but here I found...
+- id: 486
+  author: quan tri ban hang
+  author_email: Tory44316@yahoo.com
+  author_url: http://ict.sonla.gov.vn/forum/showthread.php?t=4795&amp;p=9825
+  date: '2013-03-22 20:24:18 +0800'
+  date_gmt: '2013-03-22 20:24:18 +0800'
+  content: I'm glad to be  1 of a lot of  visitors   on this  outstanding  internet
+    site  (:, thanks  for posting .
+- id: 487
+  author: Scrapebox forum
+  author_email: stankus55599@google.com
+  author_url: http://www.all4scrapebox.com
+  date: '2013-03-22 20:42:01 +0800'
+  date_gmt: '2013-03-22 20:42:01 +0800'
+  content: Great  post, I think   website owners  should  acquire a lot from this  weblog  its
+    very  user friendly . "My father always told me, 'Find a job you love and you'll
+    never have to work a day in your life.'" by Jim Fox.
+- id: 488
+  author: strony internetowe bydgoszcz
+  author_email: Olma36739@yahoo.com
+  author_url: http://www.blueparrot.pl
+  date: '2013-03-22 20:55:09 +0800'
+  date_gmt: '2013-03-22 20:55:09 +0800'
+  content: Great - I be supposed to certainly articulate I'm impressed with your website.
+    I had no agitate navigating through every one tabs as fine as associated in sequence.
+    The situate wrecked cheery consciousness rightly relaxed to access. Fine job..
+- id: 491
+  author: diablo 3 monk guide
+  author_email: groverbarrios@gmail.com
+  author_url: http://smithsonian.mobilemuseums.org/youth-npm/pg/profile/KatlynX81?view=mobile
+  date: '2013-03-22 23:38:20 +0800'
+  date_gmt: '2013-03-22 23:38:20 +0800'
+  content: "Hi there! This is my first visit to your blog!\r\nWe are a group of volunteers
+    and starting a new project in a community in the same niche.\r\nYour blog provided
+    us useful information to work on.\r\nYou have done a wonderful job!"
+- id: 496
+  author: phan mem quan ly ban hang mien phi tot nhat
+  author_email: Roode2341@yahoo.com
+  author_url: http://thuthuatpc.net/threads/817-Tim-hieu-ve-phan-mem-quan-ly-ban-hang.html?p=1116
+  date: '2013-03-23 05:12:30 +0800'
+  date_gmt: '2013-03-23 05:12:30 +0800'
+  content: Hiya! Amazing blog! I happen to be a every day visitor to your site (somewhat
+    more like addict   ) of this site. Just wanted to say I appreciate your blogs
+    and am searching forward for more!
+- id: 498
+  author: strony internetowe bydgoszcz
+  author_email: Nowosielski78312@yahoo.com
+  author_url: http://www.blueparrot.pl
+  date: '2013-03-23 07:52:46 +0800'
+  date_gmt: '2013-03-23 07:52:46 +0800'
+  content: Nice blog here! Also your locate oodles up vastly fast! What web horde
+    are you using? Can I get your affiliate bond to your host? I want my web site
+    manipulative positive as quickly as yours lol
+- id: 500
+  author: Buy Flowers Online
+  author_email: ''
+  author_url: http://flowerdeliveryz.angelfire.com/
+  date: '2013-03-23 08:51:43 +0800'
+  date_gmt: '2013-03-23 08:51:43 +0800'
+  content: |-
+    <strong>Its hard to find good help...<&#47;strong>
+
+    I am regularly saying that its difficult to get quality help, but here is...
+- id: 501
+  author: construction
+  author_email: ''
+  author_url: http://www.flixya.com/blog/5212231/Afghanistan-business
+  date: '2013-03-23 10:40:32 +0800'
+  date_gmt: '2013-03-23 10:40:32 +0800'
+  content: |-
+    <strong>Digg...<&#47;strong>
+
+    While checking out DIGG yesterday I noticed this...
+- id: 504
+  author: Find Out More
+  author_email: dmorris@itjungle.com
+  author_url: http://www.imobuild.ro/forum/profile.php?mode=viewprofile&amp;u=124994
+  date: '2013-03-23 12:11:52 +0800'
+  date_gmt: '2013-03-23 12:11:52 +0800'
+  content: After research a couple of of the blog posts in your web site now, and
+    I really like your approach of blogging. I bookmarked it to my bookmark website
+    list and will probably be checking again soon. Pls check out my web site as effectively
+    and let me know what you think.
+- id: 505
+  author: http:&#47;&#47;www.tilojavideo.com&#47;blogs&#47;314445&#47;2141828&#47;have-you-know-tips-on-how-to-los
+  author_email: dulcietolliver@snail-mail.net
+  author_url: http://www.tilojavideo.com/blogs/314445/2141828/have-you-know-tips-on-how-to-los
+  date: '2013-03-23 13:45:23 +0800'
+  date_gmt: '2013-03-23 13:45:23 +0800'
+  content: "This design is spectacular! You obviously know how to keep a reader amused.\r\nBetween
+    your wit and your videos, I was almost moved to start my own blog \r\n(well, almost...HaHa!)
+    Great job. I really loved what you had to say, and more than that, how you presented
+    \r\nit. Too cool!"
+- id: 507
+  author: http:&#47;&#47;dir.informatixworld.com&#47;
+  author_email: dwayne.wilhelm@googlemail.com
+  author_url: http://dir.informatixworld.com/blog/view/3209/extra-belly-fat-cure-comments
+  date: '2013-03-23 15:15:34 +0800'
+  date_gmt: '2013-03-23 15:15:34 +0800'
+  content: "Interesting blog! Is your theme custom made or did you download it from
+    somewhere?\r\n\r\nA theme like yours with a few simple adjustements would really
+    make my blog jump out.\r\nPlease let me know where you got your design. Cheers"
+- id: 510
+  author: dentist arlington tx
+  author_email: callum-priest@gmail.com
+  author_url: http://arlington-texas-dentist.com/
+  date: '2013-03-23 16:51:27 +0800'
+  date_gmt: '2013-03-23 16:51:27 +0800'
+  content: "I just like the helpful info you provide in your articles.\r\nI'll bookmark
+    your blog and check once more right here regularly. I am relatively certain I'll
+    be told many new \r\nstuff proper right here! Good luck for the following!"
+- id: 512
+  author: Real Estate Trade
+  author_email: ''
+  author_url: http://realestatetradee.wallinside.com/
+  date: '2013-03-23 19:26:49 +0800'
+  date_gmt: '2013-03-23 19:26:49 +0800'
+  content: |-
+    <strong>News info...<&#47;strong>
+
+    I was reading the news and I saw this really interesting info...
+- id: 513
+  author: http:&#47;&#47;kclik.ca&#47;oxwall&#47;link&#47;1706
+  author_email: harrison_braswell@zoho.com
+  author_url: http://kclik.ca/oxwall/link/1706
+  date: '2013-03-23 19:29:28 +0800'
+  date_gmt: '2013-03-23 19:29:28 +0800'
+  content: Good day! I simply wish to give you a big thumbs up for the excellent information
+    you've got here on this post. I am returning to your website for more soon.
+- id: 514
+  author: page
+  author_email: Paul.Bernhardt@m.cc.utah.edu
+  author_url: http://mileycyrus.fangap.com/Home/tabid/1161/EntryId/15416/Wed-20-May-2009-Miley-Cyrus-To-Step-Into-Footloose.aspx
+  date: '2013-03-23 20:05:26 +0800'
+  date_gmt: '2013-03-23 20:05:26 +0800'
+  content: WONDERFUL Post.thanks for share..extra wait .. &hellip;
+- id: 518
+  author: Scrapebox forum
+  author_email: seller49650@google.com
+  author_url: http://www.all4scrapebox.com
+  date: '2013-03-23 22:16:09 +0800'
+  date_gmt: '2013-03-23 22:16:09 +0800'
+  content: I have recently started a website, the info you provide on this web site
+    has helped me greatly. Thanks for all of your time &amp; work. "Americans detest
+    all lies except lies spoken in public or printed lies." by Edgar Watson Howe.
+- id: 521
+  author: phan mem quan ly ban hang mien phi tot nhat
+  author_email: Soltren47075@yahoo.com
+  author_url: http://diendancongso.com/thiet-ke-web-phan-mem/47122-tim-hieu-ve-phan-mem-quan-ly-ban-hang.html
+  date: '2013-03-24 00:27:32 +0800'
+  date_gmt: '2013-03-24 00:27:32 +0800'
+  content: Your own situation you are going to capable company the best approach to
+    keep here in preparing essential subjects good for  web-based corporation. cash
+- id: 527
+  author: online shop louis vuitton
+  author_email: Quirino@gmail.com
+  author_url: http://www.theagiot.net/index.php?option=com_fireboard&amp;Itemid=0&amp;func=view&amp;catid=8&amp;id=74158#74158
+  date: '2013-03-24 11:22:20 +0800'
+  date_gmt: '2013-03-24 11:22:20 +0800'
+  content: One thing is that if you find yourself searching for a student loan you
+    may find that you will want a co-signer. There are many cases where this is true
+    because you may find that you do not use a past credit score so the lender will
+    require that you've someone cosign the borrowed funds for you. Thanks for your
+    post.
+- id: 532
+  author: lose belly fat
+  author_email: lorenawilkinson@gmail.com
+  author_url: http://lodz.zagadywacz.pl/index.php?do=/blog/749/ways-to-lose-waist-fat-as-well-as-the-love-represents/
+  date: '2013-03-24 15:07:48 +0800'
+  date_gmt: '2013-03-24 15:07:48 +0800'
+  content: Hello, all the time i used to check blog posts here early in the daylight,
+    for the reason that i like to find out more and more.
+- id: 533
+  author: mobile web design
+  author_email: Huebschman66925@dudeahmobile.com
+  author_url: http://www.mobilewebdesignexpert.com
+  date: '2013-03-24 15:19:16 +0800'
+  date_gmt: '2013-03-24 15:19:16 +0800'
+  content: anyone looking up at the skies (google chemtrails) any more?
+- id: 535
+  author: Salz
+  author_email: ''
+  author_url: http://honigz.blog.com/2013/03/21/honig/
+  date: '2013-03-24 20:45:26 +0800'
+  date_gmt: '2013-03-24 20:45:26 +0800'
+  content: |-
+    <strong>Looking around...<&#47;strong>
+
+    I like to look around the internet, often I will just go to Digg and read and check stuff out...
+- id: 537
+  author: free avon leads
+  author_email: ''
+  author_url: http://freeavonleads.weebly.com/
+  date: '2013-03-24 21:20:55 +0800'
+  date_gmt: '2013-03-24 21:20:55 +0800'
+  content: |-
+    <strong>Informative and precise...<&#47;strong>
+
+    Its difficult to find informative and precise info but here I noted...
+- id: 540
+  author: review
+  author_email: 49561775@N02.jpg
+  author_url: http://judoclub-jjc-st-ingbert.de/index.php?option=com_easygb&amp;Itemid=29
+  date: '2013-03-24 22:34:38 +0800'
+  date_gmt: '2013-03-24 22:34:38 +0800'
+  content: There are some attention-grabbing cut-off dates on this article but I don&rsquo;t
+    know if I see all of them center to heart. There may be some validity but I will
+    take maintain opinion until I look into it further. Good article , thanks and
+    we want extra! Added to FeedBurner as nicely
+- id: 542
+  author: diablo 3 gold farming
+  author_email: chun-bourne@arcor.de
+  author_url: https://xerobank.com/forum/topic/diablo-3-looking-items-program
+  date: '2013-03-25 02:00:00 +0800'
+  date_gmt: '2013-03-25 02:00:00 +0800'
+  content: Saved as a favorite, I really like your blog!
+- id: 547
+  author: BNS Gold
+  author_email: Ebenstein10@gmail.com
+  author_url: http://www.bladeandsoul-gold.de
+  date: '2013-03-25 06:55:27 +0800'
+  date_gmt: '2013-03-25 06:55:27 +0800'
+  content: Nearly all of what you mention is astonishingly accurate and that makes
+    me ponder the reason why I hadn't looked at this in this light previously. This
+    particular piece truly did switch the light on for me personally as far as this
+    issue goes. But there is actually just one point I am not too cozy with so while
+    I attempt to reconcile that with the actual core idea of your issue, allow me
+    see exactly what the rest of your visitors have to point out.Well done.
+- id: 550
+  author: best site
+  author_email: jmcintyre@thebiglead.com
+  author_url: http://www.godoinn.com/zbxe/?document_srl=179384
+  date: '2013-03-25 08:01:28 +0800'
+  date_gmt: '2013-03-25 08:01:28 +0800'
+  content: There are some attention-grabbing deadlines in this article but I don&rsquo;t
+    know if I see all of them middle to heart. There's some validity but I'll take
+    maintain opinion until I look into it further. Good article , thanks and we want
+    more! Added to FeedBurner as effectively
+- id: 554
+  author: Anti Aging Cream
+  author_email: rodeny.murray86@gmail.com
+  author_url: http://antiagingcreamsite.com/
+  date: '2013-03-25 09:17:03 +0800'
+  date_gmt: '2013-03-25 09:17:03 +0800'
+  content: A big thank you for your post.Really looking forward to read more. Really
+    Great.
+- id: 560
+  author: Boston moving company
+  author_email: ''
+  author_url: http://bostonmovingcompany.beep.com/
+  date: '2013-03-25 15:53:49 +0800'
+  date_gmt: '2013-03-25 15:53:49 +0800'
+  content: |-
+    <strong>Informative and precise...<&#47;strong>
+
+    Its difficult to find informative and accurate info but here I noted...
+- id: 568
+  author: Adria Richards
+  author_email: susannasweet@gmail.com
+  author_url: https://amandablumwords.wordpress.com/2013/03/21/3/
+  date: '2013-03-25 23:10:33 +0800'
+  date_gmt: '2013-03-25 23:10:33 +0800'
+  content: "I&rsquo;m not that much of a online reader to be honest \r\nbut your sites
+    really nice, keep it up! I'll go ahead and bookmark your site to come back in
+    the future. All the best\r\n\r\nmy weblog :: <a href=\"https:&#47;&#47;amandablumwords.wordpress.com&#47;2013&#47;03&#47;21&#47;3&#47;\"
+    rel=\"nofollow\">Adria Richards<&#47;a>"
+- id: 592
+  author: Click Here
+  author_email: ''
+  author_url: http://independent.academia.edu/CheapLeatherSofaszCheapLeatherSofasz/Posts
+  date: '2013-03-26 20:18:32 +0800'
+  date_gmt: '2013-03-26 20:18:32 +0800'
+  content: |-
+    <strong>News info...<&#47;strong>
+
+    I was reading the news and I saw this really cool info...
+- id: 607
+  author: Alfonso Zierdt
+  author_email: Padalecki@gmail.com
+  author_url: http://www.alegro.doauta.pl/info-5969.html
+  date: '2013-03-27 01:21:05 +0800'
+  date_gmt: '2013-03-27 01:21:05 +0800'
+  content: Thanks for the tips about credit repair on this web-site. Things i would
+    advice people should be to give up this mentality that they'll buy currently and
+    fork out later. Being a society many of us tend to do that for many factors. This
+    includes getaways, furniture, and also items we want. However, you'll want to
+    separate the wants from the needs. When you're working to raise your credit ranking
+    score you really have to make some sacrifices. For example you possibly can shop
+    online to save money or you can check out second hand merchants instead of expensive
+    department stores pertaining to clothing.
+- id: 608
+  author: Rocky Gelb
+  author_email: Rourk@gmail.com
+  author_url: http://www.katalogstron-seo.org/biznes,i,ekonomia/sale,konferencyjne,we,wroclawiu,s,7082/
+  date: '2013-03-27 01:31:47 +0800'
+  date_gmt: '2013-03-27 01:31:47 +0800'
+  content: One more thing I would like to convey is that instead of trying to match
+    all your online degree classes on times that you finish off work (because most
+    people are worn out when they get back), try to obtain most of your sessions on
+    the saturdays and sundays and only one or two courses on weekdays, even if it
+    means taking some time off your weekend. This is beneficial because on the week-ends,
+    you will be more rested plus concentrated upon school work. Thanks a bunch for
+    the different guidelines I have acquired from your web site.
+- id: 617
+  author: how to grow taller
+  author_email: rosettaabrams@zoho.com
+  author_url: http://www.opensketches.org/groups/how-to-grow-a-couple-of-inches-bigger-fast/
+  date: '2013-03-27 11:40:04 +0800'
+  date_gmt: '2013-03-27 11:40:04 +0800'
+  content: "Thanks designed for sharing such a fastidious thinking, post is nice,
+    thats why i \r\nhave read it fully"
+- id: 703
+  author: Virgie Scrape
+  author_email: AmbroseYarman@tabnak.ir
+  author_url: http://www.getcfedgdfhu.cso/6390.html
+  date: '2013-03-29 02:43:20 +0800'
+  date_gmt: '2013-03-29 02:43:20 +0800'
+  content: I have come to understand that costs for on-line degree professionals tend
+    to be a great value. For example a full Bachelor's Degree in Communication from
+    The University of Phoenix Online consists of Sixty credits at $515&#47;credit
+    or $30,900. Also American Intercontinental University Online comes with a Bachelors
+    of Business Administration with a complete education course requirement of 180
+    units and a tariff of $30,560. Online degree learning has made obtaining your
+    diploma been so detailed more than before because you may earn your degree in
+    the comfort of your house and when you finish from office. Thanks for all other
+    tips I have learned through the website.
+- id: 715
+  author: louboutin shoes toronto
+  author_email: curleykofoed718@hotmail.com
+  author_url: http://www.christianllouboutintoronto.com
+  date: '2013-03-29 08:33:06 +0800'
+  date_gmt: '2013-03-29 08:33:06 +0800'
+  content: Your mode of telling the whole thing in this paragraph is really nice,
+    all be able to easily know it, Thanks a lot.
+- id: 726
+  author: sell cars for cash
+  author_email: ''
+  author_url: http://www.iamsport.org/pg/blog/sellcarfast4/read/16320099/sell-car-fast
+  date: '2013-03-29 17:23:42 +0800'
+  date_gmt: '2013-03-29 17:23:42 +0800'
+  content: |-
+    <strong>Tumblr article...<&#47;strong>
+
+    I saw a writer talking about this on Tumblr and it linked to...
+- id: 729
+  author: Freddy Vavra
+  author_email: Fewless@yahoo.com
+  author_url: http://www.itestcomments12.com
+  date: '2013-03-29 18:41:15 +0800'
+  date_gmt: '2013-03-29 18:41:15 +0800'
+  content: I like what you guys are up also. Such clever work and reporting! Keep
+    up the excellent works guys I have incorporated you guys to my blogroll. I think
+    it will improve the value of my web site :)
+- id: 730
+  author: Nia Biggins
+  author_email: Buzzelli@yahoo.com
+  author_url: http://www.itestcomments12.com
+  date: '2013-03-29 18:44:11 +0800'
+  date_gmt: '2013-03-29 18:44:11 +0800'
+  content: I truly appreciate this post. I&iexcl;&brvbar;ve been looking all over
+    for this! Thank goodness I found it on Bing. You've made my day! Thx again
+- id: 731
+  author: voyance telephone
+  author_email: infisaPyday@etabox.info
+  author_url: http://www.voyance-telephone-gratuite.com
+  date: '2013-03-29 19:34:41 +0800'
+  date_gmt: '2013-03-29 19:34:41 +0800'
+  content: Hey I know this is off topic but I was wondering if you knew of any widgets
+    I could add to my blog that automatically tweet my newest twitter updates. I've
+    been looking for a plug-in like this for quite some time and was hoping maybe
+    you would have some experience with something like this. Please let me know if
+    you run into anything. I truly enjoy reading your blog and I look forward to your
+    new updates.
+- id: 746
+  author: komis ubrania dla dzieci stargard
+  author_email: Gavan28@yahoo.com
+  author_url: http://www.babyboom.sklep.pl/
+  date: '2013-03-30 05:42:32 +0800'
+  date_gmt: '2013-03-30 05:42:32 +0800'
+  content: Absolutely   indited  written content , thanks  for  selective information
+    .
+- id: 750
+  author: wypożyczalnia ubrań dziecięcych stargard
+  author_email: Okajima73@yahoo.com
+  author_url: http://www.babyboom.sklep.pl/
+  date: '2013-03-30 08:26:30 +0800'
+  date_gmt: '2013-03-30 08:26:30 +0800'
+  content: Well I definitely liked studying it. This post offered by you is very effective
+    for good planning.
+- id: 751
+  author: cree light
+  author_email: Meryman767@gmail.ca
+  author_url: http://www.brightestflashlights.com/terralux-tlf-3c2aaex-lightstar220-3-watt-led-aluminum-flashlight/
+  date: '2013-03-30 08:51:23 +0800'
+  date_gmt: '2013-03-30 08:51:23 +0800'
+  content: What i don't realize is actually how you are no longer really much more
+    neatly-favored than you may be right now. You're so intelligent. You recognize
+    therefore significantly on the subject of this topic, produced me individually
+    believe it from numerous numerous angles. Its like women and men are not fascinated
+    except it is something to do with Woman gaga! Your own stuffs outstanding. All
+    the time deal with it up!
+- id: 760
+  author: dr dre headphones
+  author_email: Foote878@gmail.com
+  author_url: http://www.drdreheadphones-monser.com
+  date: '2013-03-30 14:34:47 +0800'
+  date_gmt: '2013-03-30 14:34:47 +0800'
+  content: 'If you''re still on the fence: grab your favorite earphones, head down
+    to a Best Buy and ask to plug them into a Zune then an iPod and see which one
+    sounds better to you, and which interface makes you smile more.'
+- id: 761
+  author: hurtownia chemii szczecin
+  author_email: Breslin45@yahoo.com
+  author_url: http://www.esta.pl/
+  date: '2013-03-30 15:59:42 +0800'
+  date_gmt: '2013-03-30 15:59:42 +0800'
+  content: Good article and straight to the point. I am not sure if this is in fact
+    the best place to ask but do you folks have any thoughts on where to get some
+    professional writers? Thanks :)
+- id: 762
+  author: Jesus Paid It All Video
+  author_email: ''
+  author_url: http://jesuspaiditall.webnode.com/
+  date: '2013-03-30 18:19:29 +0800'
+  date_gmt: '2013-03-30 18:19:29 +0800'
+  content: |-
+    <strong>Digg...<&#47;strong>
+
+    While checking out DIGG yesterday I found this...
+- id: 764
+  author: garcinia cambogia extract
+  author_email: 28571Villines@hotmail.com
+  author_url: http://www.youtube.com/user/yeseniawanne4262
+  date: '2013-03-30 19:11:18 +0800'
+  date_gmt: '2013-03-30 19:11:18 +0800'
+  content: I gotta bookmark  this  web site  it seems  very beneficial  very useful
+- id: 765
+  author: chemia kosmetyczna szczecin
+  author_email: Interrante58@yahoo.com
+  author_url: http://www.esta.pl/
+  date: '2013-03-30 19:46:47 +0800'
+  date_gmt: '2013-03-30 19:46:47 +0800'
+  content: I love the efforts you have put in this, thank you for all the great blog
+    posts.
+- id: 770
+  author: voyance telephone
+  author_email: heaminymn@brixmail.info
+  author_url: http://www.voyance-telephone-gratuite.com
+  date: '2013-03-30 22:51:28 +0800'
+  date_gmt: '2013-03-30 22:51:28 +0800'
+  content: Thanks for the marvelous posting! I certainly enjoyed reading it, you happen
+    to be a great author.I will make certain to bookmark your blog and may come back
+    very soon. I want to encourage one to continue your great writing, have a nice
+    evening!
+- id: 773
+  author: zahnfleischr&uuml;ckgang hachenburg
+  author_email: stomoutty@sparxbox.info
+  author_url: http://www.europe-studio.net/handmade/?p=1192
+  date: '2013-03-31 02:04:42 +0800'
+  date_gmt: '2013-03-31 02:04:42 +0800'
+  content: Fissurenversiegelung Wirges produced in perfect accuracy by your dentists
+    with dedication to precission
+- id: 779
+  author: clear
+  author_email: emilyarthur@web.de
+  author_url: http://clear33221.com
+  date: '2013-03-31 03:42:09 +0800'
+  date_gmt: '2013-03-31 03:42:09 +0800'
+  content: This text is invaluable. When can I find out more?
+- id: 782
+  author: Karla Capriola
+  author_email: Lofaso766@gmail.com
+  author_url: http://www.headphones-drdre.org/beats-by-dre-overear-headphone-beats-by-dre-studio-c-1_4.html
+  date: '2013-03-31 06:53:43 +0800'
+  date_gmt: '2013-03-31 06:53:43 +0800'
+  content: This is getting a bit more subjective, but I much prefer the Zune Marketplace.
+- id: 787
+  author: ecommerce website design
+  author_email: ecommercewebsitedesign955@lycos.com
+  author_url: http://e-commercewebsitedesign.me.uk/ecommercewebdesign
+  date: '2013-03-31 10:30:42 +0800'
+  date_gmt: '2013-03-31 10:30:42 +0800'
+  content: "[...]below you?ll obtain the link to some web-sites that we think you
+    need to visit[...]"
+- id: 791
+  author: how to lose stomach fat
+  author_email: verenamcgough@arcor.de
+  author_url: http://watchcoding.com/groups/surrendering-fat-around-diet-as-well-as-the-exercise/
+  date: '2013-03-31 13:33:42 +0800'
+  date_gmt: '2013-03-31 13:33:42 +0800'
+  content: "Its not my first time to visit this website, i am visiting this website
+    \r\ndailly and get nice data from here everyday."
+- id: 795
+  author: Dave Allison
+  author_email: WhitneyPurkey@pantip.com
+  author_url: http://wp.vogfhesvo.in/2012/11/17/discover-usas-best-national-parks.html
+  date: '2013-03-31 17:51:07 +0800'
+  date_gmt: '2013-03-31 17:51:07 +0800'
+  content: The things i have seen in terms of pc memory is that often there are specific
+    features such as SDRAM, DDR and the like, that must match the specific features
+    of the motherboard. If the computer's motherboard is pretty current while there
+    are no operating-system issues, updating the storage space literally takes under
+    sixty minutes. It's among the list of easiest computer system upgrade procedures
+    one can visualize. Thanks for giving your ideas.
+- id: 796
+  author: send flower online
+  author_email: ''
+  author_url: http://floweronline.buzznet.com/user/journal/17316344/online-flowers-delivery/
+  date: '2013-03-31 18:42:14 +0800'
+  date_gmt: '2013-03-31 18:42:14 +0800'
+  content: |-
+    <strong>Tumblr article...<&#47;strong>
+
+    I saw a writer talking about this on Tumblr and it linked to...
+- id: 799
+  author: hermes par
+  author_email: Lyday@salemen.com
+  author_url: http://partyfz.com/forum.php?mod=viewthread&amp;tid=980443
+  date: '2013-03-31 19:29:45 +0800'
+  date_gmt: '2013-03-31 19:29:45 +0800'
+  content: Thanks for your write-up. I have usually seen that many people are wanting
+    to lose weight simply because wish to appear slim plus attractive. Nonetheless,
+    they do not always realize that there are additional benefits so that you can
+    losing weight additionally. Doctors insist that fat people suffer from a variety
+    of conditions that can be instantly attributed to their own excess weight. Thankfully
+    that people who sadly are overweight and also suffering from numerous diseases
+    are able to reduce the severity of their particular illnesses by way of losing
+    weight. You possibly can see a gradual but notable improvement in health whenever
+    even a minor amount of weight loss is achieved.
+- id: 806
+  author: tattoos designs
+  author_email: tanesha_kearney@bigstring.com
+  author_url: http://member.vidsubmit.com/blogs/entry/Delicious-Tattoo-Designs
+  date: '2013-04-01 02:23:53 +0800'
+  date_gmt: '2013-04-01 02:23:53 +0800'
+  content: "When someone writes an paragraph he&#47;she retains the idea of a user
+    in his&#47;her brain that \r\nhow a user can understand it. Therefore that's why
+    this article is amazing. Thanks!"
+- id: 807
+  author: Lela
+  author_email: lela.varney@gmx.net
+  author_url: http://www.inlabeauty.com/groups/skin-image-designs-intended-for-everyone/
+  date: '2013-04-01 02:51:31 +0800'
+  date_gmt: '2013-04-01 02:51:31 +0800'
+  content: Keep on writing, great job!
+- id: 822
+  author: dr dre headphones
+  author_email: Winesett798@gmail.com
+  author_url: http://www.monsterdrbeats.org
+  date: '2013-04-01 10:34:37 +0800'
+  date_gmt: '2013-04-01 10:34:37 +0800'
+  content: Apple now has Rhapsody as an app, which is a great start, but it is currently
+    hampered by the inability to store locally on your iPod, and has a dismal 64kbps
+    bit rate. If this changes, then it will somewhat negate this advantage for the
+    Zune, but the 10 songs per month will still be a big plus in Zune Pass' favor.
+- id: 834
+  author: game repair henderson
+  author_email: ''
+  author_url: http://gamerepairlasvegas.buzznet.com/user/journal/17316345/game-repair-las-vegas/
+  date: '2013-04-01 16:56:54 +0800'
+  date_gmt: '2013-04-01 16:56:54 +0800'
+  content: |-
+    <strong>Wikia...<&#47;strong>
+
+    Wika linked to this site...
+- id: 839
+  author: co2 laser marking machine
+  author_email: Nunnery@gmail.com
+  author_url: http://www.hanalasertech.com/
+  date: '2013-04-01 21:12:51 +0800'
+  date_gmt: '2013-04-01 21:12:51 +0800'
+  content: I'm truly enjoying the design and layout of your web site. It's a extremely
+    straightforward on the eyes which tends to make it much much more pleasurable
+    for me to appear below and check out a lot more frequently. Did you hire out a
+    designer to develop your topic? Excellent function!
+- id: 842
+  author: iPhone 5 contacts to Nokia
+  author_email: Spino@live.com
+  author_url: http://www.youtube.com/watch?v=EgsMIm7plBY
+  date: '2013-04-01 21:48:08 +0800'
+  date_gmt: '2013-04-01 21:48:08 +0800'
+  content: Enjoyed  looking at  this, very good stuff, thanks . "We swallow greedily
+    any lie that flatters us, but we sip little by little at a truth we find bitter."
+    by Denis Diderot.
+- id: 844
+  author: Des Plaines Plumber
+  author_email: ''
+  author_url: http://plumberdesplaines.webnode.com/
+  date: '2013-04-01 23:37:23 +0800'
+  date_gmt: '2013-04-01 23:37:23 +0800'
+  content: |-
+    <strong>Just Browsing...<&#47;strong>
+
+    While I was surfing yesterday I saw a great post about...
+- id: 857
+  author: Latrisha Laprarie
+  author_email: xueijss@loonycodupon.com
+  author_url: http://www.belivestooo.com
+  date: '2013-04-02 11:30:30 +0800'
+  date_gmt: '2013-04-02 11:30:30 +0800'
+  content: This is a topic that is close to my heart... Take care! Exactly where are
+    your contact details though?
+- id: 860
+  author: iPhone videos to Android
+  author_email: Trotz@live.com
+  author_url: http://www.youtube.com/watch?v=7PfXoODHfyk
+  date: '2013-04-02 18:09:27 +0800'
+  date_gmt: '2013-04-02 18:09:27 +0800'
+  content: I went over this internet site and I believe you have a lot of excellent
+    information, saved to fav (:.
+- id: 863
+  author: how to reduce belly fat
+  author_email: florher@gmail.com
+  author_url: http://sns.cam111.com/BrianNunl
+  date: '2013-04-02 20:51:54 +0800'
+  date_gmt: '2013-04-02 20:51:54 +0800'
+  content: "I am extremely impressed with your writing skills as well as with the
+    layout on \r\nyour weblog. Is this a paid theme or did you customize it yourself?\r\nEither
+    way keep up the nice quality writing, it's rare to see a nice blog like this one
+    nowadays."
+- id: 870
+  author: tribal tattoos
+  author_email: gilbertobenoit@gmail.com
+  author_url: http://sns.dichoinhe.com/IsabellaM
+  date: '2013-04-03 08:06:18 +0800'
+  date_gmt: '2013-04-03 08:06:18 +0800'
+  content: Hi friends, good paragraph and fastidious urging commented here, I am genuinely
+    enjoying by these.
+- id: 963
+  author: Clement Gusewelle
+  author_email: Frierdich@yahoo.co.uk
+  author_url: http://cgem.pl/forum/ucp.php?i=172
+  date: '2013-04-05 17:49:35 +0800'
+  date_gmt: '2013-04-05 17:49:35 +0800'
+  content: I've read this post really carefully and I must say I'm charmed. Personally
+    you are really talented. Splendid  view, brilliant effect.
+- id: 988
+  author: official site
+  author_email: art@designersupps.com
+  author_url: http://www.nanum-j.com/index.php?document_srl=1716
+  date: '2013-04-06 08:15:36 +0800'
+  date_gmt: '2013-04-06 08:15:36 +0800'
+  content: I&rsquo;m impressed, I must say. Really rarely do I encounter a weblog
+    that&rsquo;s both educative and entertaining, and let me inform you, you have
+    got hit the nail on the head. Your concept is excellent; the difficulty is one
+    thing that not enough persons are talking intelligently about. I'm very completely
+    satisfied that I stumbled across this in my search for something relating to this.
+- id: 1000
+  author: how to grow taller
+  author_email: jacintobagwell@the-fastest.net
+  author_url: http://m.onedollarsoft.com/fbook/link/4970
+  date: '2013-04-06 14:32:20 +0800'
+  date_gmt: '2013-04-06 14:32:20 +0800'
+  content: "These are actually enormous ideas in on the topic \r\nof blogging. You
+    have touched some fastidious factors here.\r\nAny way keep up wrinting."
+- id: 1001
+  author: diablo 3 guide
+  author_email: tylersalazar@gmail.com
+  author_url: http://shbab.twhed.com/blogs/13654/14282/what-makes-diablo-3-superior-for
+  date: '2013-04-06 14:44:14 +0800'
+  date_gmt: '2013-04-06 14:44:14 +0800'
+  content: "Quality articles is the main to interest the visitors to \r\npay a visit
+    the website, that's what this site is providing."
+- id: 1006
+  author: ds.easypagesaver.com
+  author_email: wilmer-purdy@gmx.de
+  author_url: http://ds.easypagesaver.com/node/42459
+  date: '2013-04-06 16:25:17 +0800'
+  date_gmt: '2013-04-06 16:25:17 +0800'
+  content: "This is a really good tip particularly to those fresh to the blogosphere.\r\nBrief
+    but very precise info&hellip; Thanks for sharing this one.\r\nA must read article!"
+- id: 1026
+  author: christian louboutin blue shoes
+  author_email: pleasghs57itri@gmail.com
+  author_url: http://mollyrecords.com/blog/view/631138/who-wants-to-know-ways-to-reach-the-mulberry-thailand-top-position
+  date: '2013-04-07 03:40:32 +0800'
+  date_gmt: '2013-04-07 03:40:32 +0800'
+  content: By my observation, shopping for electronics online may be easily expensive,
+    but there are some guidelines that you can use to acquire the best bargains. There
+    are often ways to find discount discounts that could help to make one to hold
+    the best electronic products products at the smallest prices. Thanks for your
+    blog post.
+- id: 1046
+  author: christian louboutin bridal collection
+  author_email: skovsgaard657mi@gmail.com
+  author_url: http://orkut.earnpaisa.in/blogs/viewstory/86782
+  date: '2013-04-07 12:52:33 +0800'
+  date_gmt: '2013-04-07 12:52:33 +0800'
+  content: Hello.This post was extremely remarkable, particularly because I was investigating
+    for thoughts on this issue last Wednesday.
+- id: 1047
+  author: christian louboutin alti
+  author_email: smith557it@gmail.com
+  author_url: http://socialnetwork.stock-options-picks.com/blogs/viewstory/153126
+  date: '2013-04-07 12:54:07 +0800'
+  date_gmt: '2013-04-07 12:54:07 +0800'
+  content: fantastic points altogether, you just won a logo new reader. What might
+    you suggest in regards to your submit that you simply made a few days ago? Any
+    certain?
+- id: 1072
+  author: Fotografo bodas zaragoza
+  author_email: Apadoca@yahoo.com
+  author_url: http://www.inosolo.es
+  date: '2013-04-07 22:39:01 +0800'
+  date_gmt: '2013-04-07 22:39:01 +0800'
+  content: Pretty! This was an incredibly wonderful post. Thanks for providing this
+    information.
+- id: 1073
+  author: Fotografo bodas zaragoza
+  author_email: Gertz@yahoo.com
+  author_url: http://www.inosolo.es
+  date: '2013-04-07 22:39:12 +0800'
+  date_gmt: '2013-04-07 22:39:12 +0800'
+  content: You ought to be a part of a contest for one of the greatest blogs on the
+    web. I&rsquo;m going to recommend this web site!
+- id: 1138
+  author: water ionizers
+  author_email: Hoyer@yahoo.com
+  author_url: http://www.vitev.com
+  date: '2013-04-08 20:22:01 +0800'
+  date_gmt: '2013-04-08 20:22:01 +0800'
+  content: You&rsquo;ve made some decent points there. I checked on the internet for
+    more info about the issue and found most people will go along with your views
+    on this website.
+- id: 1159
+  author: christian louboutin los angeles
+  author_email: delbertsd35nk@gmail.com
+  author_url: http://eyeuser.com/blogs/viewstory/1322435
+  date: '2013-04-09 04:07:38 +0800'
+  date_gmt: '2013-04-09 04:07:38 +0800'
+  content: Heya i am for the first time here. I found this board and I find It really
+    useful &amp; it helped me out much. I hope to give something back and aid others
+    like you helped me.
+- id: 1169
+  author: Overseas Mortgage Loans
+  author_email: Collazo@yahoo.com
+  author_url: http://www.findahomeloan.sg
+  date: '2013-04-09 10:15:31 +0800'
+  date_gmt: '2013-04-09 10:15:31 +0800'
+  content: I&rsquo;m impressed, I have to admit. Seldom do I encounter a blog that&rsquo;s
+    both educative and interesting, and let me tell you, you&rsquo;ve hit the nail
+    on the head. The problem is something that too few people are speaking intelligently
+    about. I&rsquo;m very happy that I came across this in my search for something
+    concerning this.
+- id: 1170
+  author: Overseas Housing loans
+  author_email: Cruzado@yahoo.com
+  author_url: http://www.findahomeloan.sg
+  date: '2013-04-09 10:15:40 +0800'
+  date_gmt: '2013-04-09 10:15:40 +0800'
+  content: I wanted to thank you for this very good read!! I certainly enjoyed every
+    little bit of it. I&rsquo;ve got you saved as a favorite to check out new things
+    you post&hellip;
+- id: 1174
+  author: fuckbook
+  author_email: jerry_scruggs@inbox.com
+  author_url: http://www.mascoteros.com/groups/uk-dating-site/
+  date: '2013-04-09 12:06:53 +0800'
+  date_gmt: '2013-04-09 12:06:53 +0800'
+  content: "I think this is among the most important information for me.\r\nAnd i
+    am glad reading your article. But wanna remark on few general things, The web
+    site style is wonderful, the \r\narticles is really nice : D. Good job, cheers"
+- id: 1183
+  author: Bulimia Help
+  author_email: Barias@ymail.com
+  author_url: http://bit.ly/ZevDmB
+  date: '2013-04-09 13:48:33 +0800'
+  date_gmt: '2013-04-09 13:48:33 +0800'
+  content: We're looking for like-minded people who are passionate about recovery
+    to help us reach this goal by joining the Bulimia Help Partner Program Today!
+- id: 1185
+  author: Tiffany Sloop
+  author_email: Froeliger@yahoo.co.uk
+  author_url: http://forum.apartal.pl/index.php?action=profile;u=231937
+  date: '2013-04-09 15:17:39 +0800'
+  date_gmt: '2013-04-09 15:17:39 +0800'
+  content: A big round of applause for the author of this post! Well done, man. You're
+    an expert. Yours posts should be example for everyone web owners and copywriters.
+- id: 1192
+  author: Pharma80
+  author_email: johna926@aol.com
+  author_url: http://oieypxa1.com/oryxskr/5.html
+  date: '2013-04-09 17:57:09 +0800'
+  date_gmt: '2013-04-09 17:57:09 +0800'
+  content: Hello! ggdeecg interesting ggdeecg site! I'm really like it! Very, very
+    ggdeecg good!
+- id: 1193
+  author: Pharmc981
+  author_email: johnc926@aol.com
+  author_url: http://oieypxa1.com/oryxskr/5.html
+  date: '2013-04-09 17:57:41 +0800'
+  date_gmt: '2013-04-09 17:57:41 +0800'
+  content: Hello! fadbage interesting fadbage site! I'm really like it! Very, very
+    fadbage good!
+- id: 1194
+  author: Pharmf372
+  author_email: johnf6@aol.com
+  author_url: http://oieypxa1.com/oryxskr/5.html
+  date: '2013-04-09 17:58:02 +0800'
+  date_gmt: '2013-04-09 17:58:02 +0800'
+  content: Hello! gdkebbd interesting gdkebbd site! I'm really like it! Very, very
+    gdkebbd good!
+- id: 1195
+  author: Pharmf487
+  author_email: johnf716@aol.com
+  author_url: http://oieypxa1.com/oryxskr/5.html
+  date: '2013-04-09 17:58:23 +0800'
+  date_gmt: '2013-04-09 17:58:23 +0800'
+  content: Hello! adabgbe interesting adabgbe site! I'm really like it! Very, very
+    adabgbe good!
+- id: 1201
+  author: George Brownsberger
+  author_email: Knezevic@yahoo.co.uk
+  author_url: http://www.gry-online.pl/forum_user_info.asp?ID=910092
+  date: '2013-04-09 18:53:55 +0800'
+  date_gmt: '2013-04-09 18:53:55 +0800'
+  content: Atypical but very correct point of view. You know about what you're writing.
+    I love your style of writing and layout on your blog. I am waiting for even more
+    things about it. Thanks for great job!
+- id: 1205
+  author: underwater camera housing
+  author_email: Calcote@yahoo.com
+  author_url: http://www.housingcamera.com/Fantasea-Underwater-Camera-Housings-for-Nikon-Canon-Olympus-s/30.htm
+  date: '2013-04-09 20:23:23 +0800'
+  date_gmt: '2013-04-09 20:23:23 +0800'
+  content: You should be a part of a contest for one of the finest websites on the
+    web. I&rsquo;m going to highly recommend this site!
+- id: 1206
+  author: canon underwater camera housing for DSLR
+  author_email: Shadwick@yahoo.com
+  author_url: http://www.housingcamera.com/Ikelite-Underwater-Housings-s/165.htm
+  date: '2013-04-09 20:23:23 +0800'
+  date_gmt: '2013-04-09 20:23:23 +0800'
+  content: Oh my goodness! Impressive article dude! Many thanks, However I am encountering
+    troubles with your RSS. I don&rsquo;t know the reason why I am unable to join
+    it. Is there anyone else having the same RSS problems? Anyone that knows the answer
+    will you kindly respond? Thanx!!
+- id: 1210
+  author: water ionizers
+  author_email: Schachterle@yahoo.com
+  author_url: http://alkalinewaterplus.info/blog/
+  date: '2013-04-09 21:31:11 +0800'
+  date_gmt: '2013-04-09 21:31:11 +0800'
+  content: browse this site
+- id: 1212
+  author: top article
+  author_email: tertar@hotmail.com
+  author_url: http://lamanmedia.com/blog/
+  date: '2013-04-09 23:11:12 +0800'
+  date_gmt: '2013-04-09 23:11:12 +0800'
+  content: This is the correct weblog for anybody who wants to seek out out about
+    this topic. You understand so much its virtually arduous to argue with you (not
+    that I truly would need&hellip;HaHa). You undoubtedly put a brand new spin on
+    a subject thats been written about for years. Nice stuff, simply nice!
+- id: 1221
+  author: christian louboutin lace bootie
+  author_email: walker237474557@gmail.com
+  author_url: http://indimusic.tv/blogs/entry/The-Enigmas-For-usa-christian-louboutin
+  date: '2013-04-10 03:03:03 +0800'
+  date_gmt: '2013-04-10 03:03:03 +0800'
+  content: What's up, I wish for to subscribe for this web site to obtain newest updates,
+    thus where can i do it please assist.
+- id: 1222
+  author: christian louboutin feticha
+  author_email: courtney365sn@gmail.com
+  author_url: http://journals.fotki.com/fly54lamp/the-following-must-be-675/entry/drgqrbrgdgdw/
+  date: '2013-04-10 03:04:38 +0800'
+  date_gmt: '2013-04-10 03:04:38 +0800'
+  content: I wish to show my thanks to the writer just for bailing me out of such
+    a crisis. Because of checking throughout the the web and seeing views which were
+    not productive, I assumed my entire life was gone. Existing without the presence
+    of approaches to the difficulties you have resolved as a result of your main guideline
+    is a critical case, and the ones which may have badly affected my career if I
+    hadn't noticed the website. Your own personal ability and kindness in maneuvering
+    all things was very useful. I don't know what I would've done if I had not come
+    upon such a subject like this. I can also now relish my future. Thanks very much
+    for this professional and results-oriented help. I won't think twice to recommend
+    your blog to anybody who wants and needs care about this subject.
+- id: 1223
+  author: this website
+  author_email: trevor@users.sourceforge.net
+  author_url: http://articlesdemand.info/article.php?id=4
+  date: '2013-04-10 03:49:44 +0800'
+  date_gmt: '2013-04-10 03:49:44 +0800'
+  content: I&rsquo;m impressed, I need to say. Really rarely do I encounter a blog
+    that&rsquo;s both educative and entertaining, and let me tell you, you've gotten
+    hit the nail on the head. Your concept is outstanding; the issue is one thing
+    that not enough persons are speaking intelligently about. I am very comfortable
+    that I stumbled throughout this in my seek for one thing relating to this.
+- id: 1230
+  author: Dixie Hancock
+  author_email: Folkins@lirsopas.com
+  author_url: http://oboimaniya.ru/index.php?subaction=userinfo&amp;user=Acculaestasia
+  date: '2013-04-10 07:05:10 +0800'
+  date_gmt: '2013-04-10 07:05:10 +0800'
+  content: I have figured out some essential things through your site post. One other
+    point I would like to express is that there are plenty of games that you can buy
+    which are designed mainly for preschool age little ones. They incorporate pattern
+    identification, colors, dogs, and shapes. These commonly focus on familiarization
+    instead of memorization. This keeps children and kids engaged without having a
+    sensation like they are learning. Thanks
+- id: 1240
+  author: interior rumah rumahku
+  author_email: poittePioda@spandamail.info
+  author_url: http://rumah.1colony.com
+  date: '2013-04-10 11:55:32 +0800'
+  date_gmt: '2013-04-10 11:55:32 +0800'
+  content: Fascinating blog! Is your theme custom made or did you download it from
+    somewhere? A design like yours with a few simple tweeks would really make my blog
+    stand out. Please let me know where you got your design. With thanks
+- id: 1242
+  author: christian louboutin fifi
+  author_email: christopherse156@gmail.com
+  author_url: http://www.awebcafe.com/blogs/viewstory/975317
+  date: '2013-04-10 12:16:21 +0800'
+  date_gmt: '2013-04-10 12:16:21 +0800'
+  content: This video post is really impressive, the sound feature and the picture
+    quality of this tape post is actually awesome.
+- id: 1243
+  author: christian louboutin dallas
+  author_email: rossreynolds25@hotmail.com
+  author_url: http://boat06slope.livejournal.com/3747.html
+  date: '2013-04-10 12:17:50 +0800'
+  date_gmt: '2013-04-10 12:17:50 +0800'
+  content: You really make it seem so easy with your presentation but I find this
+    topic to be actually something which I think I would never understand. It seems
+    too complex and extremely broad for me. I'm looking forward for your next post,
+    I&rsquo;ll try to get the hang of it!
+- id: 1245
+  author: box lunches troy
+  author_email: Meemabdom@cruxmail.info
+  author_url: http://www.thumbtack.com/Tropical-Smoothie-Cafe-Clawson-MI/service/551430
+  date: '2013-04-10 13:00:43 +0800'
+  date_gmt: '2013-04-10 13:00:43 +0800'
+  content: I like what you guys are up also. Such clever work and reporting! Carry
+    on the excellent works guys I&rsquo;ve incorporated you guys to my blogroll. I
+    think it will improve the value of my web site :)
+- id: 1247
+  author: water ionizers
+  author_email: Weiter@yahoo.com
+  author_url: http://www.alkalinewaterplus.com/water-class/
+  date: '2013-04-10 14:05:35 +0800'
+  date_gmt: '2013-04-10 14:05:35 +0800'
+  content: more
+- id: 1248
+  author: water ionizer
+  author_email: Colonna@yahoo.com
+  author_url: http://www.alkalinewaterplus.com/glossary-of-water-ionizer-terms
+  date: '2013-04-10 14:05:35 +0800'
+  date_gmt: '2013-04-10 14:05:35 +0800'
+  content: Going Here
+- id: 1249
+  author: injury law
+  author_email: Naftzinger@yahoo.com
+  author_url: http://www.actualite-bancaire.com/News/excellent-georgia-personal-injury-attorneys/
+  date: '2013-04-10 14:09:29 +0800'
+  date_gmt: '2013-04-10 14:09:29 +0800'
+  content: Nice post. I learn something totally new and challenging on websites I
+    stumbleupon on a daily basis. It will always be useful to read content from other
+    authors and use a little something from other web sites.
+- id: 1250
+  author: car accident lawyers
+  author_email: Hollin@yahoo.com
+  author_url: http://204.234.22.33/groups/podcasts/wiki/5ab8c/Tips_To_Car_or_truck_Accident_Law_firm.html
+  date: '2013-04-10 14:09:30 +0800'
+  date_gmt: '2013-04-10 14:09:30 +0800'
+  content: Your style is very unique in comparison to other people I&rsquo;ve read
+    stuff from. Thank you for posting when you&rsquo;ve got the opportunity, Guess
+    I will just bookmark this web site.
+- id: 1261
+  author: Google
+  author_email: ''
+  author_url: http://www.google.com/tdtstols
+  date: '2013-04-10 18:15:26 +0800'
+  date_gmt: '2013-04-10 18:15:26 +0800'
+  content: "<strong>Google...<&#47;strong>\n\nthat could be the end of this report.
+    Here you\x92ll obtain some websites that we believe you\x92ll appreciate, just
+    click the hyperlinks over..."
+- id: 1265
+  author: v6tfmijbtfvxerxse
+  author_email: ''
+  author_url: http://www.v6tfmijbtfvxerxse.com/
+  date: '2013-04-10 19:10:44 +0800'
+  date_gmt: '2013-04-10 19:10:44 +0800'
+  content: |-
+    <strong>Title...<&#47;strong>
+
+    [...]always a major fan of linking to bloggers that I adore but do not get quite a bit of link enjoy from[...]...
+- id: 1327
+  author: facebook for sex
+  author_email: don.craig@freenet.de
+  author_url: http://wiki.piratupartija.lv/index.php?title=Lietot%C4%81js:SQNMurray
+  date: '2013-04-11 07:01:29 +0800'
+  date_gmt: '2013-04-11 07:01:29 +0800'
+  content: "Hi my family member! I wish to say that this \r\narticle is amazing, nice
+    written and include almost all important infos.\r\nI"
+- id: 1335
+  author: spam
+  author_email: Lallier@yahoo.com
+  author_url: http://authenticviews.com
+  date: '2013-04-11 07:46:27 +0800'
+  date_gmt: '2013-04-11 07:46:27 +0800'
+  content: Spot on with this write-up, I absolutely believe that this website needs
+    far more attention. I&rsquo;ll probably be back again to see more, thanks for
+    the information!
+- id: 1357
+  author: latest trend
+  author_email: Gargan@yahoo.com
+  author_url: http://pinterest.com/hairextensionss/red-hair-extensions/
+  date: '2013-04-11 11:21:46 +0800'
+  date_gmt: '2013-04-11 11:21:46 +0800'
+  content: Get the Specifics
+- id: 1359
+  author: click here for pre taped
+  author_email: Kuney@yahoo.com
+  author_url: http://pinterest.com/hairextensionss/pre-bonded-hair-extensions/
+  date: '2013-04-11 11:21:57 +0800'
+  date_gmt: '2013-04-11 11:21:57 +0800'
+  content: click
+- id: 1369
+  author: kim kardashian louboutin shoes
+  author_email: heide56nt@gmail.com
+  author_url: http://ebook-music-software.com/blogs/viewstory/322818
+  date: '2013-04-11 12:33:59 +0800'
+  date_gmt: '2013-04-11 12:33:59 +0800'
+  content: I am genuinely glad to glance at this blog posts which contains plenty
+    of valuable information, thanks for providing such statistics.
+- id: 1370
+  author: purple christian louboutin shoes
+  author_email: curleykofoed718@hotmail.com
+  author_url: http://indimusic.tv/blogs/entry/Every-Thing-People-Learn-About-christian-louboutin-pigalle-Is-Wrong
+  date: '2013-04-11 12:35:43 +0800'
+  date_gmt: '2013-04-11 12:35:43 +0800'
+  content: Excellent, what a webpage it is! This web site presents helpful data to
+    us, keep it up.
+- id: 1447
+  author: spam
+  author_email: Beltramo@yahoo.com
+  author_url: http://authenticviews.com
+  date: '2013-04-11 23:38:10 +0800'
+  date_gmt: '2013-04-11 23:38:10 +0800'
+  content: I could not refrain from commenting. Well written!
+- id: 1448
+  author: voyeur forum
+  author_email: Roles@yahoo.com
+  author_url: http://www.amateurvoyeurforum.com/
+  date: '2013-04-11 23:38:13 +0800'
+  date_gmt: '2013-04-11 23:38:13 +0800'
+  content: carry on
+- id: 1450
+  author: xxx
+  author_email: Duffus@yahoo.com
+  author_url: http://authenticviews.com
+  date: '2013-04-12 01:00:13 +0800'
+  date_gmt: '2013-04-12 01:00:13 +0800'
+  content: Good web site you have got here.. It&rsquo;s difficult to find high-quality
+    writing like yours these days. I honestly appreciate individuals like you! Take
+    care!!
+- id: 1451
+  author: Lino Griswald
+  author_email: Alerte@live.fr
+  author_url: http://leplombier-94.com
+  date: '2013-04-12 01:01:28 +0800'
+  date_gmt: '2013-04-12 01:01:28 +0800'
+  content: F*ckin&rsquo; awesome things here. I&rsquo;m very satisfied to see your
+    article. Thanks a lot and i'm looking ahead to contact you. Will you kindly drop
+    me a e-mail?
+- id: 1484
+  author: pink christian louboutin shoes
+  author_email: walker237474557@gmail.com
+  author_url: http://www.23hq.com/willow6ounce/story/10753303
+  date: '2013-04-12 04:34:55 +0800'
+  date_gmt: '2013-04-12 04:34:55 +0800'
+  content: Wow, wonderful weblog layout! How long have you ever been blogging for?
+    you make blogging look easy. The entire glance of your web site is great, as neatly
+    as the content material!
+- id: 1485
+  author: christian sales
+  author_email: janezpihl924tt@gmail.com
+  author_url: http://najaradio.com/index.php?p=blogs/viewstory/211991
+  date: '2013-04-12 04:36:24 +0800'
+  date_gmt: '2013-04-12 04:36:24 +0800'
+  content: Magnificent web site. Plenty of useful information here. I&iexcl;&brvbar;m
+    sending it to a few buddies ans additionally sharing in delicious. And of course,
+    thanks for your effort!
+- id: 1510
+  author: buy viagra
+  author_email: Opal@yahoo.com
+  author_url: http://www.offshorecompanyexperts.com
+  date: '2013-04-12 08:11:44 +0800'
+  date_gmt: '2013-04-12 08:11:44 +0800'
+  content: Everything is very open with a clear clarification of the challenges. It
+    was truly informative. Your site is useful. Thank you for sharing!
+- id: 1511
+  author: Like To Eat
+  author_email: ''
+  author_url: http://i-like-to-eat--all-the-time.tumblr.com/post/47176440131/good-food
+  date: '2013-04-12 08:14:29 +0800'
+  date_gmt: '2013-04-12 08:14:29 +0800'
+  content: |-
+    <strong>Great Article Resource...<&#47;strong>
+
+    ...another great resource for you to read is at this site......
+- id: 1517
+  author: offshore companies
+  author_email: Plienis@yahoo.com
+  author_url: http://www.offshorecompanyexperts.com
+  date: '2013-04-12 09:14:12 +0800'
+  date_gmt: '2013-04-12 09:14:12 +0800'
+  content: Greetings! Very helpful advice within this article! It is the little changes
+    that produce the greatest changes. Thanks a lot for sharing!
+- id: 1539
+  author: atrakcje dla dzieci
+  author_email: paulaaiken@gmail.com
+  author_url: http://www.tworcyimprez.pl/
+  date: '2013-04-12 11:56:14 +0800'
+  date_gmt: '2013-04-12 11:56:14 +0800'
+  content: Wonderful web site. Plenty of helpful information here. I'm sending it
+    to a few friends ans also sharing in delicious. And obviously, thank you in your
+    sweat!
+- id: 1583
+  author: POE Items
+  author_email: Vidra29@power-leveling-service.com
+  author_url: http://tr.im/42h2v
+  date: '2013-05-01 19:33:55 +0800'
+  date_gmt: '2013-05-01 19:33:55 +0800'
+  content: Thank you for the good writeup. It in fact was a amusement account it.
+    Look advanced to more added agreeable from you! By the way, how can we communicate?
+- id: 1624
+  author: http:&#47;&#47;www.bestecigarettelist.org&#47;online-clothing-related-articles&#47;
+  author_email: elisabeth-erickson@yahoo.com
+  author_url: http://controlchaostech.com/wiki/index.php?title=%D0%A3%D1%87%D0%B0%D1%81%D1%82%D0%BD%D0%B8%D0%BA:MerrillJa
+  date: '2013-05-02 13:05:30 +0800'
+  date_gmt: '2013-05-02 13:05:30 +0800'
+  content: "I don't even know how I ended up here, but I thought this post was great.
+    I don't know who you \r\nare but definitely you are going to a famous blogger
+    if you aren't already ;) Cheers!"
+- id: 1631
+  author: daily kos
+  author_email: kelsey.goble@gmail.com
+  author_url: http://cwbp.cartographersguild.com/index.php?title=User:PMQJerry
+  date: '2013-05-02 17:17:24 +0800'
+  date_gmt: '2013-05-02 17:17:24 +0800'
+  content: Hi to every one, as I am actually eager of reading this web site's post
+    to be updated daily. It consists of fastidious data.
+- id: 1641
+  author: laser tattoo removal
+  author_email: vilmaaguayo@gmail.com
+  author_url: http://%URL%
+  date: '2013-05-03 02:33:54 +0800'
+  date_gmt: '2013-05-03 02:33:54 +0800'
+  content: "My brother recommended I might like this web site.\r\nHe was totally right.
+    This post truly made my day.\r\nYou can not imagine just how much time I had spent
+    for \r\nthis information! Thanks!"
+- id: 2076
+  author: tattoo removal
+  author_email: nadineleeper@gmail.com
+  author_url: http://www.smoothieheaven.co.uk/Rosemarie
+  date: '2013-05-10 09:32:56 +0800'
+  date_gmt: '2013-05-10 13:32:56 +0800'
+  content: "Your mode of telling all in this piece of writing is in fact pleasant,
+    every one can easily know \r\nit, Thanks a lot."
+- id: 2077
+  author: tattoo removal cream
+  author_email: alejandramoulton@inbox.com
+  author_url: http://canarianexcursions.com/node/63980
+  date: '2013-05-10 09:33:14 +0800'
+  date_gmt: '2013-05-10 13:33:14 +0800'
+  content: "We're a group of volunteers and starting a new scheme in our community.
+    Your site provided us with valuable info to work on. You've done a formidable
+    job and our whole community \r\nwill be grateful to you."
+- id: 2093
+  author: 2 hour teeth whitening crest
+  author_email: velva-donnelly@animail.net
+  author_url: http://www.branded2u.com/blogs/user/JuliaWitte
+  date: '2013-06-01 08:25:32 +0800'
+  date_gmt: '2013-06-01 12:25:32 +0800'
+  content: "You have made some good points there. I checked on the web \r\nto find
+    out more about the issue and found most individuals will go \r\nalong with your
+    views on this web site."
+- id: 2095
+  author: Free Backlink Analysis
+  author_email: raymond@zoho.com
+  author_url: http://freebacklinkanalysis.blogspot.com/
+  date: '2013-06-01 13:25:04 +0800'
+  date_gmt: '2013-06-01 17:25:04 +0800'
+  content: Keep on working, great job!
+- id: 2108
+  author: fuck book
+  author_email: sabrinarosen@zoho.com
+  author_url: http://www.terasore.dk/wiki/index.php?title=Join_Internet_Dating_For_Singles
+  date: '2013-06-03 20:35:07 +0800'
+  date_gmt: '2013-06-04 00:35:07 +0800'
+  content: "You really make it seem so easy along with your presentation but I \r\nfind
+    this matter to be really something which I believe I'd never understand. It sort
+    of feels too complicated and extremely huge for me. I am having a look forward
+    on your next put up, I"
+- id: 2111
+  author: free dating site
+  author_email: teresacarnahan@freenet.de
+  author_url: http://www.socialmatchup.com/Luis58F
+  date: '2013-06-04 05:12:28 +0800'
+  date_gmt: '2013-06-04 09:12:28 +0800'
+  content: "I have been examinating out some of your posts and i can claim pretty
+    \r\ngood stuff. I will make sure to bookmark your website."
+- id: 2121
+  author: Pregnancy Miracle
+  author_email: jodimcgovern@aol.com
+  author_url: http://pregnancy-miracle-review.webs.com
+  date: '2013-06-04 23:06:48 +0800'
+  date_gmt: '2013-06-05 03:06:48 +0800'
+  content: "Hurrah! After all I got a web site from where I be able to genuinely get
+    helpful \r\nfacts regarding my study and knowledge."
+- id: 2123
+  author: SDAO Power Leveling
+  author_email: ''
+  author_url: http://sdaopowerleveling7896.unblog.fr/2013/06/04/sdao-power-leveling-qui-leur-permet-de-rester-dans-le/
+  date: '2013-06-05 02:51:51 +0800'
+  date_gmt: '2013-06-05 06:51:51 +0800'
+  content: |-
+    <strong>safe power leveling and gold...<&#47;strong>
+
+    I'm not sure what I would have done if I had not discovered such a thing like this....
+- id: 2142
+  author: penis Advantage review
+  author_email: bradly_cannon@yahoo.com
+  author_url: http://PenisAdvantageReview.webs.com/
+  date: '2013-06-06 10:19:09 +0800'
+  date_gmt: '2013-06-06 14:19:09 +0800'
+  content: "I am regular reader, how are you everybody? This article posted \r\nat
+    this website is really nice."
+- id: 2149
+  author: domain name
+  author_email: standelacruz@gmail.com
+  author_url: http://www.coin-rouge.fr/uprofile.php?UID=21298
+  date: '2013-06-07 00:06:43 +0800'
+  date_gmt: '2013-06-07 04:06:43 +0800'
+  content: "Hi! I could ha&nu;e sworn I've been to this website before but after checking
+    through some of the post I realized it's ne&#969; to \r\nme. &Alpha;nyhow, I'm
+    definitely glad I found it and I'll b&#1077; boo&kappa;marking &#1072;nd checking
+    back &#959;ften!"
+- id: 2152
+  author: adagio online savings codes
+  author_email: debbra_patten@inbox.com
+  author_url: http://inboundmarketing.com/user/394898
+  date: '2013-06-07 11:30:35 +0800'
+  date_gmt: '2013-06-07 15:30:35 +0800'
+  content: "This design is wicked! You definitely know how to keep a reader \r\namused.
+    Between your wit and your videos, I was almost moved to start my own blog (well,\r\nalmost...HaHa!)
+    Great job. I really enjoyed what you had to say, and more than that, how you presented
+    it.\r\nToo cool!"
+- id: 2169
+  author: parent spyware for computers
+  author_email: Janicke@makemydisk.com
+  author_url: http://mandarseamudar.com/index.php?title=Usuario:Haiyuqmsr
+  date: '2013-06-08 06:50:48 +0800'
+  date_gmt: '2013-06-08 10:50:48 +0800'
+  content: I discovered your blog site on google and check a few of your early posts.
+    Continue to keep up the very good operate. I just additional up your RSS feed
+    to my MSN News Reader. Seeking forward to reading more from you later on!&hellip;
+- id: 2172
+  author: shit scam website
+  author_email: summerhouston@yahoo.com
+  author_url: http://mirahairoilinfo.org
+  date: '2013-06-08 13:31:31 +0800'
+  date_gmt: '2013-06-08 17:31:31 +0800'
+  content: "What i do not realize is in fact how you are no longer actually a lot
+    more well-appreciated \r\nthan you might be right now. You're so intelligent.
+    You recognize therefore significantly on the subject of this topic, made me in
+    my view believe it from numerous various angles. Its like men and women aren't
+    involved unless it is something to \r\naccomplish with Girl gaga! Your personal
+    stuffs great.\r\nAlways take care of it up!"
+- id: 2173
+  author: blackfeet nation
+  author_email: conrad.gilbert@gawab.com
+  author_url: http://adlane.net/story.php?title=all-about-bdsm-online-chat
+  date: '2013-06-08 21:32:41 +0800'
+  date_gmt: '2013-06-09 01:32:41 +0800'
+  content: "Useful info. Fortunate me I discovered your site unintentionally,\r\nand
+    I'm stunned why this twist of fate did not took place earlier! I bookmarked it."
+- id: 2176
+  author: http:&#47;&#47;www.snakepaydayloans.co.uk
+  author_email: paydayloans@gmail.com
+  author_url: http://www.snakepaydayloans.co.uk
+  date: '2013-06-09 07:36:29 +0800'
+  date_gmt: '2013-06-09 11:36:29 +0800'
+  content: Thanks intended for furnishing these sort of substantial content material.
+- id: 2177
+  author: http:&#47;&#47;satanpaydayloans.co.uk
+  author_email: paydayloans@t-online.de
+  author_url: http://satanpaydayloans.co.uk
+  date: '2013-06-09 09:03:32 +0800'
+  date_gmt: '2013-06-09 13:03:32 +0800'
+  content: I simply couldn't leave your site before suggesting that I actually enjoyed
+    the usual info an individual provide in your guests? Is gonna be again steadily
+    to inspect new posts
+- id: 2179
+  author: http:&#47;&#47;www.payday4meloans.co.uk&#47;
+  author_email: payday.loans@inbox.com
+  author_url: http://www.payday4meloans.co.uk/
+  date: '2013-06-09 09:15:19 +0800'
+  date_gmt: '2013-06-09 13:15:19 +0800'
+  content: With thanks! It a outstanding site.
+- id: 2181
+  author: buy cars
+  author_email: rhondaainsworth@hotmail.de
+  author_url: http://lcdkj.com/Shownews.asp?id=9980571
+  date: '2013-06-09 11:26:54 +0800'
+  date_gmt: '2013-06-09 15:26:54 +0800'
+  content: "Excellent article. Keep posting such kind of info on \r\nyour blog. Im
+    really impressed by your blog.\r\nHello there,  You have performed an excellent
+    job.\r\n\r\nI will definitely digg it and in my view suggest to my friends.\r\nI
+    am sure they'll be benefited from this website."
+- id: 2182
+  author: Rafaela
+  author_email: rafaelahelms@gmail.com
+  author_url: http://engineandpistonparts.com
+  date: '2013-06-09 15:14:33 +0800'
+  date_gmt: '2013-06-09 19:14:33 +0800'
+  content: "Very n&#1110;ce post. I simply stumbl&#1077;d upon your weblog &#1072;nd
+    wished \r\nto say that I've really enjoyed surfing around your blog posts. After
+    all I will be subscribing for your rss feed and I am hoping you write again very
+    soon!\r\n\r\nHave a look at my website: homepage :: <a href=\"http:&#47;&#47;engineandpistonparts.com\"
+    rel=\"nofollow\">Rafaela<&#47;a> ::"
+- id: 2184
+  author: air bed pump
+  author_email: zachery-bowling@fastmail.es
+  author_url: http://w.90degrees.org/best-airmattresses.com
+  date: '2013-06-09 17:27:53 +0800'
+  date_gmt: '2013-06-09 21:27:53 +0800'
+  content: "Do you have a spam problem on this blog; I also am a blogger,\r\nand I
+    was wanting to know your situation; we have created some nice practices and we
+    are looking to swap solutions with others, \r\nwhy not shoot me an email if interested."
+- id: 2188
+  author: raspberry ketones dosage
+  author_email: lizzie_griffiths@arcor.de
+  author_url: http://leanraspberryketones.com/
+  date: '2013-06-10 03:32:19 +0800'
+  date_gmt: '2013-06-10 07:32:19 +0800'
+  content: "&#1030; am gla&#1281; to be &#1072; v&#1110;&#1109;it&#1086;&#1075; of
+    \r\nthis gro&#1109;&#1109; weblog, a&rho;preciate it f&#1086;r this &#1075;&#1072;re
+    &#1110;nfo!"
+- id: 2194
+  author: moms anal adventure
+  author_email: colinclem@t-online.de
+  author_url: http://www.xpornclub.com/pov/longest/
+  date: '2013-06-10 17:50:29 +0800'
+  date_gmt: '2013-06-10 21:50:29 +0800'
+  content: always i used to read smaller articles which as well clear their motive,
+    and that is also happening with this article which I am reading at this place.
+- id: 2201
+  author: raspberry ketones dosage
+  author_email: nan.ashmore@gmail.com
+  author_url: http://leanraspberryketones.com/
+  date: '2013-06-11 18:29:03 +0800'
+  date_gmt: '2013-06-11 22:29:03 +0800'
+  content: "&Iota; agree with you. I w&#1110;sh I had your blogg&#1110;ng st&#1091;l&#1077;."
+- id: 2202
+  author: psychology eighth edition david g myers
+  author_email: rochell_amaral@web.de
+  author_url: http://ctf.faui2k9.de/The_Aishwarya_Rai_Wedding_Ceremony_And_Her_Lifestyle
+  date: '2013-06-11 19:04:25 +0800'
+  date_gmt: '2013-06-11 23:04:25 +0800'
+  content: "I do agree with all the ideas you have introduced to your post.\r\nThey
+    are really convincing and will definitely work.\r\nNonetheless, the posts are
+    too short for starters.\r\nMay just you please lengthen them a little from next
+    time?\r\nThanks for the post."
+- id: 2206
+  author: pinterest.com
+  author_email: mckinleyfarias@gmail.com
+  author_url: http://pinterest.com/grindgreencoffe/pins/
+  date: '2013-06-12 01:44:30 +0800'
+  date_gmt: '2013-06-12 05:44:30 +0800'
+  content: "H&#1077;l&rho;ful &#1110;nfo. F&#1086;rtunate me I \r\nf&omicron;und &#1091;our
+    w&#1077;bsite accidentall&#1091;, an&#1281; I'm stunned why this coincidence did
+    not came about in advance! I bookmarked it."
+- id: 2207
+  author: Michelle
+  author_email: michelle-lavigne@gmail.com
+  author_url: http://ambientnews.Co.uk/__media__/js/netsoltrademark.php?d=esigaretta-elettronica.it
+  date: '2013-06-12 06:10:02 +0800'
+  date_gmt: '2013-06-12 10:10:02 +0800'
+  content: It's very straightforward to find out any topic on web as compared to textbooks,
+    as I found this piece of writing at this web site.
+- id: 2209
+  author: free sex dating sites
+  author_email: german.weinstein@gmail.com
+  author_url: http://enigmauo.com/euowiki/index.php?title=Online_Dating_To_Meet_Romanian_Girls_For_Marriage
+  date: '2013-06-12 16:50:10 +0800'
+  date_gmt: '2013-06-12 20:50:10 +0800'
+  content: "Today, while I was at work, my sister stole my iphone and \r\ntested to
+    see if it can survive a 30 foot drop, just so she can be a youtube sensation.\r\nMy
+    iPad is now destroyed and she has 83 views.\r\nI know this is totally off topic
+    but I had to share it with someone!"
+- id: 2210
+  author: www.facebookofsex.yaforia.com
+  author_email: gustavogillette@gmail.com
+  author_url: http://www.facebookofsex.yaforia.com
+  date: '2013-06-12 16:50:44 +0800'
+  date_gmt: '2013-06-12 20:50:44 +0800'
+  content: "It is my belief that mesothelioma will be the most dangerous cancer.\r\n\r\nIt's
+    got unusual features. The more I really look at it the more I am confident it
+    does not behave like a real solid tissues cancer. If mesothelioma is often a rogue
+    virus-like infection, therefore there is the chance of developing a vaccine in
+    addition to offering vaccination to asbestos uncovered"
+- id: 2215
+  author: colon cleanse diet
+  author_email: sang_torrence@web.de
+  author_url: http://coloncleanseguide.net
+  date: '2013-06-13 07:14:11 +0800'
+  date_gmt: '2013-06-13 11:14:11 +0800'
+  content: "I have learn several just right stuff here.\r\nCertainly value bookmarking
+    for revisiting. I wonder how much effort you put to create one of these \r\nexcellent
+    informative web site."
+- id: 2216
+  author: spyware doctor license code generator
+  author_email: Bassano@makemydisk.com
+  author_url: http://mortiferaincident.com/wiki/index.php?title=User:Lisette08
+  date: '2013-06-13 08:12:59 +0800'
+  date_gmt: '2013-06-13 12:12:59 +0800'
+  content: This web site is really a walk-through for all of the info you wanted about
+    this and didn&rsquo;t know who to ask. Glimpse here, and you&rsquo;ll definitely
+    discover it.
+- id: 2217
+  author: pc repair
+  author_email: Cane@gmail.com
+  author_url: http://soscomputer-glasgow.co.uk
+  date: '2013-06-13 10:43:18 +0800'
+  date_gmt: '2013-06-13 14:43:18 +0800'
+  content: One more thing. I really believe that there are several travel insurance
+    sites of respectable companies that allow you enter your vacation details and
+    obtain you the rates. You can also purchase an international travel cover policy
+    on the internet by using your own credit card. All you need to do is usually to
+    enter all travel information and you can start to see the plans side-by-side.
+    Simply find the program that suits your finances and needs and use your credit
+    card to buy it. Travel insurance online is a good way to check for a respected
+    company with regard to international travel insurance. Thanks for revealing your
+    ideas.
+- id: 2218
+  author: http:&#47;&#47;www.wiki.dashengjiao.org&#47;index.php?title=How_To_Find_Love_On_A_Free_Dating_Site_Or_Free_Video_Chat_Rooms
+  author_email: kareemharvey@gmail.com
+  author_url: http://www.wiki.dashengjiao.org/index.php?title=How_To_Find_Love_On_A_Free_Dating_Site_Or_Free_Video_Chat_Rooms
+  date: '2013-06-13 14:28:14 +0800'
+  date_gmt: '2013-06-13 18:28:14 +0800'
+  content: Great post. I was checking constantly this blog and I'm inspired! Very
+    helpful info specifically the final phase :) I deal with such info much. I was
+    looking for this particular info for a very long time. Thanks and best of luck.
+- id: 2224
+  author: free dating site
+  author_email: justin_bevins@zoho.com
+  author_url: http://formacion.dimensioneducativa.org.co/user/view.php?id=10499&amp;course=1
+  date: '2013-06-13 22:13:12 +0800'
+  date_gmt: '2013-06-14 02:13:12 +0800'
+  content: "One thing is the fact one of the most prevalent incentives \r\nfor utilizing
+    your credit card is a cash-back and also rebate provision.\r\nGenerally, you'll
+    get 1-5% back upon various acquisitions. Depending on the credit card, you may
+    get 1% back again on most expenditures, and 5% back on expenses made at convenience
+    stores, filling stations, grocery stores plus"
+- id: 2226
+  author: sex facebook
+  author_email: jeffreymorrissey@t-online.de
+  author_url: http://daydreamers-tuath.de/j/components/com_jwiki/mediawiki/index.php?title=Dating_Site_Characteristics
+  date: '2013-06-13 22:22:26 +0800'
+  date_gmt: '2013-06-14 02:22:26 +0800'
+  content: "Great blog! I am loving it!! Will be back later to read some more.\r\n\r\nI
+    am bookmarking your feeds also."
+- id: 2227
+  author: spyware apps for androids
+  author_email: Torstrick@makemydisk.com
+  author_url: http://abc0120.jp/index.php?title=%E5%88%A9%E7%94%A8%E8%80%85:AdelaidaD
+  date: '2013-06-13 22:36:14 +0800'
+  date_gmt: '2013-06-14 02:36:14 +0800'
+  content: I am often to blogging and i really appreciate your content. The article
+    has really peaks my interest. I am going to bookmark your site and keep checking
+    for new information.
+- id: 2229
+  author: microsoft spyware beta
+  author_email: Ards@makemydisk.com
+  author_url: http://www.sveaskolan.se/wiki/index.php?title=Anv%C3%A4ndare:OlgaSee
+  date: '2013-06-14 05:50:51 +0800'
+  date_gmt: '2013-06-14 09:50:51 +0800'
+  content: The next time I read a blog, I hope that it doesnt disappoint me as much
+    as this one. I mean, I know it was my choice to read, but I actually thought youd
+    have something interesting to say. All I hear is a bunch of whining about something
+    that you could fix if you werent too busy looking for attention.
+- id: 2231
+  author: facebook for sex
+  author_email: juan.joseph@zoho.com
+  author_url: http://www.openemm.org/mediawiki/index.php?title=Advantages_Of_Using_A_Good_Gay_Online_Facebook_Of_Sex_To_Meet_Up_With_Singles
+  date: '2013-06-14 06:38:55 +0800'
+  date_gmt: '2013-06-14 10:38:55 +0800'
+  content: "Thanks  for another magnificent post. Where else could anyone \r\nget
+    that kind of information in such a perfect way of writing?\r\n\r\nI've a presentation
+    next week, and I'm on \r\nthe look for such info."
+- id: 2232
+  author: fuck book
+  author_email: marylou.nation@gmx.de
+  author_url: http://forotic.mcti.gob.ve/wikigauti/index.php/Free_Dating_Sites_:_No_More_Credit_Card
+  date: '2013-06-14 10:41:19 +0800'
+  date_gmt: '2013-06-14 14:41:19 +0800'
+  content: "I am extremely impressed with your writing skills as well as with the
+    layout on your \r\nblog. Is this a paid theme or did you modify it yourself?\r\nEither
+    way keep up the excellent quality writing, it is rare \r\nto see a great blog
+    like this one today.."
+- id: 2233
+  author: Jamee Rebeles
+  author_email: Tarmey@hotmail.com
+  author_url: http://boai777.org/home.php?mod=space&amp;uid=86646&amp;do=blog&amp;id=27644
+  date: '2013-06-14 13:50:09 +0800'
+  date_gmt: '2013-06-14 17:50:09 +0800'
+  content: in partnership with our multichannel movie computer programming providers.
+    congress are anticipated to ask bags chanel once the combination performed caused
+    job hair cuts as reduce the effectiveness of unions. and they're going to look
+    into how handbags chanel the combination may very well have an impact on consumers'
+    likely reasons for night-life particularly the Internet and whether Comcast might
+    to help keep mustwatch instructs this includes the very best chef on well done
+    and The for dinner Show everything from upstarts Roku and Vuze, Congressional
+    staffers asserted consumers have received names right from high street commanders
+    inside of their districts, advised basically Comcast"telling the property to "
+    develop into prestigious
+- id: 2241
+  author: http:&#47;&#47;www.dwarffortress.es&#47;wiki&#47;index.php?title=Find_Love_On_An_Hiv_Adult_Dating_Site
+  author_email: linowashington@freenet.de
+  author_url: http://www.dwarffortress.es/wiki/index.php?title=Find_Love_On_An_Hiv_Adult_Dating_Site
+  date: '2013-06-15 14:41:56 +0800'
+  date_gmt: '2013-06-15 18:41:56 +0800'
+  content: "Write more, thats all I have to say. Literally, it \r\nseems as though
+    you relied on the video to make your point.\r\nYou obviously know what youre talking
+    about, why throw away your intelligence \r\non just posting videos to your site
+    when you could be giving us \r\nsomething enlightening to read?"
+- id: 2246
+  author: funny games
+  author_email: heidicampbell@t-online.de
+  author_url: http://www.theopffa.org/forum/profile.php?mode=viewprofile&amp;u=6691
+  date: '2013-06-16 03:38:53 +0800'
+  date_gmt: '2013-06-16 07:38:53 +0800'
+  content: "&#919;&#1077;&#1091; I am &#1109;&#959; happy I found your webpag&#1077;,\r\n&#1231;
+    really found you by &#1077;&#1075;ror, while &#921; &#969;as browsing &#959;n
+    Bing for s&#959;m&#1077;thing el&#1109;e, Any&#969;&#1072;ys &#921; &#1072;m h&#1077;r&#1077;
+    n&omicron;w &#1072;nd &omega;ould &#1112;ust \r\nlike to &#1109;ay thank you fo&#1075;
+    &#1072; f&#1072;ntast&#1110;c &#961;ost and a &#1072;ll r&omicron;und en&#1011;oyabl&#1077;
+    blog (I \r\n&#1072;lso love th&#1077; them&#1077;&#47;de&#1109;ign), I d&#1086;n&rsquo;t
+    \r\nh&#1072;ve time to go through it all at the moment but &#1216; have saved
+    it and al&#1109;o a&#1281;d&#1077;d &#1091;our RS&#1029; fee&#1281;s, so \r\nwhen
+    I ha&#1141;e tim&#1077; &#1231; w&#1110;ll be b&#1072;ck t&omicron; re&#1072;d
+    mu&#1089;h mor&#1077;, Please do keep u&#1088; the superb \r\n&#1011;o."
+- id: 2248
+  author: insanity workout
+  author_email: retha-surratt@gmail.com
+  author_url: http://news.powerlinekingdom.com/members/maude3354/activity/413052
+  date: '2013-06-16 09:51:42 +0800'
+  date_gmt: '2013-06-16 13:51:42 +0800'
+  content: Excellent post. I'm dealing with a few of these issues as well..
+- id: 2256
+  author: http:&#47;&#47;3d-story.com&#47;phpmotion&#47;read_blog&#47;50591&#47;exactly-why-one-should-rather-be-considered-a-mistress-compared-to-lady-of-the-house
+  author_email: tawnyaswearingen@gmail.com
+  author_url: http://3d-story.com/phpmotion/read_blog/50591/exactly-why-one-should-rather-be-considered-a-mistress-compared-to-lady-of-the-house
+  date: '2013-06-17 10:41:51 +0800'
+  date_gmt: '2013-06-17 14:41:51 +0800'
+  content: "Please let me know if you're looking for a writer for your blog. You have
+    some really great articles and I feel I would be a good asset. If you ever want
+    to take some of the load off, I'd absolutely love to write some content for \r\nyour
+    blog in exchange for a link back to mine. Please send me an email if interested.\r\n\r\nMany
+    thanks!"
+- id: 2257
+  author: adult personals
+  author_email: ermelinda_terrell@yahoo.de
+  author_url: http://unityforachange.org/cooperativemedia/groups/dating-exploring-the-virtual-world/
+  date: '2013-06-17 14:25:27 +0800'
+  date_gmt: '2013-06-17 18:25:27 +0800'
+  content: "Excellent blog! Do you have any tips for aspiring writers?\r\nI'm planning
+    to start my own site soon but I'm a little lost on \r\neverything. Would you advise
+    starting with a free platform like Wordpress or \r\ngo for a paid option? There
+    are so many options out there that I'm completely overwhelmed .. Any tips? Appreciate
+    it!"
+- id: 2258
+  author: surround sound in chesapeake
+  author_email: deanforeman@gmail.com
+  author_url: http://www.svtaudiovisual.com/
+  date: '2013-06-17 19:13:24 +0800'
+  date_gmt: '2013-06-17 23:13:24 +0800'
+  content: "I love your blog.. very nice colors &amp; theme. Did you make this website
+    yourself or did you hire \r\nsomeone to do it for you? Plz respond as I'm looking
+    to create my own blog and would like to find out where u got this from. cheers"
+- id: 2259
+  author: sexsearch
+  author_email: florentinabaldridge@gmail.com
+  author_url: http://www.terasore.dk/wiki/index.php?title=Free_Online_Dating_Tips_Best_Internet_Dating_Sites_Reviews
+  date: '2013-06-17 21:37:02 +0800'
+  date_gmt: '2013-06-18 01:37:02 +0800'
+  content: "Oh my goodness! a tremendous article dude. Thank you Nonetheless \r\nI'm
+    experiencing problem with ur rss . Don"
+- id: 2261
+  author: sex facebook
+  author_email: vivienbunch@gmx.de
+  author_url: http://skypesexx.tk
+  date: '2013-06-18 08:40:11 +0800'
+  date_gmt: '2013-06-18 12:40:11 +0800'
+  content: "Wow! This can be one particular of the most beneficial blogs We have ever
+    arrive across on this subject.\r\nBasically Excellent. I'm also an expert in this
+    topic therefore I can understand your hard work."
+- id: 2270
+  author: free adult personals
+  author_email: janieshaffer@gmail.com
+  author_url: http://www.globalmyanmar.org/home/blog/view/2430049/successfully-utilizing-online-dating-sites-to-meet-women
+  date: '2013-06-18 20:23:38 +0800'
+  date_gmt: '2013-06-19 00:23:38 +0800'
+  content: "Thanks for the article. My spouse and i have often noticed that almost
+    all people are needing to lose weight \r\nbecause they wish to look slim in addition
+    to looking attractive.\r\nHaving said that, they do not constantly realize \r\nthat
+    there are many benefits for you to losing weight in addition.\r\nDoctors declare
+    that obese people are afflicted by a variety of \r\ndiseases that can be perfectely
+    attributed to their own excess weight.\r\n\r\nThe good news is that people who
+    definitely are overweight as well as suffering from numerous diseases can reduce
+    the \r\nseverity of their particular illnesses by means of losing weight.\r\nIt
+    is easy to see a gradual but noted improvement with health while even a negligible
+    amount \r\nof weight-loss is realized."
+- id: 2275
+  author: facebook for sex
+  author_email: markusthorp@live.de
+  author_url: http://www.kinkysex.adultcrowd.com/
+  date: '2013-06-19 10:56:38 +0800'
+  date_gmt: '2013-06-19 14:56:38 +0800'
+  content: "It is perfect time to make a few plans for the long run and it is time
+    to \r\nbe happy. I've read this post and if I may I want to recommend you some
+    attention-grabbing issues or advice. Perhaps you could write next articles regarding
+    this article. I wish to read even more issues about it!"
+- id: 2282
+  author: free sex dating sites
+  author_email: geraldo-hefner@aol.com
+  author_url: http://crosquare.com/ToryPace
+  date: '2013-06-20 06:13:48 +0800'
+  date_gmt: '2013-06-20 10:13:48 +0800'
+  content: "Thanks for these guidelines. One thing  I should also believe is credit
+    cards supplying \r\na 0% interest often attract consumers together with \r\nzero
+    rate, instant approval and easy on the net balance transfers, \r\nnevertheless
+    beware of the top factor that can void that 0% easy road annual percentage rate
+    and th"
+- id: 2287
+  author: Marti
+  author_email: martinaquin@yahoo.com
+  author_url: http://tradescraper.hostingsiteforfree.com/activity/p/53/
+  date: '2013-06-20 15:43:53 +0800'
+  date_gmt: '2013-06-20 19:43:53 +0800'
+  content: "Aw, this was a really good post. Spending some time and actual effort
+    to create a superb article&hellip; \r\nbut what can I say&hellip; I procrastinate
+    a whole lot \r\nand don't manage to get anything done."
+- id: 2300
+  author: www.expresaideas.com
+  author_email: devin.stearns@gmail.com
+  author_url: http://www.expresaideas.com/content/madness-mikes-insanity-travel-day-30-results
+  date: '2013-07-01 07:19:08 +0800'
+  date_gmt: '2013-07-01 11:19:08 +0800'
+  content: Great article, just what I needed.
+- id: 2304
+  author: webvidx.com
+  author_email: gerardoplunkett@gawab.com
+  author_url: http://webvidx.com/GraceBost
+  date: '2013-07-01 11:36:14 +0800'
+  date_gmt: '2013-07-01 15:36:14 +0800'
+  content: "One thing I would like to say is that often before purchasing \r\nmore
+    laptop or computer memory, check out the machine in which it could be installed.\r\nIn
+    the event the machine is usually running Windows XP, for instance,\r\na memory
+    ceiling is 3.25GB. Adding a lot more than this would \r\nbasically constitute
+    any waste. Be sure that one's mother board can handle the actual upgrade quantity,
+    as well. Good blog post."
+- id: 2306
+  author: Youtube.Com
+  author_email: noemi.stine@freenet.de
+  author_url: https://www.youtube.com/watch?v=iL6yw2_HwAE
+  date: '2013-07-01 12:58:15 +0800'
+  date_gmt: '2013-07-01 16:58:15 +0800'
+  content: "&#1231;f some on&#1077; w&#1072;nts expe&#1075;t vie&#969; &#959;n th&#1077;
+    top&#1110;c of &#1075;unning a blog afterward &#1110; \r\nre&#1089;&#1086;mm&#1077;nd
+    him&#47;he&#1075; to pa&#1091; a quic&kappa; \r\nvisit this w&#1077;bpage, Keep
+    up the nice work.\r\n\r\nmy blog :: cute :: <a href=\"https:&#47;&#47;www.youtube.com&#47;watch?v=iL6yw2_HwAE\"
+    rel=\"nofollow\">Youtube.Com<&#47;a> ::"
+- id: 2307
+  author: facebook of sex
+  author_email: chastitycomer@gmail.com
+  author_url: http://wiki.ohalo.ac.il/index.php?title=Ideal_Free_Online_Dating_Site_2011_In_Video_Articles
+  date: '2013-07-01 14:16:28 +0800'
+  date_gmt: '2013-07-01 18:16:28 +0800'
+  content: "It's appropriate time to make some plans for the future and it is time
+    to be happy. I've read \r\nthis post and if I could I desire to suggest you few
+    interesting things or advice.\r\nMaybe you could write next articles referring
+    to this \r\narticle. I want to read more things about it!"
+- id: 2311
+  author: sex facebook
+  author_email: nestormerchant@aol.com
+  author_url: http://udelascienciasyelarte.ac.cr/index.php?option=com_blog&amp;view=comments&amp;pid=22388&amp;Itemid=0
+  date: '2013-07-01 16:25:00 +0800'
+  date_gmt: '2013-07-01 20:25:00 +0800'
+  content: "I would like to thnkx for the efforts you have put in writing this website.\r\nI
+    am hoping the same high-grade blog post from you in the upcoming as well.\r\nActually
+    your creative writing skills has encouraged me to get \r\nmy own blog now. Really
+    the blogging is spreading its wings fast.\r\nYour write up is a good example of
+    it."
+- id: 2318
+  author: facebook sex
+  author_email: kristin.oconner@web.de
+  author_url: https://www.youtube.com/watch?v=JC73myeZdpc
+  date: '2013-07-02 01:09:19 +0800'
+  date_gmt: '2013-07-02 05:09:19 +0800'
+  content: "Thanks for this wonderful article. Yet another thing \r\nto mention is
+    that many digital cameras arrive equipped with some sort of zoom lens so \r\nthat
+    more or less of the scene being included simply by 'zooming' in and out.\r\n\r\nThese
+    kinds of changes in focusing length will be \r\nreflected inside the viewfinder
+    and on large display screen right on the back of any camera."
+- id: 2319
+  author: free spyware terminator download
+  author_email: Hilvers@makemydisk.com
+  author_url: http://stlawrenceriverwalleyeassociation.com/phpBB1/profile.php?mode=viewprofile&amp;u=131775
+  date: '2013-07-02 02:56:52 +0800'
+  date_gmt: '2013-07-02 06:56:52 +0800'
+  content: You should take part in a contest for one of the best blogs on the web.
+    I will recommend this site!
+- id: 2322
+  author: Online dating Software
+  author_email: florentinaaaron@t-online.de
+  author_url: http://www.smart-links.org/members/rafaeltri/activity/140800/
+  date: '2013-07-02 12:38:54 +0800'
+  date_gmt: '2013-07-02 16:38:54 +0800'
+  content: "I also believe that mesothelioma is a exceptional form of most cancers
+    that \r\nis typically found in individuals previously familiar with asbestos.\r\nCancerous
+    cellular material form from the mesothelium, which is a shielding \r\nlining that
+    covers the majority of the body's areas. These cells ordinarily form in the lining
+    with the lu"
+- id: 2326
+  author: galaxy797.net
+  author_email: adrianacallahan@gmail.com
+  author_url: http://galaxy797.net/Sharetronix/EttieMcdonald1981/tab:info
+  date: '2013-07-02 16:26:38 +0800'
+  date_gmt: '2013-07-02 20:26:38 +0800'
+  content: "Heya! I'm at work browsing your blog from my new apple iphone! Just wanted
+    to say I love reading through your blog and look forward to all your \r\n\r\nposts!
+    Keep up the superb work!\r\n\r\nMy page ... <a href=\"http:&#47;&#47;galaxy797.net&#47;Sharetronix&#47;EttieMcdonald1981&#47;tab:info\"
+    rel=\"nofollow\">galaxy797.net<&#47;a>"
+- id: 2330
+  author: free sex dating sites
+  author_email: nicholhalsey@googlemail.com
+  author_url: http://carchoose.co.uk/sn/link/7697
+  date: '2013-07-02 23:06:24 +0800'
+  date_gmt: '2013-07-03 03:06:24 +0800'
+  content: "It is really a great and helpful piece of info.\r\nI"
+- id: 2340
+  author: sex facebook
+  author_email: mirtadonaldson@gmx.de
+  author_url: http://ravanshn.com/members/howardear/activity/4629/
+  date: '2013-07-03 11:47:26 +0800'
+  date_gmt: '2013-07-03 15:47:26 +0800'
+  content: "Hmm it appears like your site ate my first comment (it was super long)
+    so I guess I'll just sum it up what I submitted and say, I'm thoroughly enjoying
+    your \r\nblog. I too am an aspiring blog blogger but I'm still new to the whole
+    thing. Do you have any points for rookie blog writers? I'd definitely \r\nappreciate
+    it."
+- id: 2343
+  author: fetish cams
+  author_email: terrancefish@gmail.com
+  author_url: http://findfetishcams.com
+  date: '2013-07-03 18:35:16 +0800'
+  date_gmt: '2013-07-03 22:35:16 +0800'
+  content: "What's Going down i'm new to this, I stumbled upon this I have discovered
+    It positively useful and it has aided me \r\nout loads. I'm hoping to contribute
+    &amp; aid other users like its helped me. Great job."
+- id: 2351
+  author: facebookofsex
+  author_email: beverlyqueen@t-online.de
+  author_url: http://fbs3pcu113.leeds.ac.uk/ucsc/mediawiki/index.php/Can_You_Really_Meet_Girls_About_A_Free_Internet_Dating_Website
+  date: '2013-07-04 06:09:03 +0800'
+  date_gmt: '2013-07-04 10:09:03 +0800'
+  content: "Thanks for your short article. I would also love to say a health insurance
+    brokerage service \r\nalso works well with the benefit of the actual coordinators
+    \r\nof any group insurance. The health insurance agent is given a directory of
+    benefits wanted \r\nby an individual or a group coordinator.\r\nSuch a broker
+    may is find individuals or coordinat"
+- id: 2353
+  author: are online dating sites worth it
+  author_email: madelainemarsh@freenet.de
+  author_url: http://www.osteopatiacreso.com/wiki/index.php?title=Free_Dating_Site_To_Find_A_Thai_Soul_Mate
+  date: '2013-07-04 12:16:42 +0800'
+  date_gmt: '2013-07-04 16:16:42 +0800'
+  content: "Great website you have here but I was wanting to know if you knew of any
+    discussion boards that cover the same topics talked about in this article?\r\nI'd
+    really love to be a part of community where I can get feedback from other knowledgeable
+    individuals that share the same interest. If you have any suggestions, please
+    let me know. Kudos!"
+- id: 2356
+  author: tournament
+  author_email: camillabatiste@arcor.de
+  author_url: http://sportinggoodsstoreinfo.com
+  date: '2013-07-04 16:10:29 +0800'
+  date_gmt: '2013-07-04 20:10:29 +0800'
+  content: I've been surfing online more than three hours today, yet I never found
+    any interesting article like yours. It is pretty worth enough for me. Personally,
+    if all website owners and bloggers made good content as you did, the web will
+    be a lot more useful than ever before.
+- id: 2357
+  author: super anti spyware
+  author_email: Koepsell@makemydisk.com
+  author_url: http://lachef.net/foro/profile.php?mode=viewprofile&amp;u=2295807
+  date: '2013-07-04 16:24:04 +0800'
+  date_gmt: '2013-07-04 20:24:04 +0800'
+  content: When I originally commented I clicked the -Notify me when new comments
+    are added- checkbox and now each time a comment is added I get four emails with
+    the same comment. Is there any way you can remove me from that service? Thanks!
+- id: 2359
+  author: Lillie
+  author_email: lillieknott@t-online.de
+  author_url: http://universityrep.info/correct-information-pimples
+  date: '2013-07-04 17:44:28 +0800'
+  date_gmt: '2013-07-04 21:44:28 +0800'
+  content: "Heya! I &#1075;ealize th&#1110;s i&#1109; kind &omicron;f off-t&#1086;&rho;ic
+    but I ha&#1281; t&omicron; a&#1109;&kappa;.\r\nDo&#1077;s bu&#1110;lding a well-&#1077;stablished
+    websit&#1077; like y&#959;urs take a la&#1075;ge amount of \r\nwork? &Iota; am
+    b&#1075;and new to blogging but I &#1281;o \r\nwrit&#1077; in m&#1091; dia&#1075;y
+    on a &#1281;aily b&#1072;&#1109;i&#1109;.\r\nI'd like to start a blog so I will
+    be able to share my own experience and feelings online. Please let me know if
+    you have any kind of recommendations or tips for brand new aspiring blog owners.
+    Thankyou!"
+- id: 2361
+  author: fxace book of sex
+  author_email: jenniferappel@freenet.de
+  author_url: http://community.halflifestudio.com/link/1028
+  date: '2013-07-04 19:41:17 +0800'
+  date_gmt: '2013-07-04 23:41:17 +0800'
+  content: "Thanks for the suggestions you are discussing on this blog.\r\nAnother
+    thing I'd like to say is that often getting hold of duplicates of your credit
+    report in order to scrutinize accuracy of each and every detail is one first measures
+    you have to accomplish in fixing credit. You are looking to clear your credit
+    history from dangerous details mistakes that damage your credit score."
+- id: 2363
+  author: spyware for iphone 3g
+  author_email: Bonnlander@makemydisk.com
+  author_url: http://simplicitgaming.uniteamericanow.org/modules.php?name=Your_Account&amp;op=userinfo&amp;username=KamiPJT
+  date: '2013-07-04 23:11:28 +0800'
+  date_gmt: '2013-07-05 03:11:28 +0800'
+  content: There are some interesting points in time in this article but I don&rsquo;t
+    know if I see all of them center to heart. There is some validity but I will take
+    hold opinion until I look into it further. Good article , thanks and we want more!
+    Added to FeedBurner as well
+- id: 2367
+  author: ffxiv Power Leveling USA
+  author_email: Salerno@100lvl.com
+  author_url: http://www.100lvl.com/final-fantasy-xiv/ffxiv-power-leveling
+  date: '2013-07-05 04:14:25 +0800'
+  date_gmt: '2013-07-05 08:14:25 +0800'
+  content: I dugg some of you post as I  cerebrated they were  invaluable   invaluable
+- id: 2370
+  author: anti spyware wiki
+  author_email: Franeo@makemydisk.com
+  author_url: http://team-6.eng.toyo.ac.jp/practice5-6/index.php/%E5%88%A9%E7%94%A8%E8%80%85:BOABrenda
+  date: '2013-07-05 09:30:25 +0800'
+  date_gmt: '2013-07-05 13:30:25 +0800'
+  content: There is noticeably a bundle to know about this. I assume you made certain
+    nice points in features also.
+- id: 2371
+  author: deptak.org
+  author_email: walter-damron@web.de
+  author_url: http://deptak.org/link/35508
+  date: '2013-07-05 10:05:57 +0800'
+  date_gmt: '2013-07-05 14:05:57 +0800'
+  content: "Wonderful website. Plenty of helpful info here.\r\nI am sending it to
+    some pals ans also sharing in delicious.\r\n\r\nAnd certainly, thank you on your
+    sweat!"
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"><span style="font-size: small;"><span style="font-size: large;"><b>Grub Rescue commands<&#47;b><&#47;span> <&#47;span><span style="font-size: small;">I<&#47;span><span style="font-size: small;">f <b>Grub is missing<&#47;b> after installing Ubuntu and screen is showing <b>Grub Rescue<&#47;b>, then Ubuntu <b>grub<&#47;b> <b>rescue or restore<&#47;b> has to done. It can be done through Ubuntu Server CD or <b>Ubuntu Desktop CD<&#47;b>.&nbsp;<&#47;span><br />
+<span style="font-size: small;">If <span style="font-size: small;">a<&#47;span>t system start up you might be seeing the option <b>Grub Rescue or Grub missing<&#47;b><span style="font-size: small;"> option then you <span style="font-size: small;">need to follow the below commands.<&#47;span><&#47;span><&#47;span></p>
+<div style="font-family: inherit;"><span style="font-size: small;">This article will show how to do <b>Ubuntu grub rescue<&#47;b> with screen shots using Ubuntu Desktop CD. These <span style="font-size: small;">screenshots<&#47;span>&nbsp; have been taken on Ubuntu 11.04. The very same method can be used to repair <b>grub mint Debian<&#47;b>. <&#47;span><&#47;div><br />
+<span style="font-size: small;"><span style="font-family: inherit;">If you don't have the desktop CD then <span style="font-size: small;">you can use<&#47;span> Ubuntu server CD or USB also.&nbsp;<&#47;span><&#47;span></p>
+<div style="font-family: inherit;"><span style="font-size: small;"> To do grub rescue through Ubuntu Server CD see&nbsp;<&#47;span><&#47;div><br />
+<span style="font-size: small;">"<i style="color: blue;"><b>Install Grub from Ubuntu server CD<&#47;b><&#47;i>".<&#47;span></p>
+<p><span style="font-size: small;"><i><b>NOTE:<&#47;b><&#47;i><b>&nbsp; <&#47;b>You will get <&#47;span><b><span style="font-size: large;">&#47;usr&#47;sbin&#47;grub-probe: error: cannot stat 'aufs'<&#47;span><&#47;b><span style="font-size: small;">&nbsp; error if <&#47;span>you didn't follow the commands listed below. Specifically you did not do chroot,<br />
+i.e. <span style="font-size: small;"><i><b> sudo chroot &#47;mnt<&#47;b><&#47;i><&#47;span>.<span style="font-size: small;">&nbsp;<&#47;span><br />
+<a id="more"></a><a id="more-13"></a><br />
+<span style="font-size: small;">For <b>Ubuntu grub rescue<&#47;b> follow these steps:<&#47;span><br />
+<span style="font-size: small;">1.Boot from the <b>Ubuntu Desktop live CD<&#47;b>.&nbsp;<&#47;span></p>
+<p><span style="font-size: small;"><br />
+<&#47;span></p>
+<table class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;" width="369" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><img class="alignnone" alt="" src="https:&#47;&#47;help.ubuntu.com&#47;community&#47;LiveCD?action=AttachFile&amp;do=get&amp;target=804+Live+2+.png" width="640" height="480" &#47;><&#47;td><br />
+<&#47;tr></p>
+<tr>
+<td class="tr-caption" style="text-align: center;">Ubuntu grub rescue-1<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table></p>
+<div class="separator" style="clear: both; text-align: center;"><&#47;div><br />
+<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Select Try Ubuntu.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<&#47;span><br />
+<a href="http:&#47;&#47;www.blogger.com&#47;blogger.g?blogID=3974554257572840501" rel="nofollow" name="more"><&#47;a><span style="font-size: small;"><br />
+<&#47;span><span style="font-size: small;">2.In Live Desktop session open terminal.&nbsp;<&#47;span><br />
+<span style="font-size: small;">&nbsp; Application ->Accessories->Terminal.<&#47;span><br />
+<span style="font-size: small;"><br />
+<&#47;span><span style="font-size: small;">3. In Terminal tpye <i style="color: red;"><b style="color: blue;">sudo fdisk -l<&#47;b><b> &nbsp; <&#47;b><b><span style="color: black;">.&nbsp;<&#47;span><&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i style="color: red;"><b><span style="color: black;">&nbsp; &nbsp; <&#47;span><&#47;b><&#47;i><span style="color: red;"><span style="color: black;">It will display all partiton of the disk.<&#47;span><&#47;span><&#47;span></p>
+<table class="tr-caption-container" style="margin-left: auto; margin-right: auto; text-align: center;" cellspacing="0" cellpadding="0" align="center">
+<tbody>
+<tr>
+<td style="text-align: center;"><a href="http:&#47;&#47;blog.futureme.info&#47;wp-content&#47;uploads&#47;2013&#47;01&#47;Screenshot-from-2013-02-12-221619.png"><img class="aligncenter size-full wp-image-489" alt="Screenshot from 2013-02-12 22:16:19" src="http:&#47;&#47;blog.futureme.info&#47;wp-content&#47;uploads&#47;2013&#47;01&#47;Screenshot-from-2013-02-12-221619.png" width="672" height="412" &#47;><&#47;a><&#47;td><br />
+<&#47;tr></p>
+<tr>
+<td class="tr-caption" style="text-align: center;">Ubuntu grub rescue screenshot-2<&#47;td><br />
+<&#47;tr><br />
+<&#47;tbody><br />
+<&#47;table></p>
+<div class="separator" style="clear: both; text-align: center;"><&#47;div><br />
+<span style="font-size: small;"><span style="color: red;"><span style="color: black;">&nbsp;<&#47;span><&#47;span><i style="color: red;"><b><&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;">The partation which have <i><b>Linux<&#47;b><&#47;i> under <i><b>System<&#47;b><&#47;i> column is your drive in which ubuntu linux is installed. In screenshot ubuntu partition drive is <i><b>&#47;dev&#47;sda11<&#47;b><&#47;i>.<&#47;span><br />
+<span style="font-size: small;"><br />
+<&#47;span><span style="font-size: small;">4. Mount the ubuntu partition drive<&#47;span><br />
+<span style="font-size: small;">&nbsp; &nbsp;&nbsp; <&#47;span><span style="font-size: small;">&nbsp; <i><b>sudo mount &#47;dev&#47;sdXX &#47;mnt<&#47;b><&#47;i>&nbsp;<&#47;span><span style="font-size: small;"> (example 'sudo mount &#47;dev&#47;sda11 &#47;mnt' ,don't miss the spaces.)<&#47;span><br />
+<span style="font-size: small;"><br />
+<&#47;span><span style="font-size: small;">5.<&#47;span><span style="font-size: small;">Only if you have a separate boot partition: <&#47;span></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><span style="font-size: small;">&nbsp;&nbsp; <&#47;span><span style="font-size: small;">&nbsp; &nbsp; &nbsp;&nbsp;&nbsp;&nbsp; <b><i>sudo mount &#47;dev&#47;sdYY &#47;mnt&#47;boot.<&#47;i><&#47;b><&#47;span><&#47;div></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><span style="font-size: small;">&nbsp;6.&nbsp; <&#47;span><span style="font-size: small;">Mount the virtual filesystems: <&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo mount --bind &#47;dev &#47;mnt&#47;dev<&#47;b><&#47;i><&#47;span></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo mount --bind &#47;proc &#47;mnt&#47;proc&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo mount --bind &#47;sys &#47;mnt&#47;sys<&#47;b><&#47;i><&#47;span><&#47;div><br />
+<span style="font-size: small;">7. <&#47;span><span style="font-size: small;">To ensure that only the grub utilities from the LiveCD get executed, mount &#47;usr <&#47;span><span style="font-size: small;"> &nbsp;&nbsp;&nbsp;&nbsp;<&#47;span><br />
+<span style="font-size: small;">&nbsp;&nbsp;<i><b>&nbsp;&nbsp; sudo mount --bind &#47;usr&#47; &#47;mnt&#47;usr<&#47;b><&#47;i><i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp; sudo chroot &#47;mnt <&#47;b><&#47;i><&#47;span><span style="font-size: small;">&nbsp;<&#47;span></p>
+<p><span style="font-size: small;">8. If there is no &#47;boot&#47;grub&#47;grub.cfg or it's not correct, create one using<&#47;span><span style="font-size: small;">&nbsp;<&#47;span><br />
+<span style="font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp;<i><b> update-grub<&#47;b><&#47;i>&nbsp;<&#47;span><br />
+<span style="font-size: small;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; or&nbsp; <i><b>update-grub2<&#47;b><&#47;i><&#47;span></p>
+<p><&#47;div></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><span style="font-size: small;">9.Now reinstall Grub <i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; grub-install &#47;dev&#47;sdX<&#47;b><&#47;i>&nbsp; (e.g. grub-install &#47;dev&#47;sda. Do not specify the partition number.<&#47;span><span style="font-size: small;">&nbsp; &nbsp;<&#47;span><&#47;div></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><span style="font-size: small;">&nbsp;10. Verify the install&nbsp;<&#47;span><br />
+<span style="font-size: small;">&nbsp; &nbsp; &nbsp; &nbsp; <i><b>sudo grub-install --recheck &#47;dev&#47;sdX<&#47;b><&#47;i><&#47;span><&#47;div></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><span style="font-size: small;">11. Exit chroot : <i><b>CTRL-D<&#47;b><&#47;i> on keyboard.<&#47;span><&#47;div></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;">
+<p><span style="font-size: small;">12. <&#47;span><span style="font-size: small;">Unmount virtual filesystems:<&#47;span><span style="font-size: small;"> <i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo umount &#47;mnt&#47;dev<&#47;b><&#47;i><i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo umount &#47;mnt&#47;proc<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo umount &#47;mnt&#47;sys<&#47;b><&#47;i><&#47;span><span style="font-size: small;">&nbsp;<&#47;span></p>
+<p><span style="font-size: small;">If you mounted a separate &#47;boot partition:<&#47;span><span style="font-size: small;">&nbsp;&nbsp;<&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo umount &#47;mnt&#47;boot<&#47;b><&#47;i>&nbsp;<&#47;span></p>
+<p><span style="font-size: small;">13. Unmount the LiveCD's &#47;usr directory:<&#47;span><span style="font-size: small;"><i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo umount &#47;mnt&#47;usr<&#47;b><&#47;i><&#47;span></p>
+<p><span style="font-size: small;">14. Unmount last device:<i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo umount &#47;mnt<&#47;b><&#47;i> <&#47;span></p>
+<p><&#47;div></p>
+<div lang="en" style="line-height: 115%; margin-bottom: 0.35cm;"><&#47;div><br />
+<span style="font-size: small;">15. Reboot.<i><b>&nbsp;<&#47;b><&#47;i><&#47;span><br />
+<span style="font-size: small;"><i><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; sudo reboot.<&#47;b><&#47;i><&#47;span></p>
+<p><span style="font-size: small;"><i><b>NOTE:<&#47;b><&#47;i><b> <&#47;b>If you are getting <&#47;span><span style="font-size: large;">&#47;usr&#47;sbin&#47;grub-probe: error: cannot stat 'aufs'<&#47;span><span style="font-size: small;">&nbsp; error then the possible reason is that <&#47;span>you didn't follow the commands listed above. Specifically you did not do chroot,<br />
+ie <span style="font-size: small;"><i><b> sudo chroot &#47;mnt<&#47;b><&#47;i><&#47;span>.<br />
+Follow the above steps correctly and you are done.</p>
+<p><&#47;div></p>

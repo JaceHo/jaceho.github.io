@@ -1,0 +1,35 @@
+---
+layout: post
+status: publish
+published: true
+title: Pro81:Palindromic Square
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 32
+wordpress_url: http://localhost/?p=28
+date: '2012-07-16 11:59:19 +0800'
+date_gmt: '2012-07-16 11:59:19 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;"> <center> <b><font size="7">Palindromic Squares<&#47;font><&#47;b><br &#47;> Rob Kolstad <&#47;center>
+<p> Palindromes are numbers that read the same forwards as backwards. The number 12321 is a typical palindrome.  <&#47;p>
+<p> Given a number base B (2 <= B <= 20 base 10), print all the integers N (1 <= N <= 300 base 10) such that the square of N is palindromic when expressed in base B; also print the value of that palindromic square.  Use the letters 'A', 'B', and so on to represent the digits 10, 11, and so on.  <&#47;p>
+<p> Print both the number and its square in base B.  <&#47;p><br />
+<h3>PROGRAM NAME: palsquare<&#47;h3><br />
+<h3>INPUT FORMAT<&#47;h3>  A single line with B, the base (specified in base 10).<br />
+<h3>SAMPLE INPUT (file palsquare.in) <&#47;h3>
+<pre>10 <&#47;pre><br />
+<h3>OUTPUT FORMAT<&#47;h3>  Lines with two integers represented in base B.  The first integer is the number whose square is palindromic; the second integer is the square itself.<br />
+<h3>SAMPLE OUTPUT (file palsquare.out)<&#47;h3>
+<pre>1 1 2 4 3 9 11 121 22 484 26 676 101 10201 111 12321 121 14641 202 40804 212 44944 264 69696 <br &#47;><br &#47;>&#47;*<br &#47;>ID: hippo he<br &#47;>LANG: C<br &#47;>TASK: palsquare<br &#47;>*&#47;<br &#47;>#include<stdio.h><br &#47;>#include<string.h><br &#47;>char pals[50][20];<br &#47;>const char scale[]="0123456789ABCDEFGHIJK";<br &#47;>char nin[10];<br &#47;>void input(int *base)<br &#47;>{<br &#47;>    FILE *fp=fopen("palsquare.in","r");<br &#47;>    fscanf(fp,"%d",base);<br &#47;>}<br &#47;>void transform(int n,int R,char **end)<br &#47;>{<br &#47;>    memset(nin,'0',sizeof(nin));<br &#47;>    int i=0;<br &#47;>    while(n)<br &#47;>    {<br &#47;>        nin[i]=scale[n%R];<br &#47;>        n&#47;=R;<br &#47;>        i++;<br &#47;>    }<br &#47;>    nin[i]=0;<br &#47;>    *end=&amp;nin[i-1];<br &#47;>}<br &#47;>int ispal(char* nin,char *end)<br &#47;>{<br &#47;>    char* p=nin,*q=end;<br &#47;>    while(p<q)<br &#47;>    {<br &#47;>        if(*q!=*p)return 0;<br &#47;>        q--;<br &#47;>        p++;<br &#47;>    }<br &#47;>    return 1;<br &#47;>}<br &#47;>void output(int n)<br &#47;>{<br &#47;>    int i;<br &#47;>    char *p,*q,tmp;<br &#47;>    FILE *fp=fopen("palsquare.out","w");<br &#47;>    for(i=0;i<n;i+=2)<br &#47;>    {<br &#47;>        p=pals[i];<br &#47;>        for(q=p;*q;q++);q--;<br &#47;>        while(q>p)<br &#47;>        {<br &#47;>            tmp=*p;<br &#47;>            *p=*q;<br &#47;>            *q=tmp;<br &#47;>            p++;q--;<br &#47;>        }<br &#47;>        fprintf(fp,"%s %sn",pals[i],pals[i+1]);<br &#47;>    }<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>    int n=0,base,i,R;<br &#47;>    char *end1=NULL;<br &#47;>    char *end2=NULL;<br &#47;>    input(&amp;base);<br &#47;>    for(i=1;i<=300;i++)<br &#47;>    {<br &#47;>            transform(i*i,base,&amp;end2);<br &#47;>            if(ispal(nin,end2))<br &#47;>            {<br &#47;>                transform(i,base,&amp;end1);<br &#47;>                strcpy(pals[n++],nin);<br &#47;>                transform(i*i,base,&amp;end2);<br &#47;>                strcpy(pals[n++],nin);<br &#47;>            }<br &#47;>    }<br &#47;>    output(n-1);<br &#47;>    return 0;<br &#47;>}<br &#47;><&#47;pre><&#47;div></p>

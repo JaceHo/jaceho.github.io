@@ -1,0 +1,25 @@
+---
+layout: post
+status: publish
+published: true
+title: PROB Broken Necklace
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 40
+wordpress_url: http://localhost/?p=36
+date: '2012-06-04 12:15:20 +0800'
+date_gmt: '2012-06-04 12:15:20 +0800'
+categories:
+- usaco
+tags:
+- usaco
+- algorithms
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &#47;*<br &#47;>ID:hejiek1<br &#47;>LANG: C<br &#47;>TASK:beads<br &#47;>*&#47;<br &#47;>#include<stdio.h><br &#47;>#include<string.h><br &#47;>#define MAX&nbsp;&nbsp;&nbsp;&nbsp; 1000<br &#47;>int num;<br &#47;>char beads[MAX];<br &#47;>int input(void)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; FILE *fp=fopen("beads.in","r");<br &#47;>&nbsp;&nbsp;&nbsp; fscanf(fp,"%d",&amp;num);<br &#47;>&nbsp;&nbsp;&nbsp; fscanf(fp,"%s",beads);<br &#47;>&nbsp;&nbsp;&nbsp; return strlen(beads);<br &#47;>}<br &#47;>int findmax(char *beads,int len)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; int i,j,k,maxn,flag,maxmaxn=0;<br &#47;>&nbsp;&nbsp;&nbsp; char buf,c;<br &#47;>&nbsp;&nbsp;&nbsp; for(i=0;i<len;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; beads[len+i]=beads[i];<br &#47;>&nbsp;&nbsp;&nbsp; for(j=0;j<len*2;j++)<br &#47;>&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxn=0;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(i=j,flag=1;i<len*2;i++)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c=beads[i];<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(flag&amp;&amp;c!='w')<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buf=c;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxn++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag=0;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if(c==buf||c=='w')<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxn++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else break;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; for(k=j-1,flag=1;k>=0;k--)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; c=beads[k];<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(flag&amp;&amp;c!='w')<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; buf=c;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxn++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; flag=0;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else if(c==buf||c=='w')<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxn++;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else break;<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if(maxmaxn<maxn)<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; maxmaxn=maxn;<br &#47;>&nbsp;&nbsp;&nbsp; }<br &#47;>&nbsp;&nbsp;&nbsp; return len>=maxmaxn?maxmaxn:len;<br &#47;>}<br &#47;>void output(int maxn)<br &#47;>{<br &#47;>&nbsp;&nbsp;&nbsp; FILE *fp=fopen("beads.out","w");<br &#47;>&nbsp;&nbsp;&nbsp; fprintf(fp,"%dn",maxn);<br &#47;>}<br &#47;>int main (int argc, char const* argv[]) {<br &#47;>&nbsp;&nbsp;&nbsp; int length,maxn;<br &#47;>&nbsp;&nbsp;&nbsp; length=input();<br &#47;>&nbsp;&nbsp;&nbsp; maxn=findmax(beads,length);<br &#47;>&nbsp;&nbsp;&nbsp; output(maxn);<br &#47;>&nbsp;&nbsp;&nbsp; return 0;<br &#47;>}<br &#47;><&#47;div></p>

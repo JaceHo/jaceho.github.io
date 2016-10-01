@@ -1,0 +1,45 @@
+---
+layout: post
+status: publish
+published: true
+title: sdl使用中libs的链接问题
+author:
+  display_name: hippo
+  login: admin
+  email: kimiscircle@gmail.com
+  url: http://blog.futureme.info
+author_login: admin
+author_email: kimiscircle@gmail.com
+author_url: http://blog.futureme.info
+wordpress_id: 44
+wordpress_url: http://localhost/?p=40
+date: '2012-05-19 22:48:21 +0800'
+date_gmt: '2012-05-19 22:48:21 +0800'
+categories:
+- 所谓科学
+tags:
+- c
+- sdl
+- libs
+- 链接
+comments: []
+---
+<div id="BlogArticleDetail" style="font-size: 14px;">                     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 期末作业是sdl上简单的游戏制作，linux下gcc编译总会出现这样那样的问题。<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 首先是header file的链接，sdl&nbsp; .h文件默认装在&#47;usr&#47;include&#47;SDL&#47; 下，lib还好，都在stantared lib directory下，不过我也是现在才知道的哈。<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; #include"SDL&#47;SDL.h",而不是直接&ldquo;SDL.h"。另外在编译包含了"rotozoom.h"时，用gcc -Wall sdl.c -lSDL -lmingw32 -lSDLmain<br &#47;>仍然会提示错误undefined reference to rotozoomSurface funcion,我google来了好久，终于无意中发觉了错误在哪里。rotozoom.h是SDL_gfx的头文件，加上-lSDL_gfx就行了。百度，google上在gcc linker上卡住的programmers比比皆是，新手老手都有。这里有一篇文章讲libs的链接，很详细，研究下，就对函数库了解多一些了。<br &#47;>&nbsp;&nbsp;&nbsp;&nbsp; <br &#47;><br />
+<h3> <a target="_blank" rel="nofollow" href="http:&#47;&#47;www.network-theory.co.uk&#47;docs&#47;gccintro&#47;gccintro_22.html">Search path example<&#47;a><&#47;h3>
+<p> The following example program uses a library that might be installed as an additional package on a system--the GNU Database Management Library (GDBM).  The GDBM Library stores key-value pairs in a DBM file, a type of data file which allows values to be stored and indexed by a <i>key<&#47;i> (an arbitrary sequence of characters).  Here is the example program <tt>&lsquo;dbmain.c&rsquo;<&#47;tt>, which creates a DBM file containing a key <samp>&lsquo;testkey&rsquo;<&#47;samp> with the value <samp>&lsquo;testvalue&rsquo;<&#47;samp>:  <&#47;p>
+<pre class="example">#include <stdio.h> #include <gdbm.h>  int main (void) {   GDBM_FILE dbf;   datum key = { "testkey", 7 };     &#47;* key, length *&#47;   datum value = { "testvalue", 9 }; &#47;* value, length *&#47;    printf ("Storing key-value pair... ");   dbf = gdbm_open ("test", 0, GDBM_NEWDB, 0644, 0);   gdbm_store (dbf, key, value, GDBM_INSERT);   gdbm_close (dbf);   printf ("done.n");   return 0; } <&#47;pre>
+<p> <span style="font-weight: bold;">The program uses the header file <&#47;span><tt style="font-weight: bold;">&lsquo;gdbm.h&rsquo;<&#47;tt><span style="font-weight: bold;"> and the library <&#47;span><tt style="font-weight: bold;">&lsquo;libgdbm.a&rsquo;<&#47;tt><span style="font-weight: bold;">.  If the library has been installed in the default location of <&#47;span><tt style="font-weight: bold;">&lsquo;&#47;usr&#47;local&#47;lib&rsquo;<&#47;tt><span style="font-weight: bold;">, with the header file in <&#47;span><tt style="font-weight: bold;">&lsquo;&#47;usr&#47;local&#47;include&rsquo;<&#47;tt><span style="font-weight: bold;">, then the program can be compiled with the following simple command:  <&#47;span><&#47;p>
+<pre class="example">$ gcc -Wall dbmain.c -lgdbm <&#47;pre>
+<p> Both these directories are part of the default <code>gcc<&#47;code> include and link paths.  <&#47;p>
+<p> However, if GDBM has been installed in a different location, trying to compile the program will give the following error:  <&#47;p>
+<pre class="example">$ gcc -Wall dbmain.c -lgdbm     dbmain.c:1: gdbm.h: No such file or directory <&#47;pre>
+<p> For example, if version 1.8.3 of the GDBM package is installed under the directory <tt>&lsquo;&#47;opt&#47;gdbm-1.8.3&rsquo;<&#47;tt> the location of the header file would be,  <&#47;p>
+<pre class="example">&#47;opt&#47;gdbm-1.8.3&#47;include&#47;gdbm.h <&#47;pre>
+<p> which is not part of the default <code>gcc<&#47;code> include path.  Adding the appropriate directory to the include path with the command-line option <code>-I<&#47;code> allows the program to be compiled, but not linked:  <&#47;p>
+<pre class="example">$ gcc -Wall -I&#47;opt&#47;gdbm-1.8.3&#47;include dbmain.c -lgdbm  &#47;usr&#47;bin&#47;ld: cannot find -lgdbm collect2: ld returned 1 exit status <&#47;pre>
+<p> The directory containing the library is still missing from the link path.   It can be added to the link path using the following option:  <&#47;p>
+<pre class="example">-L&#47;opt&#47;gdbm-1.8.3&#47;lib&#47; <&#47;pre>
+<p> The following command line allows the program to be compiled and linked:  <&#47;p>
+<pre class="example">$ gcc -Wall -I&#47;opt&#47;gdbm-1.8.3&#47;include     -L&#47;opt&#47;gdbm-1.8.3&#47;lib dbmain.c -lgdbm <&#47;pre>
+<p> This produces the final executable linked to the GDBM library.  Before seeing how to run this executable we will take a brief look at the environment variables that affect the <code>-I<&#47;code> and <code>-L<&#47;code> options.  <&#47;p>
+<p> Note that you should never place the absolute paths of header files in <code>#include<&#47;code> statements in your source code, as this will prevent the program from compiling on other systems.  The <code>-I<&#47;code> option or the <code>INCLUDE_PATH<&#47;code> variable described below should always be used to set the include path for header files.  <&#47;p><&#47;div></p>
