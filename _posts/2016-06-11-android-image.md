@@ -10,7 +10,7 @@ tags: [图标流量优化, android, 内存]
 因为我们应用中大量常用view中出现图标概率很大，正常使用拉取图标较多，对图标的流量问题优化的投入产出比会很高,对于图片的选择和使用就尤为重要。 
 android分段屏幕的物理尺寸如下:
 
-![xdpi](http://upload-images.jianshu.io/upload_images/928566-f5427c984a4ea787.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![xdpi](http://blog.futureme.info/assets/img/928566-f5427c984a4ea787.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 
 现在有三个物理长宽分别为2寸、3寸, 4 寸，
@@ -20,14 +20,14 @@ android分段屏幕的物理尺寸如下:
 若只有drawable下的图片：则所以在hdpi屏幕上系统会按比例将drawable下的图片扩
 大为原来的1.5倍，在ldpi屏幕上系统会按比例将drawable下的图片缩小为原来的0.75倍
 
-![](http://upload-images.jianshu.io/upload_images/928566-852eb62c33b7c57d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://blog.futureme.info/assets/img/928566-852eb62c33b7c57d.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ####Android 中的图片预处理
 * 对于图标的处理:
 *drable-xdpi:
 Android中对于drawable的定义比较规整，为了更好的适应各种屏幕，我们选择了几种或全部适配范围，其图片大小和像素大小对应关系如下：
 
-![](http://upload-images.jianshu.io/upload_images/928566-75c1fcc5680cac1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://blog.futureme.info/assets/img/928566-75c1fcc5680cac1f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ####Android 寻找icon的过程
 在Android2.1以及之后，出现了drawable-ldpi、drawable-mdpi、
@@ -38,7 +38,7 @@ drawable-hdpi、drawable-xhdpi、drawable-xxhdpi。在这些文件
 认的drawable文件夹下找，然后按照Android2.1之前的规则缩放。如果还没有找到，
 应用就会报错或者直接crash掉了。
 
-![](http://upload-images.jianshu.io/upload_images/928566-dc82f9534b45f79b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://blog.futureme.info/assets/img/928566-dc82f9534b45f79b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ####Android中图片的加载
 *对于bitmap的加载
@@ -47,7 +47,7 @@ drawable-hdpi、drawable-xhdpi、drawable-xxhdpi。在这些文件
 例如在列表中仅用于预览时加载缩略图（thumbnails ）
 Android中图片有四种属性，分别是：
 
-![](http://upload-images.jianshu.io/upload_images/928566-340c639b4e4e11c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![](http://blog.futureme.info/assets/img/928566-340c639b4e4e11c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ImageCache 图片缓存，包含内存和Sdcard缓存
 典型的图片加载策略: 根据屏幕需要的宽高选择`inSampleSize`的值进行decode和load

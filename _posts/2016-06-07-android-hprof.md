@@ -19,14 +19,14 @@ tags: [hprof, android, 内存]
        while true;  do adb shell dumpsys com.example.jefforeilly.mat ; sleep ;        
    ```
    * 打开应用后，内存使用情况
-![刚使用时内存使用情况](http://upload-images.jianshu.io/upload_images/928566-0dd4f76cc1cddd0d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![刚使用时内存使用情况](http://blog.futureme.info/assets/img/928566-0dd4f76cc1cddd0d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
    * 然后我们正常使用应用（包含2次登录登出，打开主页面，打开fragment，关闭fragment）使用后
-![应用使用后内存使用情况](http://upload-images.jianshu.io/upload_images/928566-1af9f4b59d1217a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![应用使用后内存使用情况](http://blog.futureme.info/assets/img/928566-1af9f4b59d1217a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ####内存泄漏分析
 #####android studio memory dump
 - 遇到这种内存泄漏问题，我们可以先用android studio2的memoery dump功能查看reference tree,选择打开[dominator_tree](https://developer.android.com/studio/profile/am-memory.html)  
-![C93EE648-089B-449C-9248-A4EAE8D8F2D8.png](http://upload-images.jianshu.io/upload_images/928566-6285d94d0b3aa871.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![C93EE648-089B-449C-9248-A4EAE8D8F2D8.png](http://blog.futureme.info/assets/img/928566-6285d94d0b3aa871.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 其中`activity`是我们最关心的组件之一，应为它们占用的内存较大，也更容易发现，按图所示步骤，第图中四步，我们发现`viewpropertyanimatorcompat listener`没有被释放，这个是我们自己产生的对象，显然有问题。
 
 
@@ -40,9 +40,9 @@ tags: [hprof, android, 内存]
 - 转换android vm的hprof格式之后，就可以使用eclipse mat做分析了,
     
    * 首先搜索任意我们认为应该被回收的对象名称，如这个例子中的MainActivity, 这里发现了5个入口,  为简单处理，我们全选所有对象， 右键选择 `merge shorttest paths to gc roots`(exclude weak references),  得到距离gc root 更近的节点. 
-![EA5A3190-E96B-46C2-943C-F43B81EAD47A.png](http://upload-images.jianshu.io/upload_images/928566-4de3962089671d61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![EA5A3190-E96B-46C2-943C-F43B81EAD47A.png](http://blog.futureme.info/assets/img/928566-4de3962089671d61.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
    
    * 依次展开这些节点， 发现了当前线程函数栈中有animator，也是我们new出的对象，这个Thread就是MainThread, 没有手动释放的animator还在运行, 这就很明确告诉我们对它处理的相关代码有问题了
-![EA7CBD37-F2F3-4E95-A18A-D180F4C78686.png](http://upload-images.jianshu.io/upload_images/928566-7c9c533279454729.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![EA7CBD37-F2F3-4E95-A18A-D180F4C78686.png](http://blog.futureme.info/assets/img/928566-7c9c533279454729.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 **上面寻找内存泄漏的方法也同样使用于内存优化的过程，如果所有对象和内存能够合理释放，在`dominator tree`中找到dominator node，看它是否可以释放，如果可以就release掉它，这样由他支配的其他节点也会被回收，如此这样内存便可以持续优化了。**

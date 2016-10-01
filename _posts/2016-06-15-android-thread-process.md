@@ -22,7 +22,7 @@ tags: [线程, 进程模型, android, 内存]
        * HandlerThread提供启动拥有Looper线程的简易方法
 
 针对不同的使用场景，在线程，线程池，handler等基础上我们拓展了一些易用的线程处理组件：
-![android_multitasking.png](http://upload-images.jianshu.io/upload_images/928566-c40e4e439581e563.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![android_multitasking.png](http://blog.futureme.info/assets/img/928566-c40e4e439581e563.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ###Android 中的进程
 
@@ -39,10 +39,10 @@ tags: [线程, 进程模型, android, 内存]
 Android进程间通讯实际上可以看做2个进程中的线程消息传递，作为cs架构，其实现依赖binder机制
 #####binder机制解析:
 
-![Paste_Image.png](http://upload-images.jianshu.io/upload_images/928566-0f3b05068e7e3243.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![Paste_Image.png](http://blog.futureme.info/assets/img/928566-0f3b05068e7e3243.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 #####分层示例
-![实例分析](http://upload-images.jianshu.io/upload_images/928566-fe9808d43e9b6400.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![实例分析](http://blog.futureme.info/assets/img/928566-fe9808d43e9b6400.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 #####进程间通讯binder机制client,server实现代码示例：
 ```shell
 git clone https://github.com/marakana/FibonacciBinderDemo.git
