@@ -44,7 +44,6 @@ gems:
   - jekyll-gist
   - jekyll-feed
   - jekyll-import
-  - jekyll-paginate
   - addressable
 sass:
   sass_dir: _sass
