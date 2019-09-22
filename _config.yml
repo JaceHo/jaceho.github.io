@@ -1,27 +1,27 @@
-title:            Learning do earn.
+title:            Fake it until you make it.
 description:      
 disqus_shortname: 
 reading_time:     true
 words_per_minute: 200
-# Your site's domain goes here (eg: https://mmistakes.github.io, http://yourdomain.com, etc)
+# Your site's domain goes here (eg: https://JaceHo.github.io, http://yourdomain.com, etc)
 # When testing locally leave blank or use http://localhost:4000
-#url: http://blog.futureme.info
-url: 
+url: http://blog.scalingworld.com/jace
+#url:
 
 # Owner/author information
 owner:
-  name:           Jace Ho
-  avatar:         avatar.jpg
-  bio:            "Keep it simple."
-  email:          kimiscircle@gmail.com
+  name:  Jace Ho
+  avatar:   avatar.jpg
+  bio:   "Keep it simple."
+  email: kimiscircle@gmail.com
   # Social networking links used in footer. Update and remove as you like.
-  twitter:        
-  facebook:       
-  github:         
+  twitter:  https://twitter.com/jace_ho
+  facebook: https://www.facebook.com/jacecr.ho
+  github: https://github.com/jaceho
   stackexchange:  
-  linkedin:       
-  jianshu:
-  # google plus id, include the '+', eg +mmistakes
+  linkedin: https://www.linkedin.com/in/jayceeho/
+  jianshu: https://www.jianshu.com/u/20e173a0df91
+  # google plus id, include the '+', eg +JaceHo
   google_plus:
 
 # Background image to be tiled on all pages
@@ -44,6 +44,7 @@ gems:
   - jekyll-gist
   - jekyll-feed
   - jekyll-import
+  - jekyll-paginate
   - addressable
 sass:
   sass_dir: _sass

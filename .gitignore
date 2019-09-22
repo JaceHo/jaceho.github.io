@@ -8,3 +8,6 @@ Gemfile.lock
 .sass-cache
 .jekyll-metadata
 .jekyll-cache/
+.idea/
+.jekyll-metadata
+jaceho.github.io.iml
