@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>出处与口径</title>
+<link rel="stylesheet" href="/me/style.css"></head>
+<body>
+<header><div class="wrap"><div class="brand"><a href="/me/index.html">何杰 <span>Jace Ho</span></a></div>
+<nav><a href="/me/index.html">何杰</a><a href="/me/writing.html">写作</a><a href="/me/work.html">工程与产品</a><a href="/me/evidence.html" class=on>出处与口径</a></nav></div></header>
+<main class="wrap">
+
+<h1>出处与口径</h1>
+<p class="sub">这一页存在的理由：数字要能被别人重跑一遍。</p>
+
+<h2>数据来源</h2>
+<table>
+<tr><th>面</th><th>取数方式</th><th>时间</th><th>原始文件</th></tr>
+<tr><td>GitHub</td><td><code>api.github.com/users/JaceHo/repos</code>（分页）+ <code>git/trees</code> 取 <code>_posts</code></td><td class="n">2026-10-26</td><td><code>gh-all-300.json</code></td></tr><tr><td>GitHub（口径复算）</td><td><code>gh api --paginate user/repos?affiliation=owner</code> = 267；默认口径含 collaborator/org，是 281，不是他的仓库数</td><td class="n">2026-10-26</td><td><code>gh-owned-live.json</code></td></tr><tr><td>自建博客</td><td>仓库文件树 + contents API 取正文（<code>raw.githubusercontent.com</code> 在本机被代理吞掉）</td><td class="n">2026-10-26</td><td><code>jekyll-full.json</code></td></tr><tr><td>Gitee</td><td>登录态工作台 <code>/dashboard/projects</code>（ego lite）逐仓库根目录，56 个仓库 / 读到 55 个，<code>_posts</code> 命中 0</td><td class="n">2026-10-26</td><td><code>gitee-trees.json</code></td></tr><tr><td>CSDN / 简书</td><td>作者公开页列表抓取（ego lite）</td><td class="n">2026-10-26</td><td><code>inventory.json</code></td></tr><tr><td>公众号列表</td><td>后台首页与内容数据（登录态读取，凭证不落盘）</td><td class="n">2026-10-26</td><td><code>mp-publish.json</code></td></tr><tr><td>公众号正文</td><td>38 篇逐篇取 #js_content：curl 被微信反爬统一返回 18 KB 验证页（38 条尺寸一致），必须走真实浏览器</td><td class="n">2026-10-26</td><td><code>mp-bodies.json</code></td></tr><tr><td>字数口径</td><td>后台“字数”≠正文汉字数（市政分析：后台 5,315 / 正文 1,817 汉字 + 6 表），两值都留，不挑一个说</td><td class="n">2026-10-26</td><td><code>mp-bodies.json</code></td></tr><tr><td>蒲公英</td><td>管理中心应用列表（登录态读取，凭证不落盘）</td><td class="n">2026-10-26</td><td><code>inventory.json</code></td></tr><tr><td>声音指标</td><td>118 篇正文级机读（<strong>按发布计</strong>：博客 62 + 公众号 38 + CSDN 10 + 简书 8）：冒号密度 / 人称 / 表格 / 代码块 / 开篇摘句。去重后唯一文本是 110 —— 简书 8 篇与 CSDN 同稿互贴（8/8 字数差 ±8% 内，实测）。</td><td class="n">2026-10-26</td><td><code>jekyll-full.json + mp-bodies.json + csdn-bodies.json + platform-bodies.json</code></td></tr><tr><td>深口径抽样</td><td>11 篇的额外指标（提问式标题 / 感叹号 / 行话密度 / 段落数 / 首末段），供发布提示词打分用，不是全量</td><td class="n">2026-10-26</td><td><code>voice-ledger.json</code></td></tr>
+</table>
+
+<h2>统计口径</h2>
+<ul>
+<li>“自有仓库”= 非 fork；fork 只算研究，不计入产出。</li><li>Gitee 侧只列公开仓库；私有仓库名、内部服务名与端口一律不进公开页（上线前有 publish_check 把关）。</li><li>公众号 46 条是<strong>发布记录</strong>条数，不等于 46 篇不同文章（存在修改后重发）；12 条为原创标记。</li><li>阅读数取后台导出的当时值，未做去重与反作弊清洗，只用于横向比较选题。</li><li>App 数按蒲公英包计，同一产品的多个渠道包合并不下 1 条，故 16 是上界。</li><li>博客篇数 62 为 <code>_posts</code> 文件数（含 html 与 md 两种扩展），未二次确认是否全部发布成功。</li><li>任何无法回源的判断都写作“推断”，并在缺口清单里列出。</li><li>126 篇里 118 篇做到正文级（94%）；余 8 条是后台已删除/不可查看的发布记录，正文不可得。</li>
+</ul>
+
+<h2>已知缺口</h2>
+<ul>
+<li>2013→2016、2016→2019 两段经历只有推断，缺一次口述补全。</li><li>Gitee 56 仓库：登录工作台翻页核到 51 个名称（`gitee-all.json`），余 5 个未出现在列表页，待确认是否为组织仓库或已删。</li><li>Gitee 上还有一个品牌素材仓库未克隆，其内容可能与本页重叠。</li><li>公众号被删除的 7 篇及其删除原因未记。</li><li>GitHub 私有仓库未纳入（本次只读公开 API）。</li><li>简历上的公司名、职级、薪资未与第三方核实，本页不引用。</li>
+</ul>
+<p class="disc">重建方式：<code>python3 本仓库的 <code>build.py</code></code>，输出到 <code>dist/</code>。
+数据文件不在本机时页面不会“凭记忆”填空——缺哪块，缺口清单里就写哪块。</p>
+
+</main>
+<footer><div class="wrap">可复算的证据链 · 本页由 <code>build.py</code> 从机读清单生成 · 2026-10-26</div></footer>
+</body></html>
