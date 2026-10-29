@@ -13,7 +13,7 @@ owner:
   name:  Jace Ho
   avatar:   avatar.jpg
   bio:   "Keep it simple."
-  email: kimiscircle@gmail.com
+  email:                    # removed 2026-10-29: published on every page = spam bait
   # Social networking links used in footer. Update and remove as you like.
   twitter:  https://twitter.com/jace_ho
   facebook: https://www.facebook.com/jacecr.ho

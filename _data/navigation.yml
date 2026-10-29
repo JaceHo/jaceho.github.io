@@ -1,7 +1,9 @@
 # Menu navigation links
+- title: 首页
+  url: /
 
-- title: Theme Setup
-  url: /theme-setup/
+- title: 关于我
+  url: /about/
 
-- title: External Link
-  url: http://mademistakes.com
+- title: 工程与作品
+  url: /me/
