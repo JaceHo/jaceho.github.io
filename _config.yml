@@ -15,11 +15,11 @@ owner:
   bio:   "Keep it simple."
   email:                    # removed 2026-10-29: published on every page = spam bait
   # Social networking links used in footer. Update and remove as you like.
-  twitter:  https://twitter.com/jace_ho
-  facebook: https://www.facebook.com/jacecr.ho
-  github: https://github.com/jaceho
+  twitter:  jace_ho
+  facebook: jacecr.ho
+  github: jaceho
   stackexchange:  
-  linkedin: https://www.linkedin.com/in/jayceeho/
+  linkedin: jayceeho
   jianshu: https://www.jianshu.com/u/20e173a0df91
   # google plus id, include the '+', eg +JaceHo
   google_plus:
