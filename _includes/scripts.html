@@ -16,3 +16,11 @@
 {% endif %}
 
 {% if page.comments != false %}{% include disqus_comments.html %}{% endif %}
+
+{% if page.math %}
+<!-- MathJax v3 is self-hosted and loaded ONLY on pages that declare math: true.
+     The old theme pulled cdn.mathjax.org (retired in 2017) on every page: dead weight that
+     blocked window.onload. 2.1MB belongs on the one post that has formulas, not on 78. -->
+<script>window.MathJax = { tex: { inlineMath: [['$','$'],['\\(','\\)']], displayMath: [['$$','$$'],['\\[','\\]']] }, svg: { fontCache: 'global' } };</script>
+<script src="{{ site.url }}/assets/js/vendor/mathjax-tex-svg.js" id="MathJax-script" defer></script>
+{% endif %}

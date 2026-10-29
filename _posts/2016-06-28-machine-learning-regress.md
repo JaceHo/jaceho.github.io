@@ -2,6 +2,7 @@
 layout: post
 title: "分析预测模型在机器学习中的应用之线性回归"
 description: "回归能做任何事情"
+math: true
 tags: [线性回归, machine learning , regression, algorithms]
 ---
 回归能做什么呢？《机器学习实战》的作者认为：
