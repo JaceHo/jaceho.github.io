@@ -1,8 +1,7 @@
 ---
-layout: single
+layout: page
 title: "About · Jace Ho"
-permalink: /about/
-author_profile: true
+description: "123 个公开仓库，19 个是我写的。"
 ---
 
 123 个公开仓库，19 个是我写的。
